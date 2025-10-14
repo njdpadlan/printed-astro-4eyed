@@ -1,16 +1,145 @@
 ---
+import Hero from "../components/HomePage/Hero.astro";
+import HighQuality from "../components/HomePage/HighQuality.astro";
+import FeaturedProducts from "../components/HomePage/FeaturedProducts.astro";
+import UniqueProducts from "../components/HomePage/UniqueProducts.astro";
+import PromoProducts from "../components/HomePage/PromoProducts.astro";
+import FeaturedServices	from "../components/HomePage/FeaturedServices.astro";
+import OnlineBased from "../components/HomePage/OnlineBased.astro";
+import About from "../components/HomePage/About.astro";
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+import fetchPageData from "../lib/pagedata";
+
+
+// content type: endpoint, dynamic zone: page
+//content type: homes, dynamic zone: HomePage
+const pages = await fetchApi({
+  endpoint: 'homes', 
+  page: 'HomePage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/homes?populate[HomePage][populate]=*
+
+//fetch page data for homepage
+const homePage = pages[0];
+const pageData = homePage?.HomePage || [];
+
+// fetch homehero components
+const heroData = pageData.find(pd => pd.__component === "homehero.home-hero") || {};
+const {heroHeader, heroText, heroBtn} = heroData;
+
+const { heroBanner: {
+	url: heroBanner
+}} = heroData;
+
+// fetch highquality components
+const highQualityData = pageData.find(pd => pd.__component === "highquality.high-quality") || {};
+const {highQualityHeader, highQualityText} = highQualityData;
+
+const { highQualityImage: {
+	url: highQualityImage
+}} = highQualityData;
+
+// fetch featuredproducts components
+const featuredProductsData = pageData.find(pd => pd.__component === "featuredproducts.featured-products") || {};
+const {  
+	featuredProductsHeader, 
+    pressureSealTitle, 
+    pressureSealBtn,
+    linerlessLabelTitle,
+    linerlessLabelBtn,
+    integratedFormText,
+    integratedFormBtn 
+} = featuredProductsData;
+
+const { pressureSealImage: {
+	url: pressureSealImage
+}} = featuredProductsData;
+
+const { linerlessLabelImage: {
+	url: linerlessLabelImage
+}} = featuredProductsData;
+
+const { integratedFormImage: {
+	url: integratedFormImage
+}} = featuredProductsData;
+
+// fetch uniqueproducts components
+const uniqueProductsData = pageData.find(pd => pd.__component === "uniqueproducts.unique-products") || {};
+const {uniqueProductsHeader, uniqueProductsText, uniqueProductsBtn} = uniqueProductsData;
+
+const { uniqueProductsImage: {
+	url: uniqueProductsImage
+}} = uniqueProductsData;
+
+// fetch promoproducts components
+const promoProductsData = pageData.find(pd => pd.__component === "promoproducts.promo-products") || {};
+const {promoProductsHeader, promoProductsBtn} = promoProductsData;
+
+const { promoProductsImage: {
+	url: promoProductsImage
+}} = promoProductsData;
+
+//fetch featuredservices components
+const featuredservicesData = pageData.find(pd => pd.__component === "featuredservices.featured-services") || {};
+const { 
+	featuredServicesHeader, 
+    clientBrandedTitle, 
+    warehouseTitle,
+    instantProofingTitle
+} = featuredservicesData;
+
+const { clientBrandedImage: {
+	url: clientBrandedImage
+}} = featuredservicesData;
+
+const { warehouseImage: {
+	url: warehouseImage
+}} = featuredservicesData;
+
+const { instantProofingImage: {
+	url: instantProofingImage
+}} = featuredservicesData;
+
+//fetch onlinebased components
+const onlineBasedData = pageData.find(pd => pd.__component === "onlinebased.online-based") || {};
+const {onlineBasedHeader, onlineBasedText, onlineBasedBtn} = onlineBasedData;
+
+const { onlineBasedImage: {
+	url: onlineBasedImage
+}} = onlineBasedData;
+
+//fetch about components
+const aboutData = pageData.find(pd => pd.__component === "about.about") || {};
+const {aboutHeader, aboutText, aboutBtn} = aboutData;
+
+const { aboutImage: {
+	url: aboutImage
+}} = aboutData;
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+
+	<Hero {heroHeader} {heroText} {heroBanner} {heroBtn} />
+
+	<HighQuality {highQualityHeader} {highQualityImage} {highQualityText} />
+
+	<FeaturedProducts 
+	{featuredProductsHeader} 
+	{pressureSealTitle} {pressureSealImage} {pressureSealBtn} 
+	{linerlessLabelTitle} {linerlessLabelImage} {linerlessLabelBtn} 
+	{integratedFormText} {integratedFormImage} {integratedFormBtn} />
+
+	<UniqueProducts {uniqueProductsHeader} {uniqueProductsText} {uniqueProductsImage} {uniqueProductsBtn} />
+
+	<PromoProducts {promoProductsHeader} {promoProductsImage} {promoProductsBtn}/>
+
+	<FeaturedServices {featuredServicesHeader} {clientBrandedTitle} {clientBrandedImage} {warehouseTitle} {warehouseImage} {instantProofingTitle} {instantProofingImage}/>
+
+	<OnlineBased {onlineBasedHeader} {onlineBasedImage} {onlineBasedText} {onlineBasedBtn} />
+
+	<About {aboutHeader} {aboutImage} {aboutText} {aboutBtn}/>
+</Layout>

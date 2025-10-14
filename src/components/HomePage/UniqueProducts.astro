@@ -1,0 +1,13 @@
+---
+const {uniqueProductsHeader, uniqueProductsText, uniqueProductsImage, uniqueProductsBtn} = Astro.props;
+const photoUrl = `${import.meta.env.STRAPI_URL}${uniqueProductsImage}`;
+---
+
+<div>
+    <section>
+        <h2>{uniqueProductsHeader}</h2>
+        <p>{uniqueProductsText}</p>
+        <img src={photoUrl} alt="random alt text">
+        <a href="#">{uniqueProductsBtn}</a>
+    </section>
+</div>

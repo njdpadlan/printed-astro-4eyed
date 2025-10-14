@@ -1,0 +1,33 @@
+---
+const {
+    featuredServicesHeader, 
+    clientBrandedTitle, 
+    clientBrandedImage,
+    warehouseTitle,
+    warehouseImage,
+    instantProofingTitle,
+    instantProofingImage
+} = Astro.props;
+
+const clientBrandedUrl = `${import.meta.env.STRAPI_URL}${clientBrandedImage}`;
+const warehouseImageUrl = `${import.meta.env.STRAPI_URL}${warehouseImage}`;
+const instantProofingImageUrl = `${import.meta.env.STRAPI_URL}${instantProofingImage}`;
+---
+
+<div>
+    <h2>{featuredServicesHeader}</h2>
+    <div>
+        <section>
+            <h3>{clientBrandedTitle}</h3>
+            <img src={clientBrandedUrl} alt="random alt text">
+        </section>
+        <section>
+            <h3>{warehouseTitle}</h3>
+            <img src={warehouseImageUrl} alt="random alt text">
+        </section>
+        <section>
+            <h3>{instantProofingTitle}</h3>
+            <img src={instantProofingImageUrl} alt="random alt text">
+        </section>
+    </div>
+</div>

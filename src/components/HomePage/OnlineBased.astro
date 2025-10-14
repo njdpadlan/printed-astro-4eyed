@@ -1,0 +1,11 @@
+---
+const {onlineBasedHeader, onlineBasedImage, onlineBasedText, onlineBasedBtn} = Astro.props;
+const photoUrl = `${import.meta.env.STRAPI_URL}${onlineBasedImage}`;
+---
+
+<div>
+    <h2>{onlineBasedHeader}</h2>
+    <img src={photoUrl} alt="random alt text">
+    <p>{onlineBasedText}</p>
+    <a href="#">{onlineBasedBtn}</a>
+</div>
