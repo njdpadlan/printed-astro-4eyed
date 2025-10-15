@@ -7,13 +7,14 @@ import PromoProducts from "../components/HomePage/PromoProducts.astro";
 import FeaturedServices	from "../components/HomePage/FeaturedServices.astro";
 import OnlineBased from "../components/HomePage/OnlineBased.astro";
 import About from "../components/HomePage/About.astro";
+import ProductGallery from "../components/HomePage/ProductGallery.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
 import fetchPageData from "../lib/pagedata";
 
 
 // content type: endpoint, dynamic zone: page
-//content type: homes, dynamic zone: HomePage
+//content type: "homes", dynamic zone: HomePage
 const pages = await fetchApi({
   endpoint: 'homes', 
   page: 'HomePage',
@@ -119,6 +120,11 @@ const { aboutImage: {
 	url: aboutImage
 }} = aboutData;
 
+
+// fetch  product gallery component
+const productGalleryData = pageData.find(pd => pd.__component === "productgallery.product-gallery");
+const { productGalleryHeader, productGalleryImages } = productGalleryData;
+
 ---
 
 <Layout>
@@ -141,5 +147,8 @@ const { aboutImage: {
 
 	<OnlineBased {onlineBasedHeader} {onlineBasedImage} {onlineBasedText} {onlineBasedBtn} />
 
+	<ProductGallery {productGalleryHeader} {productGalleryImages} />
+
 	<About {aboutHeader} {aboutImage} {aboutText} {aboutBtn}/>
+
 </Layout>

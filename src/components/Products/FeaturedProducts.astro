@@ -1,0 +1,36 @@
+---
+const {
+    featureProductsHeader, 
+    pressuresealTitle, 
+    pressuresealImage, 
+    pressuresealBtn,
+    linerlessTitle,
+    linerlessImage,
+    linerlessBtn,
+    integratedformTitle,
+    integratedformImage,
+    integratedformBtn
+    } = Astro.props;
+const pressuresealUrl = `${import.meta.env.STRAPI_URL}${pressuresealImage}`;
+const linerlessUrl = `${import.meta.env.STRAPI_URL}${linerlessImage}`;
+const integratedformUrl = `${import.meta.env.STRAPI_URL}${integratedformImage}`;
+---
+
+<div>
+    <h2>{featureProductsHeader}</h2>
+    <section>
+        <h3>{pressuresealTitle}</h3>
+        <img src={pressuresealUrl} alt="random alt text">
+        <a href="#">{pressuresealBtn}</a>
+    </section>
+    <section>
+        <h3>{linerlessTitle}</h3>
+        <img src={linerlessUrl} alt="random alt text">
+        <a href="#">{linerlessBtn}</a>
+    </section>
+    <section>
+        <h3>{integratedformTitle}</h3>
+        <img src={integratedformUrl} alt="random alt text">
+        <a href="#">{integratedformBtn}</a>
+    </section>
+</div>

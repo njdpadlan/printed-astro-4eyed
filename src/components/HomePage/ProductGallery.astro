@@ -1,0 +1,18 @@
+---
+const { productGalleryHeader, productGalleryImages = [] } = Astro.props;
+const baseUrl = import.meta.env.STRAPI_URL;
+---
+
+
+<div>
+    <section>
+        <h2>{productGalleryHeader}</h2>
+        {productGalleryImages.map((pgImg) => (
+        <img 
+            src={`${baseUrl}${pgImg.url}`} 
+            alt={pgImg.alternativeText || pgImg.name} 
+            width={pgImg.width} 
+            height={pgImg.height}/>
+         ))}
+    </section>
+</div>
