@@ -1,0 +1,18 @@
+---
+const {aboutUsWhyTitle, aboutUsWhyDesc, aboutUsWhatTitle, aboutUsWhatDesc, aboutUsWhyBtn, aboutUsWhyImage} = Astro.props;
+
+const photoUrl = `${import.meta.env.STRAPI_URL}${aboutUsWhyImage}`;
+---
+
+<div>
+    <section>
+        <h2>{aboutUsWhyTitle}</h2>
+        <p>{aboutUsWhyDesc}</p>
+    </section>
+    <section>
+        <h2>{aboutUsWhatTitle}</h2>
+        <p>{aboutUsWhatDesc}</p>
+        <a href="#">{aboutUsWhyBtn}</a>
+    </section>
+    <img src={photoUrl} alt="random alt text">
+</div>

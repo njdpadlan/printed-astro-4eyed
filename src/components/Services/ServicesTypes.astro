@@ -1,0 +1,35 @@
+---
+const {
+    servicePortalTitle, 
+    servicePortalDesc, 
+    servicePortalImage, 
+    servicePoofingTitle, 
+    servicePoofingDesc, 
+    servicePoofingImage, 
+    serviceWarehouseTitle, 
+    serviceWarehouseDesc, 
+    serviceWarehouseImage  
+} = Astro.props;
+
+const servicePortalUrl = `${import.meta.env.STRAPI_URL}${servicePortalImage}`;
+const servicePoofingUrl = `${import.meta.env.STRAPI_URL}${servicePoofingImage}`;
+const serviceWarehouseUrl = `${import.meta.env.STRAPI_URL}${serviceWarehouseImage}`;
+---
+
+<div>
+    <section>
+        <h2>{servicePortalTitle}</h2>
+        <img src={servicePortalUrl} alt="random alt text">
+        <p>{servicePortalDesc}</p>
+    </section>
+    <section>
+        <h2>{servicePoofingTitle}</h2>
+        <img src={servicePoofingUrl} alt="random alt text">
+        <p>{servicePoofingDesc}</p>
+    </section>
+    <section>
+        <h2>{serviceWarehouseTitle}</h2>
+        <img src={serviceWarehouseUrl} alt="random alt text">
+        <p>{serviceWarehouseDesc}</p>
+    </section>
+</div>

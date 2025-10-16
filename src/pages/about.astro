@@ -1,0 +1,46 @@
+---
+import AboutUsWhy from "../components/AboutUs/AboutUsWhy.astro";
+import Hero from "../components/AboutUs/Hero.astro";
+
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+
+
+
+const pages = await fetchApi({
+  endpoint: 'about-uses', 
+  page: 'AboutUsPage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/about-uses?populate[AboutUsPage][populate]=*
+
+//fetch page data for about us page
+const aboutusPage = pages[0];
+const pageData = aboutusPage?.AboutUsPage || [];
+
+// fetch about us hero components
+const heroData = pageData.find(pd => pd.__component === "aboutushero.about-us-hero") || {};
+const {aboutUsHeroHeader, aboutUsHeroDesc} = heroData;
+
+
+const { aboutUsHeroImage: {
+	url: aboutUsHeroImage
+}} = heroData;
+
+//fetch aboutusWhy components
+
+const aboutusWhyData = pageData.find(pd => pd.__component === "aboutuswhy.about-us-why") || {};
+const {aboutUsWhyTitle, aboutUsWhyDesc, aboutUsWhatTitle, aboutUsWhatDesc, aboutUsWhyBtn} = aboutusWhyData;
+
+const { aboutUsWhyImage: {
+	url: aboutUsWhyImage
+}} = aboutusWhyData;
+
+
+---
+
+<Layout>
+    <Hero {aboutUsHeroHeader} {aboutUsHeroDesc} {aboutUsHeroImage}/>
+    <AboutUsWhy {aboutUsWhyTitle} {aboutUsWhyDesc} {aboutUsWhatTitle} {aboutUsWhatDesc} {aboutUsWhyBtn} {aboutUsWhyImage} />
+</Layout>
