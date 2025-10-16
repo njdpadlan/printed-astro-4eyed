@@ -1,6 +1,7 @@
 ---
 import Head from "./Head.astro";
 import Nav from "./Nav.astro";
+import Footer from "./Footer.astro";
 const {title = "Printed", description = "Welcome to Printed!"} = Astro.props;
 ---
 <html>
@@ -8,9 +9,10 @@ const {title = "Printed", description = "Welcome to Printed!"} = Astro.props;
     <body>
         <Nav />
         <main>
-            <section>
+            <div>
                 <slot />
-            </section>
+            </div>
         </main>
+        <Footer/>
     </body>
 </html>
