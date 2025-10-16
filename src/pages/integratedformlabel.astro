@@ -1,0 +1,53 @@
+---
+import Hero from "../components/IntegratedForm/Hero.astro";
+import WhatIs from "../components/IntegratedForm/WhatIs.astro";
+import ImageGallery from "../components/IntegratedForm/ImageGallery.astro";
+
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+
+
+
+const pages = await fetchApi({
+  endpoint: 'integrated-form-labels', 
+  page: 'IntegratedFormLabelPage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/integrated-form-labels?populate[IntegratedFormLabelPage][populate]=*
+
+//fetch page data for integrated form label page
+const integratedformsPage = pages[0];
+const pageData = integratedformsPage?.IntegratedFormLabelPage || [];
+
+// fetch integratedform hero components
+const heroData = pageData.find(pd => pd.__component === "integratedformlabelhero.integratedformlabel-hero") || {};
+const {integratedformlabelHeader, integratedformlabelDesc} = heroData;
+
+
+const { integratedformlabelImage: {
+	url: integratedformlabelImage
+}} = heroData;
+
+//fetch integratedformWhatIs components
+
+const integratedformWhatIsData = pageData.find(pd => pd.__component === "integratedformlabelwhatis.integratedformlabel-what-is") || {};
+const {integratedformlabelWhatIsTitle, integratedformlabelWhatIsDesc, integratedformBtn} = integratedformWhatIsData;
+
+const { integratedformlabelWhatIsImage: {
+	url: integratedformlabelWhatIsImage
+}} = integratedformWhatIsData;
+
+//fetch integratedformImageGallery components
+
+const linerlessImageGallery = pageData.find(pd => pd.__component === "integratedformlabelimagegallery.integratedformlabel-image-gallery") || {};
+const { integratedformlabelBtn, integratedformlabelImageGallery = [] } = linerlessImageGallery;
+ 
+
+---
+
+<Layout>
+    <Hero {integratedformlabelHeader} {integratedformlabelDesc} {integratedformlabelImage} />
+    <WhatIs {integratedformlabelWhatIsTitle} {integratedformlabelWhatIsDesc} {integratedformBtn} {integratedformlabelWhatIsImage} />
+    <ImageGallery {integratedformlabelImageGallery} {integratedformlabelBtn}/>
+</Layout>

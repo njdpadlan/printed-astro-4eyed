@@ -1,0 +1,12 @@
+---
+const {linerlesslabelWhatIsTitle, linerlesslabelWhatIsDesc, linerlesslabelBtn, linerlesslabelWhatIsImage} = Astro.props;
+
+const photoUrl = `${import.meta.env.STRAPI_URL}${linerlesslabelWhatIsImage}`;
+---
+
+<div>
+    <img src={photoUrl} alt="random alt text">
+    <h2>{linerlesslabelWhatIsTitle}</h2>
+    <p>{linerlesslabelWhatIsDesc}</p>
+    <a href="#">{linerlesslabelBtn}</a>
+</div>

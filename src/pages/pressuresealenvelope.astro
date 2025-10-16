@@ -1,0 +1,53 @@
+---
+import Hero from "../components/PressureSeal/Hero.astro";
+import ImageGallery from "../components/PressureSeal/ImageGallery.astro";
+import WhatIs from "../components/PressureSeal/WhatIs.astro";
+
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+
+
+
+const pages = await fetchApi({
+  endpoint: 'pressure-seal-envelopes', 
+  page: 'PressureSealEnvelopePage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/pressure-seal-envelopes?populate[PressureSealEnvelopePage][populate]=*
+
+//fetch page data for pressure seal envelope page
+const pressureSealPage = pages[0];
+const pageData = pressureSealPage?.PressureSealEnvelopePage || [];
+
+// fetch pressureseal hero components
+const heroData = pageData.find(pd => pd.__component === "pressuresealhero.pressureseal-hero") || {};
+const {pressuresealHeader, pressuresealDesc} = heroData;
+
+
+const { pressuresealImage: {
+	url: pressuresealImage
+}} = heroData;
+
+//fetch pressuresealWhatIs components
+
+const pressuresealWhatIsData = pageData.find(pd => pd.__component === "pressuresealwhatis.pressureseal-what-is") || {};
+const {pressuresealWhatIsTitle, pressuresealWhatIsDesc, pressuresealBtn} = pressuresealWhatIsData;
+
+const { pressuresealWhatIsImage: {
+	url: pressuresealWhatIsImage
+}} = pressuresealWhatIsData;
+
+//fetch pressuresealImageGallery components
+
+const linerlessImageGallery = pageData.find(pd => pd.__component === "pressuresealimagegallery.pressureseal-image-gallery") || {};
+const { pressuresealGalleryBtn, pressuresealImageGallery = [] } = linerlessImageGallery;
+ 
+
+---
+
+<Layout>
+    <Hero {pressuresealHeader} {pressuresealDesc} {pressuresealImage} />
+    <WhatIs {pressuresealWhatIsTitle} {pressuresealWhatIsDesc} {pressuresealBtn} {pressuresealWhatIsImage} />
+    <ImageGallery {pressuresealImageGallery} {pressuresealGalleryBtn}/>
+</Layout>

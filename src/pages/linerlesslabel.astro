@@ -1,0 +1,53 @@
+---
+import Hero from "../components/LinerlessLabel/Hero.astro";
+import ImageGallery from "../components/LinerlessLabel/ImageGallery.astro";
+import WhatIs from "../components/LinerlessLabel/WhatIs.astro";
+
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+
+
+
+const pages = await fetchApi({
+  endpoint: 'linerless-labels', 
+  page: 'LinerlessLabelPage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/linerless-labels?populate[LinerlessLabelPage][populate]=*
+
+//fetch page data for products page
+const linerlessPage = pages[0];
+const pageData = linerlessPage?.LinerlessLabelPage || [];
+
+// fetch linerless hero components
+const heroData = pageData.find(pd => pd.__component === "linerlesslabelhero.linerlesslabel-hero") || {};
+const {linerlesslabelHeader, linerlesslabelDesc} = heroData;
+
+
+const { linerlesslabelImage: {
+	url: linerlesslabelImage
+}} = heroData;
+
+//fetch linerlessWhatIs components
+
+const linerlessWhatIsData = pageData.find(pd => pd.__component === "linerlesslabelwhatis.linerlesslabel-what-is") || {};
+const {linerlesslabelWhatIsTitle, linerlesslabelWhatIsDesc, linerlesslabelBtn} = linerlessWhatIsData;
+
+const { linerlesslabelWhatIsImage: {
+	url: linerlesslabelWhatIsImage
+}} = linerlessWhatIsData;
+
+//fetch linerlessImageGallery components
+
+const linerlessImageGallery = pageData.find(pd => pd.__component === "linerlessimagegallery.linerless-image-gallery") || {};
+const { linerlessBtn, linerlesslabelImageGallery = [] } = linerlessImageGallery;
+ 
+
+---
+
+<Layout>
+    <Hero {linerlesslabelHeader} {linerlesslabelDesc} {linerlesslabelImage} />
+    <WhatIs {linerlesslabelWhatIsTitle} {linerlesslabelWhatIsDesc} {linerlesslabelBtn} {linerlesslabelWhatIsImage} />
+    <ImageGallery {linerlesslabelImageGallery} {linerlessBtn}/>
+</Layout>
