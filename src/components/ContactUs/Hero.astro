@@ -1,0 +1,17 @@
+---
+const {contactusHeader, contactusText, callusTitle, callusText, emailTitle, emailText} = Astro.props;
+
+---
+
+<div>
+    <h1>{contactusHeader}</h1>
+    <p>{contactusText}</p>
+    <section>
+        <h2>{callusTitle}</h2>
+        <p>{callusText}</p>
+    </section>
+    <section>
+        <h2>{emailTitle}</h2>
+        <p>{emailText}</p>
+    </section>
+</div>

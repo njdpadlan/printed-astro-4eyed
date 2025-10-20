@@ -1,0 +1,54 @@
+---
+const {Subject, FullName, Email, Phone, CompanyName, ProductType, Quantity, FileUpload, AdditionalDetails, requestquoteBtn} = Astro.props;
+
+---
+
+<div>
+    <form action="#" method="post" name="requestquote">
+        <div>
+            <label for={Subject}>{Subject}</label>
+            <input id={Subject} type="text">
+        </div>
+        <div>
+            <label for={FullName}>{FullName}</label>
+            <input id={FullName} type="text">
+        </div>
+        <div>
+            <label for="phone">{Phone}</label>
+            <input id="phone" type="text">
+        </div>
+        <div>
+            <label for={Email}>{Email}</label>
+            <input id="email" type="text">
+        </div>
+        <div>
+            <label for={CompanyName}>{CompanyName}</label>
+            <input id={CompanyName} type="text">
+        </div>
+        <div>
+            <label for="product-type">{ProductType}</label>
+            <select name="product-type" id="product-type">
+            <option value="Pressure Seal">Pressure Seal</option>
+            <option value="Linerless Label">Linerless Label</option>
+            <option value="Integrated Form">Integrated Form</option>
+            </select>
+        </div>
+        <div>
+            <label for="quantity">{Quantity}</label>
+            <select name="quantity" id="quantity">
+            <option value="10">10</option>
+            <option value="100">100</option>
+            <option value="1000">1000</option>
+            </select>
+        </div>
+        <div>
+            <label for={FileUpload}>{FileUpload}</label>
+            <input id={FileUpload} type="text">
+        </div>
+        <div>
+            <label for={AdditionalDetails}>{AdditionalDetails}</label>
+            <input id={AdditionalDetails} type="text">
+        </div>
+        <input type="submit" value={requestquoteBtn}>
+    </form>
+</div>
