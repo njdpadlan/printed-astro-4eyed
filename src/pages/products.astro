@@ -24,6 +24,12 @@ const pageData = productPage?.ProductPage || [];
 const heroData = pageData.find(pd => pd.__component === "producthero.product-hero") || {};
 const {productHeroHeader, productHeroText} = heroData;
 
+
+const { productHeroImage: {
+	url: productHeroImage
+}} = heroData;
+
+
 //fetch featured products components
 const featuredproductData = pageData.find(pd => pd.__component === "productsfeaturedproducts.products-featured-products") || {};
 const {
@@ -52,19 +58,51 @@ const { integratedformImage: {
 const moreProductsData = pageData.find(pd => pd.__component === "moreproducts.more-products");
 const { 
     moreproductsHeader, 
-    formsTitle, 
-    envelopesTitle, 
-    chequesTitle, 
-    labelsmarketingTitle, 
-    formsImageGallery, 
-    envelopesImageGallery, 
-    chequesImageGallery, 
-    labelsmarketingImageGallery 
+    lasercutTitle, 
+    highqualitylaserTitle,
+    lasercutText,
+    partsText,
+    featuresText,
+    customsizesText,
+    snapsetTitle,
+    durableTitle,
+    multipartText,
+    snapsetpartsText,
+    commonuseText,
+    fieldserviceText,
+    continuousTitle,
+    reliableTitle,
+    continuousText,
+    continuouspartsText,
+    idealforText,
+    accountingText,
+    customenvelopeTitle,
+    deliverbrandfirstTitle,
+    daytodayText,
+    regularText,
+    availableoptionsText,
+    regularwindowText
 } = moreProductsData;
+
+const { lasercutImage: {
+	url: lasercutImage
+}} = moreProductsData;
+
+const { snapsetImage: {
+	url: snapsetImage
+}} = moreProductsData;
+
+const { continuousImage: {
+	url: continuousImage
+}} = moreProductsData;
+
+const { customenvelopeImage: {
+	url: customenvelopeImage
+}} = moreProductsData;
 
 //fetch promo products components
 const promoProductsData = pageData.find(pd => pd.__component === "featuredpromoproducts.featured-promo-products");
-const {featuredpromoTitle, featuredpromoBtn} = promoProductsData;
+const {featuredpromoTitle, featuredpromoText, featuredpromoBtn} = promoProductsData;
 
 const { featuredpromoImage: {
 	url: featuredpromoImage
@@ -75,18 +113,20 @@ const { featuredpromoImage: {
 
 <Layout>
 
-    <ProductsHero {productHeroHeader} {productHeroText} />
+    <ProductsHero {productHeroHeader} {productHeroImage} {productHeroText} />
 
     <FeaturedProducts 
     {featureProductsHeader} {pressuresealTitle} {pressuresealImage} {pressuresealBtn} 
     {linerlessTitle} {linerlessImage} {linerlessBtn} 
     {integratedformTitle} {integratedformImage} {integratedformBtn} />
 
-    <MoreProducts {moreproductsHeader} {formsTitle} {formsImageGallery} 
-    {envelopesTitle} {envelopesImageGallery} 
-    {chequesTitle} {chequesImageGallery} 
-    {labelsmarketingTitle} {labelsmarketingImageGallery} />
+    <MoreProducts {moreproductsHeader} {lasercutTitle} {lasercutImage} {snapsetImage} {continuousImage} {customenvelopeImage}
+    {highqualitylaserTitle} {lasercutText} 
+    {partsText} {featuresText} 
+    {customsizesText} {snapsetTitle}  {durableTitle} {multipartText} {snapsetpartsText} {commonuseText} {fieldserviceText} {continuousTitle} 
+    {reliableTitle} {continuousText} {continuouspartsText} {idealforText} {accountingText} {customenvelopeTitle} {deliverbrandfirstTitle} {daytodayText} 
+    {regularText} {availableoptionsText} {regularwindowText} />
 
-    <PromoProducts {featuredpromoTitle} {featuredpromoBtn} {featuredpromoImage}/>
+    <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage}/>
 
 </Layout>

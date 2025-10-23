@@ -1,0 +1,17 @@
+---
+const {idealforText, payroll, taxforms, statements, utilitybills, directmail, securefoldImage, securefoldBtn, securefoldTitle} = Astro.props;
+---
+
+<div>
+    <h2>{securefoldTitle}</h2>
+    <p>{idealforText}</p>
+    <ul>
+        <li>{payroll}</li>
+        <li>{taxforms}</li>
+        <li>{statements}</li>
+        <li>{utilitybills}</li>
+        <li>{directmail}</li>
+    </ul>
+    <img src={securefoldImage} alt="random alt text">
+    <a href="#">{securefoldBtn}</a>
+</div>

@@ -1,12 +1,23 @@
 ---
-const {integratedformlabelWhatIsTitle, integratedformlabelWhatIsDesc, integratedformBtn, integratedformlabelWhatIsImage} = Astro.props;
-
-const photoUrl = `${import.meta.env.STRAPI_URL}${integratedformlabelWhatIsImage}`;
+const {
+    integratedformlabelWhatIsTitle, 
+    integratedformlabelWhatIsDesc, 
+    integratedsolutionText, 
+    integratedformImage1, 
+    integratedformImage2, 
+    integratedformImage3
+} = Astro.props;
 ---
 
 <div>
-    <img src={photoUrl} alt="random alt text">
+<div>
     <h2>{integratedformlabelWhatIsTitle}</h2>
     <p>{integratedformlabelWhatIsDesc}</p>
-    <a href="#">{integratedformBtn}</a>
+    <p>{integratedsolutionText}</p>
+    <div>
+        <img src={integratedformImage1} alt="random alt text">
+        <img src={integratedformImage2} alt="random alt text">
+        <img src={integratedformImage3} alt="random alt text">
+    </div>
+</div>
 </div>

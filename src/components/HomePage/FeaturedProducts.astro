@@ -12,26 +12,23 @@ const {
     integratedFormBtn
 } = Astro.props;
 
-const pressureSealUrl = `${import.meta.env.STRAPI_URL}${pressureSealImage}`;
-const linerlessLabelUrl = `${import.meta.env.STRAPI_URL}${linerlessLabelImage}`;
-const integratedFormUrl = `${import.meta.env.STRAPI_URL}${integratedFormImage}`;
 ---
 
 <div>
     <h2>{featuredProductsHeader}</h2>
     <section>
         <h3>{pressureSealTitle}</h3>
-        <img src={pressureSealUrl} alt="random alt text">
+        <img src={pressureSealImage} alt="random alt text">
         <a href="/pressuresealenvelope">{pressureSealBtn}</a>
     </section>
     <section>
         <h3>{linerlessLabelTitle}</h3>
-        <img src={linerlessLabelUrl} alt="random alt text">
+        <img src={linerlessLabelImage} alt="random alt text">
         <a href="/linerlesslabel">{linerlessLabelBtn}</a>
     </section>
     <section>
         <h3>{integratedFormText}</h3>
-        <img src={integratedFormUrl} alt="random alt text">
+        <img src={integratedFormImage} alt="random alt text">
         <a href="/integratedformlabel">{integratedFormBtn}</a>
     </section>
 </div>

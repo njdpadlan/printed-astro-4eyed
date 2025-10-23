@@ -1,12 +1,21 @@
 ---
-const {pressuresealWhatIsTitle, pressuresealWhatIsDesc, pressuresealBtn, pressuresealWhatIsImage} = Astro.props;
-
-const photoUrl = `${import.meta.env.STRAPI_URL}${pressuresealWhatIsImage}`;
+const {
+    pressuresealWhatIsTitle, 
+    pressuresealWhatIsDesc, 
+    sealedbypressureText,
+    pressuresealImage1,
+    pressuresealImage2,
+    pressuresealImage3
+} = Astro.props;
 ---
 
 <div>
-    <img src={photoUrl} alt="random alt text">
     <h2>{pressuresealWhatIsTitle}</h2>
     <p>{pressuresealWhatIsDesc}</p>
-    <a href="#">{pressuresealBtn}</a>
+    <p>{sealedbypressureText}</p>
+    <div>
+        <img src={pressuresealImage1} alt="random alt text">
+        <img src={pressuresealImage2} alt="random alt text">
+        <img src={pressuresealImage3} alt="random alt text">
+    </div>
 </div>

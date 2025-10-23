@@ -1,11 +1,10 @@
 ---
 
 const {highQualityHeader, highQualityImage, highQualityText } = Astro.props;
-const photoUrl = `${import.meta.env.STRAPI_URL}${highQualityImage}`;
 ---
 
 <div>
     <h2>{highQualityHeader}</h2>
-    <img src={photoUrl} alt="random alt text">
+    <img src={highQualityImage} alt="random alt text">
     <p>{highQualityText}</p>
 </div>

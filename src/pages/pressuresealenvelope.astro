@@ -1,6 +1,7 @@
 ---
 import Hero from "../components/PressureSeal/Hero.astro";
-import ImageGallery from "../components/PressureSeal/ImageGallery.astro";
+import SecureFold from "../components/PressureSeal/SecureFold.astro";
+
 import WhatIs from "../components/PressureSeal/WhatIs.astro";
 
 import Layout from "../layouts/Layout.astro";
@@ -32,22 +33,48 @@ const { pressuresealImage: {
 //fetch pressuresealWhatIs components
 
 const pressuresealWhatIsData = pageData.find(pd => pd.__component === "pressuresealwhatis.pressureseal-what-is") || {};
-const {pressuresealWhatIsTitle, pressuresealWhatIsDesc, pressuresealBtn} = pressuresealWhatIsData;
+const {
+    pressuresealWhatIsTitle, 
+    pressuresealWhatIsDesc, 
+    sealedbypressureText,
+} = pressuresealWhatIsData;
 
-const { pressuresealWhatIsImage: {
-	url: pressuresealWhatIsImage
+const { pressuresealImage1: {
+	url: pressuresealImage1
 }} = pressuresealWhatIsData;
 
-//fetch pressuresealImageGallery components
+const { pressuresealImage2: {
+	url: pressuresealImage2
+}} = pressuresealWhatIsData;
 
-const linerlessImageGallery = pageData.find(pd => pd.__component === "pressuresealimagegallery.pressureseal-image-gallery") || {};
-const { pressuresealGalleryBtn, pressuresealImageGallery = [] } = linerlessImageGallery;
- 
+const { pressuresealImage3: {
+	url: pressuresealImage3
+}} = pressuresealWhatIsData;
+
+
+//fetch Secure Fold components
+const securefoldData = pageData.find(pd => pd.__component === "securefold.secure-fold") || {};
+const {
+  idealforText, 
+  payroll, 
+  taxforms, 
+  statements, 
+  utilitybills, 
+  directmail, 
+  securefoldBtn, 
+  securefoldTitle
+} = securefoldData;
+
+const { securefoldImage: {
+	url: securefoldImage
+}} = securefoldData;
+
+
 
 ---
 
 <Layout>
     <Hero {pressuresealHeader} {pressuresealDesc} {pressuresealImage} />
-    <WhatIs {pressuresealWhatIsTitle} {pressuresealWhatIsDesc} {pressuresealBtn} {pressuresealWhatIsImage} />
-    <ImageGallery {pressuresealImageGallery} {pressuresealGalleryBtn}/>
+    <WhatIs {pressuresealWhatIsTitle} {pressuresealWhatIsDesc} {sealedbypressureText} {pressuresealImage1} {pressuresealImage2} {pressuresealImage3} />
+    <SecureFold {idealforText} {payroll} {taxforms} {statements} {utilitybills} {directmail} {securefoldBtn} {securefoldTitle} {securefoldImage}/>
 </Layout>

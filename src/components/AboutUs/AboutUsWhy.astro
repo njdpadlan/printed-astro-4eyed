@@ -1,7 +1,18 @@
 ---
-const {aboutUsWhyTitle, aboutUsWhyDesc, aboutUsWhatTitle, aboutUsWhatDesc, aboutUsWhyBtn, aboutUsWhyImage} = Astro.props;
+const {
+    aboutUsWhyTitle, 
+    aboutUsWhyDesc, 
+    aboutUsWhatTitle, 
+    aboutUsWhatDesc, 
+    aboutUsWhyBtn, 
+    aboutUsWhyImage,
+    onlineservicesText,
+    customercareText,
+    qualityText,
+    localexpertiseText
+} = Astro.props;
 
-const photoUrl = `${import.meta.env.STRAPI_URL}${aboutUsWhyImage}`;
+
 ---
 
 <div>
@@ -12,7 +23,13 @@ const photoUrl = `${import.meta.env.STRAPI_URL}${aboutUsWhyImage}`;
     <section>
         <h2>{aboutUsWhatTitle}</h2>
         <p>{aboutUsWhatDesc}</p>
-        <a href="#">{aboutUsWhyBtn}</a>
+        <p>{onlineservicesText}</p>
+        <p>{customercareText}</p>
+        <p>{qualityText}</p>
+        <p>{localexpertiseText}</p>
     </section>
-    <img src={photoUrl} alt="random alt text">
+    <div>
+        <img src={aboutUsWhyImage} alt="random alt text">
+        <a href="#">{aboutUsWhyBtn}</a>
+    </div>
 </div>
