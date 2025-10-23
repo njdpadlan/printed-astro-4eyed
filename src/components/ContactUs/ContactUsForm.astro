@@ -1,0 +1,43 @@
+---
+const {FullName, Email, Phone, Subject, CompanyName, ContactPreference, Message, sendmessageBtn} = Astro.props;
+
+---
+
+<div>
+    <form action="#" method="post" name="contactus">
+        <div>
+            <label for={FullName}>{FullName}</label>
+            <input id={FullName} type="text">
+        </div>
+        <div>
+            <label for={Email}>{Email}</label>
+            <input id="email" type="text">
+        </div>
+        <div>
+        <label for="phone">{Phone}</label>
+        <input id="phone" type="text">
+        </div>
+        <div>
+            <label for={Subject}>{Subject}</label>
+            <input id={Subject} type="text">
+        </div>
+        <div>
+            <label for={CompanyName}>{CompanyName}</label>
+            <input id={CompanyName} type="text">
+        </div>
+        <div>
+            <p>{ContactPreference}</p>
+            <input type="radio" id="Phone Call" name="fav_language" value="Phone Call">
+            <label for="Phone Call">Phone Call</label><br>
+            <input type="radio" id="Text" name="fav_language" value="Text">
+            <label for="Text">Text</label><br>
+            <input type="radio" id="Email" name="fav_language" value="Email">
+            <label for="Email">Email</label>
+        </div>
+        <div>
+            <label for={Message}>{Message}</label>
+            <input id={Message} type="text">
+        </div>
+        <input type="submit" value={sendmessageBtn}>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+---
+import Hero from "../components/RequestQuote/Hero.astro";
+import RequestQuoteForm from "../components/RequestQuote/RequestQuoteForm.astro";
+
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+
+
+
+const pages = await fetchApi({
+  endpoint: 'request-quotes', 
+  page: 'RequestQuotePage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/request-quotes?populate[RequestQuotePage][populate]=*
+
+//fetch page data for about us page
+const requestquotePage = pages[0];
+const pageData = requestquotePage?.RequestQuotePage || [];
+
+// fetch about us hero components
+const heroData = pageData.find(pd => pd.__component === "requestquotehero.requestquote-hero") || {};
+const {requestquoteHeader, requestquoteText, requestquotePhone, requestquoteEmail} = heroData;
+
+const requestquoteFormData = pageData.find(pd => pd.__component === "requestquoteform.requestquote-form") || {};
+const {Subject, FullName, Email, Phone, CompanyName, ProductType, Quantity, FileUpload, AdditionalDetails, requestquoteBtn} = requestquoteFormData;
+---
+
+<Layout>
+    <Hero {requestquoteHeader} {requestquoteText} {requestquotePhone} {requestquoteEmail}  />
+    <RequestQuoteForm {Subject} {FullName} {Email} {Phone} {CompanyName} {ProductType} {Quantity} {FileUpload} {AdditionalDetails} {requestquoteBtn} />
+</Layout>
