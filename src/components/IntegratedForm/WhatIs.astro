@@ -7,10 +7,6 @@ const {
     integratedformImage2, 
     integratedformImage3
 } = Astro.props;
-
-const integratedformImage1URL = `${import.meta.env.STRAPI_URL}${integratedformImage1}`;
-const integratedformImage2URL = `${import.meta.env.STRAPI_URL}${integratedformImage2}`;
-const integratedformImage3URL = `${import.meta.env.STRAPI_URL}${integratedformImage3}`;
 ---
 
 <div>
@@ -19,9 +15,9 @@ const integratedformImage3URL = `${import.meta.env.STRAPI_URL}${integratedformIm
     <p>{integratedformlabelWhatIsDesc}</p>
     <p>{integratedsolutionText}</p>
     <div>
-        <img src={integratedformImage1URL} alt="random alt text">
-        <img src={integratedformImage2URL} alt="random alt text">
-        <img src={integratedformImage3URL} alt="random alt text">
+        <img src={integratedformImage1} alt="random alt text">
+        <img src={integratedformImage2} alt="random alt text">
+        <img src={integratedformImage3} alt="random alt text">
     </div>
 </div>
 </div>

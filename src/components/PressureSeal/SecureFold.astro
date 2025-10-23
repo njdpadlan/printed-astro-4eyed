@@ -1,7 +1,5 @@
 ---
 const {idealforText, payroll, taxforms, statements, utilitybills, directmail, securefoldImage, securefoldBtn, securefoldTitle} = Astro.props;
-
-const photoUrl = `${import.meta.env.STRAPI_URL}${securefoldImage}`;
 ---
 
 <div>
@@ -14,6 +12,6 @@ const photoUrl = `${import.meta.env.STRAPI_URL}${securefoldImage}`;
         <li>{utilitybills}</li>
         <li>{directmail}</li>
     </ul>
-    <img src={photoUrl} alt="random alt text">
+    <img src={securefoldImage} alt="random alt text">
     <a href="#">{securefoldBtn}</a>
 </div>

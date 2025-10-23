@@ -30,18 +30,13 @@ const {
     availableoptionsText,
     regularwindowText
 } = Astro.props;
-
-const lasercutURL = `${import.meta.env.STRAPI_URL}${lasercutImage}`;
-const snapsetURL = `${import.meta.env.STRAPI_URL}${snapsetImage}`;
-const continuousURL = `${import.meta.env.STRAPI_URL}${continuousImage}`;
-const customenvelopeURL = `${import.meta.env.STRAPI_URL}${customenvelopeImage}`;
 ---
 
 <div>
     <h2>{moreproductsHeader}</h2>
     <section>
         <h3>{lasercutTitle}</h3>
-        <img src={lasercutURL} alt="random alt text">
+        <img src={lasercutImage} alt="random alt text">
         <p>{highqualitylaserTitle}</p>
         <p>{lasercutText}</p>
         <p>{partsText}</p>
@@ -50,7 +45,7 @@ const customenvelopeURL = `${import.meta.env.STRAPI_URL}${customenvelopeImage}`;
     </section>
     <section>
         <h3>{snapsetTitle}</h3>
-        <img src={snapsetURL} alt="random alt text">
+        <img src={snapsetImage} alt="random alt text">
         <p>{durableTitle}</p>
         <p>{multipartText}</p>
         <p>{snapsetpartsText}</p>
@@ -59,7 +54,7 @@ const customenvelopeURL = `${import.meta.env.STRAPI_URL}${customenvelopeImage}`;
     </section>
     <section>
         <h3>{continuousTitle}</h3>
-        <img src={continuousURL} alt="random alt text">
+        <img src={continuousImage} alt="random alt text">
         <p>{reliableTitle}</p>
         <p>{continuousText}</p>
         <p>{continuouspartsText}</p>
@@ -68,7 +63,7 @@ const customenvelopeURL = `${import.meta.env.STRAPI_URL}${customenvelopeImage}`;
     </section>
     <section>
         <h3>{customenvelopeTitle}</h3>
-        <img src={customenvelopeURL} alt="random alt text">
+        <img src={customenvelopeImage} alt="random alt text">
         <p>{deliverbrandfirstTitle}</p>
         <p>{daytodayText}</p>
         <p>{regularText}</p>

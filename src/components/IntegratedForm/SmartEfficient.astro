@@ -1,7 +1,5 @@
 ---
 const {smartefficientformTitle, commonapplicationsText, ecommerce, distribution, retail, healthcare, insurance, logistics, smartefficientImage, smartefficientBtn} = Astro.props;
-
-const photoUrl = `${import.meta.env.STRAPI_URL}${smartefficientImage}`;
 ---
 
 <div>
@@ -15,6 +13,6 @@ const photoUrl = `${import.meta.env.STRAPI_URL}${smartefficientImage}`;
         <li>{insurance}</li>
         <li>{logistics}</li>
     </ul>
-    <img src={photoUrl} alt="random alt text">
+    <img src={smartefficientImage} alt="random alt text">
     <a href="#">{smartefficientBtn}</a>
 </div>
