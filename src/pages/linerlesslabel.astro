@@ -1,6 +1,6 @@
 ---
 import Hero from "../components/LinerlessLabel/Hero.astro";
-import ImageGallery from "../components/LinerlessLabel/ImageGallery.astro";
+import SustainableLabel from "../components/LinerlessLabel/SustainableLabel.astro";
 import WhatIs from "../components/LinerlessLabel/WhatIs.astro";
 
 import Layout from "../layouts/Layout.astro";
@@ -22,32 +22,49 @@ const pageData = linerlessPage?.LinerlessLabelPage || [];
 
 // fetch linerless hero components
 const heroData = pageData.find(pd => pd.__component === "linerlesslabelhero.linerlesslabel-hero") || {};
-const {linerlesslabelHeader, linerlesslabelDesc} = heroData;
+const {linerlesslabelHeader, linerlesslabelText} = heroData;
 
 
-const { linerlesslabelImage: {
-	url: linerlesslabelImage
+const { linerlessImage: {
+	url: linerlessImage
 }} = heroData;
 
 //fetch linerlessWhatIs components
 
 const linerlessWhatIsData = pageData.find(pd => pd.__component === "linerlesslabelwhatis.linerlesslabel-what-is") || {};
-const {linerlesslabelWhatIsTitle, linerlesslabelWhatIsDesc, linerlesslabelBtn} = linerlessWhatIsData;
+const {   
+    linerlesslabelWhatIsTitle, 
+    linerlesslabelWhatIsDesc, 
+    perfectforwindowText, 
+    printedmanufactureText,
+  } = linerlessWhatIsData;
 
-const { linerlesslabelWhatIsImage: {
-	url: linerlesslabelWhatIsImage
+const { linerlesslabelImage1: {
+	url: linerlesslabelImage1
 }} = linerlessWhatIsData;
 
-//fetch linerlessImageGallery components
+const { linerlesslabelImage2: {
+	url: linerlesslabelImage2
+}} = linerlessWhatIsData;
 
-const linerlessImageGallery = pageData.find(pd => pd.__component === "linerlessimagegallery.linerless-image-gallery") || {};
-const { linerlessBtn, linerlesslabelImageGallery = [] } = linerlessImageGallery;
- 
+const { linerlesslabelImage3: {
+	url: linerlesslabelImage3
+}} = linerlessWhatIsData;
+
+//fetch Sustainable Label components
+const sustainablelabelData = pageData.find(pd => pd.__component === "sustainablelabel.sustainable-label") || {};
+const {keyadvantagesTitle, nolinerText, continuousrollText, custombrandingText, excellentforText, sustainableBtn, sustainableTitle} = sustainablelabelData;
+
+const { sustainableImage: {
+	url: sustainableImage
+}} = sustainablelabelData;
+
+
 
 ---
 
 <Layout>
-    <Hero {linerlesslabelHeader} {linerlesslabelDesc} {linerlesslabelImage} />
-    <WhatIs {linerlesslabelWhatIsTitle} {linerlesslabelWhatIsDesc} {linerlesslabelBtn} {linerlesslabelWhatIsImage} />
-    <ImageGallery {linerlesslabelImageGallery} {linerlessBtn}/>
+    <Hero {linerlesslabelHeader} {linerlesslabelText} {linerlessImage} />
+    <WhatIs {linerlesslabelWhatIsTitle} {linerlesslabelWhatIsDesc} {perfectforwindowText} {printedmanufactureText} {linerlesslabelImage1} {linerlesslabelImage2} {linerlesslabelImage3} />
+    <SustainableLabel {keyadvantagesTitle} {nolinerText} {continuousrollText} {custombrandingText} {excellentforText} {sustainableTitle} {sustainableBtn} {sustainableImage} />
 </Layout>

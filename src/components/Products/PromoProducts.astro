@@ -1,10 +1,11 @@
 ---
-const {featuredpromoTitle, featuredpromoBtn, featuredpromoImage} = Astro.props;
+const {featuredpromoTitle, featuredpromoBtn, featuredpromoText, featuredpromoImage} = Astro.props;
 const featuredpromoUrl = `${import.meta.env.STRAPI_URL}${featuredpromoImage}`;
 ---
 
 <div>
     <h2>{featuredpromoTitle}</h2>
-    <p>{featuredpromoBtn}</p>
+    <p>{featuredpromoText}</p>
     <img src={featuredpromoUrl} alt="random alt text">
+    <p>{featuredpromoBtn}</p>
 </div>

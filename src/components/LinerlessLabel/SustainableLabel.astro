@@ -1,0 +1,18 @@
+---
+const {keyadvantagesTitle, nolinerText, continuousrollText, custombrandingText, excellentforText, sustainableImage, sustainableBtn, sustainableTitle} = Astro.props;
+
+const photoUrl = `${import.meta.env.STRAPI_URL}${sustainableImage}`;
+---
+
+<div>
+    <h2>{sustainableTitle}</h2>
+    <p>{keyadvantagesTitle}</p>
+    <ul>
+        <li>{nolinerText}</li>
+        <li>{continuousrollText}</li>
+        <li>{custombrandingText}</li>
+        <li>{excellentforText}</li>
+    </ul>
+    <img src={photoUrl} alt="random alt text">
+    <a href="#">{sustainableBtn}</a>
+</div>
