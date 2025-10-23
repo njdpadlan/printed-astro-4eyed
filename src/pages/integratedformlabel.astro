@@ -1,8 +1,7 @@
 ---
 import Hero from "../components/IntegratedForm/Hero.astro";
 import WhatIs from "../components/IntegratedForm/WhatIs.astro";
-import ImageGallery from "../components/IntegratedForm/ImageGallery.astro";
-
+import SmartEfficient from "../components/IntegratedForm/SmartEfficient.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
 
@@ -32,22 +31,49 @@ const { integratedformlabelImage: {
 //fetch integratedformWhatIs components
 
 const integratedformWhatIsData = pageData.find(pd => pd.__component === "integratedformlabelwhatis.integratedformlabel-what-is") || {};
-const {integratedformlabelWhatIsTitle, integratedformlabelWhatIsDesc, integratedformBtn} = integratedformWhatIsData;
+const {
+    integratedformlabelWhatIsTitle, 
+    integratedformlabelWhatIsDesc, 
+    integratedsolutionText, 
+} = integratedformWhatIsData;
 
-const { integratedformlabelWhatIsImage: {
-	url: integratedformlabelWhatIsImage
+const { integratedformImage1: {
+	url: integratedformImage1
 }} = integratedformWhatIsData;
 
-//fetch integratedformImageGallery components
+const { integratedformImage2: {
+	url: integratedformImage2
+}} = integratedformWhatIsData;
 
-const linerlessImageGallery = pageData.find(pd => pd.__component === "integratedformlabelimagegallery.integratedformlabel-image-gallery") || {};
-const { integratedformlabelBtn, integratedformlabelImageGallery = [] } = linerlessImageGallery;
+const { integratedformImage3: {
+	url: integratedformImage3
+}} = integratedformWhatIsData;
+
+//fetch Smart Efficient components
+const smartformData = pageData.find(pd => pd.__component === "smartefficientform.smart-efficient-form") || {};
+const {
+  smartefficientformTitle, 
+  commonapplicationsText, 
+  ecommerce, 
+  distribution, 
+  retail, 
+  healthcare, 
+  insurance, 
+  logistics, 
+  smartefficientBtn
+} = smartformData;
  
+const { smartefficientImage: {
+	url: smartefficientImage
+}} = smartformData;
+
+
 
 ---
 
 <Layout>
     <Hero {integratedformlabelHeader} {integratedformlabelDesc} {integratedformlabelImage} />
-    <WhatIs {integratedformlabelWhatIsTitle} {integratedformlabelWhatIsDesc} {integratedformBtn} {integratedformlabelWhatIsImage} />
-    <ImageGallery {integratedformlabelImageGallery} {integratedformlabelBtn}/>
+    <WhatIs {integratedformlabelWhatIsTitle} {integratedformlabelWhatIsDesc} {integratedsolutionText} {integratedformImage1} {integratedformImage2} {integratedformImage3} />
+    <SmartEfficient {smartefficientformTitle} {commonapplicationsText} {ecommerce} {distribution} {retail}
+    {healthcare} {insurance} {logistics} {smartefficientBtn} {smartefficientImage} />
 </Layout>

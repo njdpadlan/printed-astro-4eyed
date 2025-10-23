@@ -1,3 +1,5 @@
+# DON'T FORGET TO ADD A .ENV FILE TO THE ROOT OF YOUR PROJECT
+
 # Astro Starter Kit: Minimal
 
 ```sh

@@ -1,8 +1,9 @@
 ---
-const {productHeroHeader, productHeroText} = Astro.props;
+const {productHeroHeader, productHeroText, productHeroImage} = Astro.props;
 ---
 
 <div>
     <h1>{productHeroHeader}</h1>
+    <img src={productHeroImage} alt="random alt text">
     <p>{productHeroText}</p>
 </div>

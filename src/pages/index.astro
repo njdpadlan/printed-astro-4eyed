@@ -77,7 +77,7 @@ const { uniqueProductsImage: {
 
 // fetch promoproducts components
 const promoProductsData = pageData.find(pd => pd.__component === "promoproducts.promo-products") || {};
-const {promoProductsHeader, promoProductsBtn} = promoProductsData;
+const {promoProductsHeader, promoproductsText, promoProductsBtn} = promoProductsData;
 
 const { promoProductsImage: {
 	url: promoProductsImage
@@ -141,7 +141,7 @@ const { productGalleryHeader, productGalleryImages } = productGalleryData;
 
 	<UniqueProducts {uniqueProductsHeader} {uniqueProductsText} {uniqueProductsImage} {uniqueProductsBtn} />
 
-	<PromoProducts {promoProductsHeader} {promoProductsImage} {promoProductsBtn}/>
+	<PromoProducts {promoProductsHeader} {promoProductsImage} {promoproductsText} {promoProductsBtn}/>
 
 	<FeaturedServices {featuredServicesHeader} {clientBrandedTitle} {clientBrandedImage} {warehouseTitle} {warehouseImage} {instantProofingTitle} {instantProofingImage}/>
 
