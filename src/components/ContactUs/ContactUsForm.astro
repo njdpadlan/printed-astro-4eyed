@@ -1,5 +1,5 @@
 ---
-const {FullName, Email, Phone, Subject, CompanyName, ContactPreference, Message, sendmessageBtn} = Astro.props;
+const {FullName, Email, Phone, Subject, CompanyName, Message, sendmessageBtn} = Astro.props;
 
 ---
 
@@ -24,15 +24,6 @@ const {FullName, Email, Phone, Subject, CompanyName, ContactPreference, Message,
         <div>
             <label for={CompanyName}>{CompanyName}</label>
             <input id={CompanyName} type="text">
-        </div>
-        <div>
-            <p>{ContactPreference}</p>
-            <input type="radio" id="Phone Call" name="fav_language" value="Phone Call">
-            <label for="Phone Call">Phone Call</label><br>
-            <input type="radio" id="Text" name="fav_language" value="Text">
-            <label for="Text">Text</label><br>
-            <input type="radio" id="Email" name="fav_language" value="Email">
-            <label for="Email">Email</label>
         </div>
         <div>
             <label for={Message}>{Message}</label>
