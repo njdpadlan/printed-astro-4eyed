@@ -1,11 +1,9 @@
 ---
 const {productHeroHeader, productHeroText, productHeroImage} = Astro.props;
-
-const photoUrl = `${import.meta.env.STRAPI_URL}${productHeroImage}`;
 ---
 
 <div>
     <h1>{productHeroHeader}</h1>
-    <img src={photoUrl} alt="random alt text">
+    <img src={productHeroImage} alt="random alt text">
     <p>{productHeroText}</p>
 </div>

@@ -9,9 +9,6 @@ const {
     instantProofingImage
 } = Astro.props;
 
-const clientBrandedUrl = `${import.meta.env.STRAPI_URL}${clientBrandedImage}`;
-const warehouseImageUrl = `${import.meta.env.STRAPI_URL}${warehouseImage}`;
-const instantProofingImageUrl = `${import.meta.env.STRAPI_URL}${instantProofingImage}`;
 ---
 
 <div>
@@ -19,15 +16,15 @@ const instantProofingImageUrl = `${import.meta.env.STRAPI_URL}${instantProofingI
     <div>
         <section>
             <h3>{clientBrandedTitle}</h3>
-            <img src={clientBrandedUrl} alt="random alt text">
+            <img src={clientBrandedImage} alt="random alt text">
         </section>
         <section>
             <h3>{warehouseTitle}</h3>
-            <img src={warehouseImageUrl} alt="random alt text">
+            <img src={warehouseImage} alt="random alt text">
         </section>
         <section>
             <h3>{instantProofingTitle}</h3>
-            <img src={instantProofingImageUrl} alt="random alt text">
+            <img src={instantProofingImage} alt="random alt text">
         </section>
     </div>
 </div>

@@ -7,10 +7,6 @@ const {
     pressuresealImage2,
     pressuresealImage3
 } = Astro.props;
-
-const pressuresealImage1URL = `${import.meta.env.STRAPI_URL}${pressuresealImage1}`;
-const pressuresealImage2URL = `${import.meta.env.STRAPI_URL}${pressuresealImage2}`;
-const pressuresealImage3URL = `${import.meta.env.STRAPI_URL}${pressuresealImage3}`;
 ---
 
 <div>
@@ -18,8 +14,8 @@ const pressuresealImage3URL = `${import.meta.env.STRAPI_URL}${pressuresealImage3
     <p>{pressuresealWhatIsDesc}</p>
     <p>{sealedbypressureText}</p>
     <div>
-        <img src={pressuresealImage1URL} alt="random alt text">
-        <img src={pressuresealImage2URL} alt="random alt text">
-        <img src={pressuresealImage3URL} alt="random alt text">
+        <img src={pressuresealImage1} alt="random alt text">
+        <img src={pressuresealImage2} alt="random alt text">
+        <img src={pressuresealImage3} alt="random alt text">
     </div>
 </div>
