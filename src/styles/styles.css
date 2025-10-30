@@ -45,7 +45,8 @@ ol[class] {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -77,5 +78,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
-/*# sourceMappingURL=styles.css.map */
+.top-nav {
+  display: flex;
+  gap: 0.5rem;
+}/*# sourceMappingURL=styles.css.map */
