@@ -1,5 +1,5 @@
 ---
-const {idealforText, payroll, taxforms, statements, utilitybills, directmail, securefoldImage, securefoldBtn, securefoldTitle} = Astro.props;
+const {idealforText, payroll, taxforms, statements, utilitybills, directmail, securefoldImage, securefoldAltText,  securefoldBtn, securefoldTitle} = Astro.props;
 ---
 
 <div>
@@ -12,6 +12,6 @@ const {idealforText, payroll, taxforms, statements, utilitybills, directmail, se
         <li>{utilitybills}</li>
         <li>{directmail}</li>
     </ul>
-    <img src={securefoldImage} alt="random alt text">
+    <img src={securefoldImage} alt={securefoldAltText}>
     <a href="#">{securefoldBtn}</a>
 </div>

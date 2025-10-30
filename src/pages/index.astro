@@ -35,6 +35,11 @@ const { heroBanner: {
 	url: heroBanner
 }} = heroData;
 
+const { heroBanner: {
+	alternativeText: heroAltText
+}} = heroData;
+
+
 // fetch highquality components
 const highQualityData = pageData.find(pd => pd.__component === "highquality.high-quality") || {};
 const {highQualityHeader, highQualityText} = highQualityData;
@@ -42,6 +47,11 @@ const {highQualityHeader, highQualityText} = highQualityData;
 const { highQualityImage: {
 	url: highQualityImage
 }} = highQualityData;
+
+const { highQualityImage: {
+	alternativeText: highQualityAltText
+}} = highQualityData;
+
 
 // fetch featuredproducts components
 const featuredProductsData = pageData.find(pd => pd.__component === "featuredproducts.featured-products") || {};
@@ -67,6 +77,19 @@ const { integratedFormImage: {
 	url: integratedFormImage
 }} = featuredProductsData;
 
+const { pressureSealImage: {
+	alternativeText: pressureSealAltText
+}} = featuredProductsData;
+
+const { linerlessLabelImage: {
+	alternativeText: linerlessLabelAltText
+}} = featuredProductsData;
+
+const { integratedFormImage: {
+	alternativeText: integratedFormAltText
+}} = featuredProductsData;
+
+
 // fetch uniqueproducts components
 const uniqueProductsData = pageData.find(pd => pd.__component === "uniqueproducts.unique-products") || {};
 const {uniqueProductsHeader, uniqueProductsText, uniqueProductsBtn} = uniqueProductsData;
@@ -75,6 +98,11 @@ const { uniqueProductsImage: {
 	url: uniqueProductsImage
 }} = uniqueProductsData;
 
+const { uniqueProductsImage: {
+	alternativeText: uniqueProductsAltText
+}} = uniqueProductsData;
+
+
 // fetch promoproducts components
 const promoProductsData = pageData.find(pd => pd.__component === "promoproducts.promo-products") || {};
 const {promoProductsHeader, promoproductsText, promoProductsBtn} = promoProductsData;
@@ -82,6 +110,11 @@ const {promoProductsHeader, promoproductsText, promoProductsBtn} = promoProducts
 const { promoProductsImage: {
 	url: promoProductsImage
 }} = promoProductsData;
+
+const { promoProductsImage: {
+	alternativeText: promoProductsAltText
+}} = promoProductsData;
+
 
 //fetch featuredservices components
 const featuredservicesData = pageData.find(pd => pd.__component === "featuredservices.featured-services") || {};
@@ -104,6 +137,18 @@ const { instantProofingImage: {
 	url: instantProofingImage
 }} = featuredservicesData;
 
+const { clientBrandedImage: {
+	alternativeText: clientBrandedAltText
+}} = featuredservicesData;
+
+const { warehouseImage: {
+	alternativeText: warehouseAltText
+}} = featuredservicesData;
+
+const { instantProofingImage: {
+	alternativeText: instantProofingAltText
+}} = featuredservicesData;
+
 //fetch onlinebased components
 const onlineBasedData = pageData.find(pd => pd.__component === "onlinebased.online-based") || {};
 const {onlineBasedHeader, onlineBasedText, onlineBasedBtn} = onlineBasedData;
@@ -112,12 +157,21 @@ const { onlineBasedImage: {
 	url: onlineBasedImage
 }} = onlineBasedData;
 
+const { onlineBasedImage: {
+	alternativeText: onlineBasedAltText
+}} = onlineBasedData;
+
+
 //fetch about components
 const aboutData = pageData.find(pd => pd.__component === "about.about") || {};
 const {aboutHeader, aboutText, aboutBtn} = aboutData;
 
 const { aboutImage: {
 	url: aboutImage
+}} = aboutData;
+
+const { aboutImage: {
+	alternativeText: aboutAltText
 }} = aboutData;
 
 
@@ -129,26 +183,29 @@ const { productGalleryHeader, productGalleryImages } = productGalleryData;
 
 <Layout>
 
-	<Hero {heroHeader} {heroText} {heroBanner} {heroBtn} />
+	<Hero {heroHeader} {heroText} {heroBanner} {heroBtn} {heroAltText} />
 
-	<HighQuality {highQualityHeader} {highQualityImage} {highQualityText} />
+	<HighQuality {highQualityHeader} {highQualityImage} {highQualityText} {highQualityAltText}/>
 
 	<FeaturedProducts 
 	{featuredProductsHeader} 
 	{pressureSealTitle} {pressureSealImage} {pressureSealBtn} 
 	{linerlessLabelTitle} {linerlessLabelImage} {linerlessLabelBtn} 
-	{integratedFormText} {integratedFormImage} {integratedFormBtn} />
+	{integratedFormText} {integratedFormImage} {integratedFormBtn}
+	{pressureSealAltText} {linerlessLabelAltText} {integratedFormAltText}/>
 
-	<UniqueProducts {uniqueProductsHeader} {uniqueProductsText} {uniqueProductsImage} {uniqueProductsBtn} />
+	<UniqueProducts {uniqueProductsHeader} {uniqueProductsText} {uniqueProductsImage} {uniqueProductsBtn} {uniqueProductsAltText} />
 
-	<PromoProducts {promoProductsHeader} {promoProductsImage} {promoproductsText} {promoProductsBtn}/>
+	<PromoProducts {promoProductsHeader} {promoProductsImage} {promoproductsText} {promoProductsBtn} {promoProductsAltText}/>
 
-	<FeaturedServices {featuredServicesHeader} {clientBrandedTitle} {clientBrandedImage} {warehouseTitle} {warehouseImage} {instantProofingTitle} {instantProofingImage}/>
+	<FeaturedServices {featuredServicesHeader} {clientBrandedTitle} {clientBrandedImage} 
+	{warehouseTitle} {warehouseImage} {instantProofingTitle} {instantProofingImage}
+	{clientBrandedAltText} {warehouseAltText} {instantProofingAltText}/>
 
-	<OnlineBased {onlineBasedHeader} {onlineBasedImage} {onlineBasedText} {onlineBasedBtn} />
+	<OnlineBased {onlineBasedHeader} {onlineBasedImage} {onlineBasedText} {onlineBasedBtn} {onlineBasedAltText} />
 
 	<ProductGallery {productGalleryHeader} {productGalleryImages} />
 
-	<About {aboutHeader} {aboutImage} {aboutText} {aboutBtn}/>
+	<About {aboutHeader} {aboutImage} {aboutText} {aboutBtn} {aboutAltText}/>
 
 </Layout>

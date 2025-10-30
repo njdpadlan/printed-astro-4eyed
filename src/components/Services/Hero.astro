@@ -1,10 +1,10 @@
 ---
-const {serviceHeroHeader, serviceHeroDesc, serviceHeroBtn, serviceHeroImage } = Astro.props;
+const {serviceHeroHeader, serviceHeroDesc, serviceHeroBtn, serviceHeroImage, servicesAltText } = Astro.props;
 ---
 
 <div>
     <h1>{serviceHeroHeader}</h1>
-    <img src={serviceHeroImage} alt="random alt text">
+    <img src={serviceHeroImage} alt={servicesAltText}>
     <p>{serviceHeroDesc}</p>
     <a href="#">{serviceHeroBtn}</a>
 </div>

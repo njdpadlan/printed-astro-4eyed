@@ -3,10 +3,13 @@ const {
     featuredServicesHeader, 
     clientBrandedTitle, 
     clientBrandedImage,
+    clientBrandedAltText,
     warehouseTitle,
     warehouseImage,
+    warehouseAltText,
     instantProofingTitle,
-    instantProofingImage
+    instantProofingImage,
+    instantProofingAltText
 } = Astro.props;
 
 ---
@@ -16,15 +19,15 @@ const {
     <div>
         <section>
             <h3>{clientBrandedTitle}</h3>
-            <img src={clientBrandedImage} alt="random alt text">
+            <img src={clientBrandedImage} alt={clientBrandedAltText}>
         </section>
         <section>
             <h3>{warehouseTitle}</h3>
-            <img src={warehouseImage} alt="random alt text">
+            <img src={warehouseImage} alt={warehouseAltText}>
         </section>
         <section>
             <h3>{instantProofingTitle}</h3>
-            <img src={instantProofingImage} alt="random alt text">
+            <img src={instantProofingImage} alt={instantProofingAltText}>
         </section>
     </div>
 </div>

@@ -28,6 +28,10 @@ const { aboutUsHeroImage: {
 	url: aboutUsHeroImage
 }} = heroData;
 
+const { aboutUsHeroImage: {
+	alternativeText: aboutUsAltText
+}} = heroData;
+
 //fetch aboutusWhy components
 
 const aboutusWhyData = pageData.find(pd => pd.__component === "aboutuswhy.about-us-why") || {};
@@ -46,11 +50,14 @@ const { aboutUsWhyImage: {
 	url: aboutUsWhyImage
 }} = aboutusWhyData;
 
+const { aboutUsWhyImage: {
+	alternativeText: aboutUsWhyAltText
+}} = aboutusWhyData;
 
 ---
 
 <Layout>
-    <Hero {aboutUsHeroHeader} {aboutUsHeroDesc} {aboutUsHeroImage}/>
+    <Hero {aboutUsHeroHeader} {aboutUsHeroDesc} {aboutUsHeroImage} {aboutUsAltText}/>
     <AboutUsWhy {aboutUsWhyTitle} {aboutUsWhyDesc} {aboutUsWhatTitle} {aboutUsWhatDesc} {onlineservicesText} {customercareText} {qualityText} {localexpertiseText} 
-    {aboutUsWhyBtn} {aboutUsWhyImage} />
+    {aboutUsWhyBtn} {aboutUsWhyImage} {aboutUsWhyAltText} />
 </Layout>
