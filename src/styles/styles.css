@@ -81,4 +81,12 @@ select {
 .top-nav {
   display: flex;
   gap: 0.5rem;
+  background-color: #0F72DA;
+}
+.top-nav a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.top-nav span {
+  color: #FFFFFF;
 }/*# sourceMappingURL=styles.css.map */
