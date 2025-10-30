@@ -24,11 +24,13 @@ const pageData = productPage?.ProductPage || [];
 const heroData = pageData.find(pd => pd.__component === "producthero.product-hero") || {};
 const {productHeroHeader, productHeroText} = heroData;
 
-
 const { productHeroImage: {
 	url: productHeroImage
 }} = heroData;
 
+const { productHeroImage: {
+	alternativeText: productsAltText
+}} = heroData;
 
 //fetch featured products components
 const featuredproductData = pageData.find(pd => pd.__component === "productsfeaturedproducts.products-featured-products") || {};
@@ -52,6 +54,19 @@ const { linerlessImage: {
 
 const { integratedformImage: {
 	url: integratedformImage
+}} = featuredproductData;
+
+const { pressuresealImage: {
+	alternativeText: pressureSealAltText
+
+}} = featuredproductData;
+
+const { linerlessImage: {
+	alternativeText: linerlessLabelAltText
+}} = featuredproductData;
+
+const { integratedformImage: {
+	alternativeText: integratedFormAltText
 }} = featuredproductData;
 
 // fetch  more products component
@@ -100,6 +115,22 @@ const { customenvelopeImage: {
 	url: customenvelopeImage
 }} = moreProductsData;
 
+const { lasercutImage: {
+	alternativeText: lasercutAltText
+}} = moreProductsData;
+
+const { snapsetImage: {
+	alternativeText: snapsetAltText
+}} = moreProductsData;
+
+const { continuousImage: {
+	alternativeText: continuousAltText
+}} = moreProductsData;
+
+const { customenvelopeImage: {
+	alternativeText: customenvelopeAltText
+}} = moreProductsData;
+
 //fetch promo products components
 const promoProductsData = pageData.find(pd => pd.__component === "featuredpromoproducts.featured-promo-products");
 const {featuredpromoTitle, featuredpromoText, featuredpromoBtn} = promoProductsData;
@@ -108,25 +139,30 @@ const { featuredpromoImage: {
 	url: featuredpromoImage
 }} = promoProductsData;
 
+const { featuredpromoImage: {
+	alternativeText: featuredpromoAltText
+}} = promoProductsData;
 
 ---
 
 <Layout>
 
-    <ProductsHero {productHeroHeader} {productHeroImage} {productHeroText} />
+    <ProductsHero {productHeroHeader} {productHeroImage} {productHeroText} {productsAltText} />
 
     <FeaturedProducts 
     {featureProductsHeader} {pressuresealTitle} {pressuresealImage} {pressuresealBtn} 
     {linerlessTitle} {linerlessImage} {linerlessBtn} 
-    {integratedformTitle} {integratedformImage} {integratedformBtn} />
+    {integratedformTitle} {integratedformImage} {integratedformBtn}
+    {pressureSealAltText} {linerlessLabelAltText} {integratedFormAltText}/>
 
     <MoreProducts {moreproductsHeader} {lasercutTitle} {lasercutImage} {snapsetImage} {continuousImage} {customenvelopeImage}
     {highqualitylaserTitle} {lasercutText} 
     {partsText} {featuresText} 
     {customsizesText} {snapsetTitle}  {durableTitle} {multipartText} {snapsetpartsText} {commonuseText} {fieldserviceText} {continuousTitle} 
     {reliableTitle} {continuousText} {continuouspartsText} {idealforText} {accountingText} {customenvelopeTitle} {deliverbrandfirstTitle} {daytodayText} 
-    {regularText} {availableoptionsText} {regularwindowText} />
+    {regularText} {availableoptionsText} {regularwindowText} 
+    {lasercutAltText} {snapsetAltText} {continuousAltText} {customenvelopeAltText}/>
 
-    <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage}/>
+    <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}/>
 
 </Layout>

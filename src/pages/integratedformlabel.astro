@@ -28,6 +28,10 @@ const { integratedformlabelImage: {
 	url: integratedformlabelImage
 }} = heroData;
 
+const { integratedformlabelImage: {
+	alternativeText: integratedformlabelAltText
+}} = heroData;
+
 //fetch integratedformWhatIs components
 
 const integratedformWhatIsData = pageData.find(pd => pd.__component === "integratedformlabelwhatis.integratedformlabel-what-is") || {};
@@ -49,6 +53,18 @@ const { integratedformImage3: {
 	url: integratedformImage3
 }} = integratedformWhatIsData;
 
+const { integratedformImage1: {
+	alternativeText: integratedformAltText1
+}} = integratedformWhatIsData;
+
+const { integratedformImage2: {
+	alternativeText: integratedformAltText2
+}} = integratedformWhatIsData;
+
+const { integratedformImage3: {
+	alternativeText: integratedformAltText3
+}} = integratedformWhatIsData;
+
 //fetch Smart Efficient components
 const smartformData = pageData.find(pd => pd.__component === "smartefficientform.smart-efficient-form") || {};
 const {
@@ -67,13 +83,16 @@ const { smartefficientImage: {
 	url: smartefficientImage
 }} = smartformData;
 
-
+const { smartefficientImage: {
+	alternativeText: smartefficientAltText
+}} = smartformData;
 
 ---
 
 <Layout>
-    <Hero {integratedformlabelHeader} {integratedformlabelDesc} {integratedformlabelImage} />
-    <WhatIs {integratedformlabelWhatIsTitle} {integratedformlabelWhatIsDesc} {integratedsolutionText} {integratedformImage1} {integratedformImage2} {integratedformImage3} />
+    <Hero {integratedformlabelHeader} {integratedformlabelDesc} {integratedformlabelImage} {integratedformlabelAltText} />
+    <WhatIs {integratedformlabelWhatIsTitle} {integratedformlabelWhatIsDesc} {integratedsolutionText} {integratedformImage1} {integratedformImage2} {integratedformImage3}
+    {integratedformAltText1} {integratedformAltText2} {integratedformAltText3} />
     <SmartEfficient {smartefficientformTitle} {commonapplicationsText} {ecommerce} {distribution} {retail}
-    {healthcare} {insurance} {logistics} {smartefficientBtn} {smartefficientImage} />
+    {healthcare} {insurance} {logistics} {smartefficientBtn} {smartefficientImage} {smartefficientAltText}/>
 </Layout>

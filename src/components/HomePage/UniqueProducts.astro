@@ -1,12 +1,12 @@
 ---
-const {uniqueProductsHeader, uniqueProductsText, uniqueProductsImage, uniqueProductsBtn} = Astro.props;
+const {uniqueProductsHeader, uniqueProductsText, uniqueProductsImage, uniqueProductsBtn, uniqueProductsAltText} = Astro.props;
 ---
 
 <div>
     <section>
         <h2>{uniqueProductsHeader}</h2>
         <p>{uniqueProductsText}</p>
-        <img src={uniqueProductsImage} alt="random alt text">
+        <img src={uniqueProductsImage} alt={uniqueProductsAltText}>
         <a href="#">{uniqueProductsBtn}</a>
     </section>
 </div>
