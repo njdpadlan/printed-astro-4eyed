@@ -5,8 +5,11 @@ const {
     perfectforwindowText, 
     printedmanufactureText,
     linerlesslabelImage1,
+    linerlesslabelAltText1,
     linerlesslabelImage2,
-    linerlesslabelImage3 
+    linerlesslabelAltText2,
+    linerlesslabelImage3,
+    linerlesslabelAltText3
 } = Astro.props;
 ---
 
@@ -16,8 +19,8 @@ const {
     <p>{perfectforwindowText}</p>
     <p>{printedmanufactureText}</p>
     <div>
-        <img src={linerlesslabelImage1} alt="random alt text">
-        <img src={linerlesslabelImage2} alt="random alt text">
-        <img src={linerlesslabelImage3} alt="random alt text">
+        <img src={linerlesslabelImage1} alt={linerlesslabelAltText1}>
+        <img src={linerlesslabelImage2} alt={linerlesslabelAltText2}>
+        <img src={linerlesslabelImage3} alt={linerlesslabelAltText3}>
     </div>
 </div>

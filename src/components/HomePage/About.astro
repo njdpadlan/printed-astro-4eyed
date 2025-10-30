@@ -1,12 +1,12 @@
 ---
-const {aboutHeader, aboutImage, aboutText, aboutBtn} = Astro.props;
+const {aboutHeader, aboutImage, aboutText, aboutBtn, aboutAltText} = Astro.props;
 
 
 ---
 
 <div>
     <h2>{aboutHeader}</h2>
-    <img src={aboutImage} alt="random alt text">
+    <img src={aboutImage} alt={aboutAltText}>
     <p>{aboutText}</p>
     <a href="#">{aboutBtn}</a>
 </div>

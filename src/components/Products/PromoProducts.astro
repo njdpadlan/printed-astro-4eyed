@@ -1,10 +1,10 @@
 ---
-const {featuredpromoTitle, featuredpromoBtn, featuredpromoText, featuredpromoImage} = Astro.props;
+const {featuredpromoTitle, featuredpromoBtn, featuredpromoText, featuredpromoImage, featuredpromoAltText} = Astro.props;
 ---
 
 <div>
     <h2>{featuredpromoTitle}</h2>
     <p>{featuredpromoText}</p>
-    <img src={featuredpromoImage} alt="random alt text">
+    <img src={featuredpromoImage} alt={featuredpromoAltText}>
     <a href="#">{featuredpromoBtn}</a>
 </div>

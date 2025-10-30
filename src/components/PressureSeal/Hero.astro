@@ -1,9 +1,9 @@
 ---
-const {pressuresealHeader, pressuresealDesc, pressuresealImage} = Astro.props;
+const {pressuresealHeader, pressuresealDesc, pressuresealImage, pressuresealAltText} = Astro.props;
 ---
 
 <div>
     <h1>{pressuresealHeader}</h1>
     <p>{pressuresealDesc}</p>
-    <img src={pressuresealImage} alt="random alt text">
+    <img src={pressuresealImage} alt={pressuresealAltText}>
 </div>

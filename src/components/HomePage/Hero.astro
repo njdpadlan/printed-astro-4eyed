@@ -1,12 +1,11 @@
 ---
-import '../../styles/header.scss';
-const {heroHeader, heroBanner, heroText, heroBtn } = Astro.props;
+const {heroHeader, heroBanner, heroText, heroBtn, heroAltText } = Astro.props;
 
 ---
 
 <div>
     <h1>{heroHeader}</h1>
-    <img src={heroBanner} alt="random alt text">
+    <img src={heroBanner} alt={heroAltText}>
     <p>{heroText}</p>
     <a href="#">{heroBtn}</a>
 </div>

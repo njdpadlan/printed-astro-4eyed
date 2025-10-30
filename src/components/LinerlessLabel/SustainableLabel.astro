@@ -1,5 +1,5 @@
 ---
-const {keyadvantagesTitle, nolinerText, continuousrollText, custombrandingText, excellentforText, sustainableImage, sustainableBtn, sustainableTitle} = Astro.props;
+const {keyadvantagesTitle, nolinerText, continuousrollText, custombrandingText, excellentforText, sustainableImage, sustainableAltText, sustainableBtn, sustainableTitle} = Astro.props;
 ---
 
 <div>
@@ -11,6 +11,6 @@ const {keyadvantagesTitle, nolinerText, continuousrollText, custombrandingText, 
         <li>{custombrandingText}</li>
         <li>{excellentforText}</li>
     </ul>
-    <img src={sustainableImage} alt="random alt text">
+    <img src={sustainableImage} alt={sustainableAltText}>
     <a href="#">{sustainableBtn}</a>
 </div>

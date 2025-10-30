@@ -2,30 +2,33 @@
 const {
     servicePortalTitle, 
     servicePortalDesc, 
-    servicePortalImage, 
+    servicePortalImage,
+    servicePortalAltText,
     servicePoofingTitle, 
     servicePoofingDesc, 
-    servicePoofingImage, 
+    servicePoofingImage,
+    servicePoofingAltText, 
     serviceWarehouseTitle, 
     serviceWarehouseDesc, 
-    serviceWarehouseImage  
+    serviceWarehouseImage,
+    serviceWarehouseAltText
 } = Astro.props;
 ---
 
 <div>
     <section>
         <h2>{servicePortalTitle}</h2>
-        <img src={servicePortalImage} alt="random alt text">
+        <img src={servicePortalImage} alt={servicePortalAltText}>
         <p>{servicePortalDesc}</p>
     </section>
     <section>
         <h2>{servicePoofingTitle}</h2>
-        <img src={servicePoofingImage} alt="random alt text">
+        <img src={servicePoofingImage} alt={servicePoofingAltText}>
         <p>{servicePoofingDesc}</p>
     </section>
     <section>
         <h2>{serviceWarehouseTitle}</h2>
-        <img src={serviceWarehouseImage} alt="random alt text">
+        <img src={serviceWarehouseImage} alt={serviceWarehouseAltText}>
         <p>{serviceWarehouseDesc}</p>
     </section>
 </div>

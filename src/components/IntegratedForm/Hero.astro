@@ -1,9 +1,9 @@
 ---
-const {integratedformlabelHeader, integratedformlabelDesc, integratedformlabelImage} = Astro.props;
+const {integratedformlabelHeader, integratedformlabelDesc, integratedformlabelImage, integratedformlabelAltText} = Astro.props;
 ---
 
 <div>
     <h1>{integratedformlabelHeader}</h1>
     <p>{integratedformlabelDesc}</p>
-    <img src={integratedformlabelImage} alt="random alt text">
+    <img src={integratedformlabelImage} alt={integratedformlabelAltText}>
 </div>

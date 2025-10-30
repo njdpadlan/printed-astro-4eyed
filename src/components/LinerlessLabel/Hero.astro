@@ -1,9 +1,9 @@
 ---
-const {linerlesslabelHeader, linerlesslabelText, linerlessImage} = Astro.props;
+const {linerlesslabelHeader, linerlesslabelText, linerlessImage, linerlessAltText} = Astro.props;
 ---
 
 <div>
     <h1>{linerlesslabelHeader}</h1>
     <p>{linerlesslabelText}</p>
-    <img src={linerlessImage} alt="random alt text">
+    <img src={linerlessImage} alt={linerlessAltText}>
 </div>
