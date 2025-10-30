@@ -3,9 +3,12 @@ const {
     integratedformlabelWhatIsTitle, 
     integratedformlabelWhatIsDesc, 
     integratedsolutionText, 
-    integratedformImage1, 
-    integratedformImage2, 
-    integratedformImage3
+    integratedformImage1,
+    integratedformAltText1,
+    integratedformImage2,
+    integratedformAltText2, 
+    integratedformImage3,
+    integratedformAltText3
 } = Astro.props;
 ---
 
@@ -15,9 +18,9 @@ const {
     <p>{integratedformlabelWhatIsDesc}</p>
     <p>{integratedsolutionText}</p>
     <div>
-        <img src={integratedformImage1} alt="random alt text">
-        <img src={integratedformImage2} alt="random alt text">
-        <img src={integratedformImage3} alt="random alt text">
+        <img src={integratedformImage1} alt={integratedformAltText1}>
+        <img src={integratedformImage2} alt={integratedformAltText2}>
+        <img src={integratedformImage3} alt={integratedformAltText3}>
     </div>
 </div>
 </div>

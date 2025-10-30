@@ -4,8 +4,11 @@ const {
     pressuresealWhatIsDesc, 
     sealedbypressureText,
     pressuresealImage1,
+    pressuresealAltText1,
     pressuresealImage2,
-    pressuresealImage3
+    pressuresealAltText2,
+    pressuresealImage3,
+    pressuresealAltText3
 } = Astro.props;
 ---
 
@@ -14,8 +17,8 @@ const {
     <p>{pressuresealWhatIsDesc}</p>
     <p>{sealedbypressureText}</p>
     <div>
-        <img src={pressuresealImage1} alt="random alt text">
-        <img src={pressuresealImage2} alt="random alt text">
-        <img src={pressuresealImage3} alt="random alt text">
+        <img src={pressuresealImage1} alt={pressuresealAltText1}>
+        <img src={pressuresealImage2} alt={pressuresealAltText2}>
+        <img src={pressuresealImage3} alt={pressuresealAltText3}>
     </div>
 </div>

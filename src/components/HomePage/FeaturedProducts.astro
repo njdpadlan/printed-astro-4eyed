@@ -3,12 +3,15 @@ const {
     featuredProductsHeader, 
     pressureSealTitle, 
     pressureSealImage,
+    pressureSealAltText,
     pressureSealBtn,
     linerlessLabelTitle,
     linerlessLabelImage,
+    linerlessLabelAltText,
     linerlessLabelBtn,
     integratedFormText,
     integratedFormImage,
+    integratedFormAltText,
     integratedFormBtn
 } = Astro.props;
 
@@ -18,17 +21,17 @@ const {
     <h2>{featuredProductsHeader}</h2>
     <section>
         <h3>{pressureSealTitle}</h3>
-        <img src={pressureSealImage} alt="random alt text">
+        <img src={pressureSealImage} alt={pressureSealAltText}>
         <a href="/pressuresealenvelope">{pressureSealBtn}</a>
     </section>
     <section>
         <h3>{linerlessLabelTitle}</h3>
-        <img src={linerlessLabelImage} alt="random alt text">
+        <img src={linerlessLabelImage} alt={linerlessLabelAltText}>
         <a href="/linerlesslabel">{linerlessLabelBtn}</a>
     </section>
     <section>
         <h3>{integratedFormText}</h3>
-        <img src={integratedFormImage} alt="random alt text">
+        <img src={integratedFormImage} alt={integratedFormAltText}>
         <a href="/integratedformlabel">{integratedFormBtn}</a>
     </section>
 </div>

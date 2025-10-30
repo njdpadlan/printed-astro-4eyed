@@ -1,5 +1,5 @@
 ---
-const {smartefficientformTitle, commonapplicationsText, ecommerce, distribution, retail, healthcare, insurance, logistics, smartefficientImage, smartefficientBtn} = Astro.props;
+const {smartefficientformTitle, commonapplicationsText, ecommerce, distribution, retail, healthcare, insurance, logistics, smartefficientImage, smartefficientAltText, smartefficientBtn} = Astro.props;
 ---
 
 <div>
@@ -13,6 +13,6 @@ const {smartefficientformTitle, commonapplicationsText, ecommerce, distribution,
         <li>{insurance}</li>
         <li>{logistics}</li>
     </ul>
-    <img src={smartefficientImage} alt="random alt text">
+    <img src={smartefficientImage} alt={smartefficientAltText}>
     <a href="#">{smartefficientBtn}</a>
 </div>
