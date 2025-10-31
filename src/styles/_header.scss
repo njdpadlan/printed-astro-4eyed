@@ -1,15 +1,87 @@
 @use 'colours' as *;
 
-.top-nav {
-    display: flex;
-    gap: .5rem;
-    background-color: $primary-blue;
+header {
+    font-family: "Assistant", sans-serif;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(143, 143, 143, 0.25);
 
-    a {
-        text-decoration: none;
-        color: $white;
+    .top-nav {
+        font-weight: bold;
+        display: flex;
+        gap: .5rem;
+        background-color: $primary-blue;
+        padding: 6px 1rem;
+
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+
+        span {
+            color: $white;
+        }
     }
-    span {
-        color: $white;
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 6px 1rem 6px 1rem;
+
+        svg {
+            width: 50px;
+        }
     }
+
+    nav {
+        display: none;
+        background-color: $white;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 10;
+        border: 1px solid $grey;
+        border-radius: 12px 0 0 12px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                border-bottom: 1px solid $grey;
+                padding: 13px 0 13px 1rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            font-size: 20px;
+            font-weight: 600;
+            color: $black;
+        }
+    }
+
+    .show-nav {
+        display: unset;
+    }
+
+    button {
+        border: none;
+        background-color: unset;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+}
+
+main {
+    position: relative;
+    margin-top: 167px;
 }
