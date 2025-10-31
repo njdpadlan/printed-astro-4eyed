@@ -1,0 +1,163 @@
+@use 'colours' as *;
+
+header {
+    font-family: "Assistant", sans-serif;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(143, 143, 143, 0.25);
+
+    .top-nav {
+        font-weight: bold;
+        display: flex;
+        gap: .5rem;
+        background-color: $primary-blue;
+        padding: 6px 1rem;
+
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+
+        span {
+            color: $white;
+        }
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 6px 1rem 6px 1rem;
+
+        img {
+            width: 75%;
+        }
+
+        svg {
+            width: 50px;
+        }
+    }
+
+    nav {
+        display: none;
+        background-color: $white;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 67%;
+        z-index: 10;
+        border: 1px solid $grey;
+        border-radius: 12px 0 0 12px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                border-bottom: 1px solid $grey;
+
+                a {
+                    padding: 13px 0 13px 1rem;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    display: block;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: $black;
+                }
+
+                a:hover,
+                a:active {
+                    background-color: $secondary-yellow;
+                }
+            }
+        }
+    }
+
+    .show-nav {
+        display: unset;
+    }
+
+    button {
+        border: none;
+        background-color: unset;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+}
+
+main {
+    margin-top: 137.25px;
+}
+
+@media (min-width: 320px) {
+    .request {
+        display: none;
+    }
+}
+
+@media (min-width: 1000px) {
+    header {
+        position: unset;
+
+        .nav-container {
+            flex-wrap: unset;
+
+            button {
+                display: none;
+            }
+
+            .request {
+                display: inline-block;
+                font-weight: bold;
+                font-size: 20px;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $button-blue;
+                background-color: $secondary-yellow;
+                padding: 1rem;
+                border-radius: 6px;
+            }
+        }
+
+        nav {
+            position: unset;
+            display: flex;
+            width: unset;
+            border: unset;
+            align-items: center;
+            justify-content: space-between;
+
+            ul {
+                display: flex;
+                gap: 87px;
+
+                li {
+                    border-bottom: none;
+
+                    a {
+                        display: inline-block;
+                        padding: unset;
+                    }
+
+                    a:hover {
+                        padding: 1rem;
+                    }
+                }
+            }
+        }
+
+        .show-nav {
+            position: unset;
+        }
+    }
+
+    main {
+        margin-top: unset;
+    }
+}
