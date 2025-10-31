@@ -31,6 +31,10 @@ header {
         flex-wrap: wrap;
         padding: 6px 1rem 6px 1rem;
 
+        img {
+            width: 75%;
+        }
+
         svg {
             width: 50px;
         }
@@ -41,7 +45,8 @@ header {
         background-color: $white;
         position: absolute;
         top: 100%;
-        width: 100%;
+        right: 0;
+        width: 67%;
         z-index: 10;
         border: 1px solid $grey;
         border-radius: 12px 0 0 12px;
@@ -52,17 +57,35 @@ header {
 
             li {
                 border-bottom: 1px solid $grey;
-                padding: 13px 0 13px 1rem;
+
+                a {
+                    padding: 13px 0 13px 1rem;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    display: block;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: $black;
+                }
+
+                a:hover,
+                a:active {
+                    background-color: $secondary-yellow;
+                }
             }
         }
 
-        a {
+        .request {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 20px;
             text-decoration: none;
             text-transform: uppercase;
-            display: block;
-            font-size: 20px;
-            font-weight: 600;
-            color: $black;
+            color: $button-blue;
+            background-color: $secondary-yellow;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem;
         }
     }
 
@@ -82,6 +105,47 @@ header {
 }
 
 main {
-    position: relative;
-    margin-top: 167px;
+    margin-top: 137.25px;
+}
+
+@media (min-width: 1150px) {
+    header {
+        position: unset;
+
+        .nav-container {
+            flex-wrap: unset;
+            button {
+                display: none;
+            }
+        }
+
+        nav {
+            position: unset;
+            display: flex;
+            width: unset;
+            border: unset;
+            align-items: center;
+            justify-content: space-between;
+
+            ul {
+                display: flex;
+                gap: 1rem;
+
+                li {
+                    border-bottom: none;
+
+                    a {
+                        padding: unset;
+                    }
+                }
+            }
+        }
+
+        .show-nav {
+            position: unset;
+        }
+    }
+    main {
+        margin-top: unset;
+    }
 }
