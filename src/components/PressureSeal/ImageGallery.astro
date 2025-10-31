@@ -1,0 +1,16 @@
+---
+const { pressuresealBtn, pressuresealImageGallery  = [] } = Astro.props;
+const baseUrl = import.meta.env.STRAPI_URL;
+---
+
+
+<div>
+    {pressuresealImageGallery .map((pressuresealIG) => (
+    <img 
+        src={`${baseUrl}${pressuresealIG.url}`} 
+        alt={pressuresealIG.alternativeText || pressuresealIG.name} 
+        width={pressuresealIG.width} 
+        height={pressuresealIG.height}/>
+    ))}
+    <a href="#">{pressuresealBtn}</a>
+</div>
