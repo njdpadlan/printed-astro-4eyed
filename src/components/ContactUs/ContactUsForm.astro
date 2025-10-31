@@ -1,34 +1,66 @@
 ---
-const {FullName, Email, Phone, Subject, CompanyName, Message, sendmessageBtn} = Astro.props;
-
+const {
+    FullName,
+    Email,
+    Phone,
+    Subject,
+    CompanyName,
+    Message,
+    sendmessageBtn,
+} = Astro.props;
 ---
 
 <div>
-    <form action="#" method="post" name="contactus">
+    <!-- Add https://formsubmit.co/email-here later in the action -->
+    <form
+        action="#"
+        method="post"
+        name="contactus"
+    >
         <div>
             <label for={FullName}>{FullName}</label>
-            <input id={FullName} type="text">
+            <input
+                id={FullName}
+                type="text"
+                name="name"
+                placeholder="Enter your full name here."
+                required
+            />
+        </div>
+        <div>
+            <label for="phone">{Phone}</label>
+            <input id="phone" type="tel" name="phone" required />
         </div>
         <div>
             <label for={Email}>{Email}</label>
-            <input id="email" type="text">
-        </div>
-        <div>
-        <label for="phone">{Phone}</label>
-        <input id="phone" type="text">
+            <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Enter your email here."
+            />
         </div>
         <div>
             <label for={Subject}>{Subject}</label>
-            <input id={Subject} type="text">
+            <select id={Subject} name="_subject" required></select>
+            <option value="general-inquiry">General Inquiry</option>
+            <option value="product-details"> Product Details</option>
+            <option value="service-inquiry">Service Status</option>
+            <option value="order-status">Feedback</option>
+            <option value="feedback">Other</option>
+            <option value="other"></option>
         </div>
         <div>
             <label for={CompanyName}>{CompanyName}</label>
-            <input id={CompanyName} type="text">
+            <input id={CompanyName} type="text" name="company" />
         </div>
         <div>
             <label for={Message}>{Message}</label>
-            <input id={Message} type="text">
+            <textarea
+                id={Message}
+                name="message"
+                placeholder="Enter your message here."></textarea>
         </div>
-        <input type="submit" value={sendmessageBtn}>
+        <input type="submit" value={sendmessageBtn} />
     </form>
 </div>
