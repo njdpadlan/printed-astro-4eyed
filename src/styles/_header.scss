@@ -29,7 +29,7 @@ header {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        padding: 6px 1rem 6px 1rem;
+        padding: 0 1rem 0 1rem;
 
         svg {
             width: 50px;
@@ -62,6 +62,8 @@ header {
                     font-size: 20px;
                     font-weight: 600;
                     color: $black;
+                    height: 100%;
+                    width: 100%;
                 }
 
                 a:hover,
@@ -98,7 +100,7 @@ main {
 
     .nav-container {
         img {
-            width: 80px;
+            width: 100px;
         }
     }
 }
@@ -110,12 +112,12 @@ main {
         .nav-container {
             flex-wrap: unset;
 
-            img {
-                width: 149px;
-            }
-
             button {
                 display: none;
+            }
+
+            img {
+                width: 135px;
             }
 
             .request {
@@ -141,18 +143,20 @@ main {
 
             ul {
                 display: flex;
-                gap: 87px;
+                gap: 55px;
 
                 li {
                     border-bottom: none;
 
                     a {
-                        display: inline-block;
-                        padding: unset;
+                        display: inline;
+                        padding: 1rem 1rem;
                     }
 
                     a:hover {
-                        padding: 1rem;
+                        padding: 1rem 1rem 41px 1rem;
+                        border-radius: 12px 12px 0 0;
+                        box-shadow: 4px 0 3px 0 rgba(74, 68, 68, 0.50);
                     }
                 }
             }
