@@ -1,0 +1,67 @@
+@use 'colours' as *;
+
+footer {
+    font-family: "Assistant", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: $primary-blue;
+    padding: 1rem;
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .footer-quote-button {
+            background-color: $white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 6px;
+
+            a {
+                color: $tertiary-magenta;
+                text-transform: uppercase;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+
+        .footer-phone,
+        .footer-email {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            svg {
+                width: 36px;
+            }
+        }
+
+        .footer-line {
+            border-bottom: 3px solid $white;
+        }
+    
+        .footer-list {
+            display: flex;
+            justify-content: space-between;
+    
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+    
+                li {
+                    padding: 1rem 0 1rem 0;
+                }
+            }
+    
+        }
+
+        p {
+            color: $white;
+        }
+    }
+}
