@@ -20,6 +20,8 @@ const {
         name="requestquote"
         enctype="multipart/form-data"
     >
+    <!-- Template type -->
+    <input type="hidden" name="_template" value="table">
         <div>
             <label for={FullName}>{FullName}</label>
             <input
@@ -27,26 +29,27 @@ const {
                 type="text"
                 name="name"
                 placeholder="Enter your full name here."
-                required
             />
+            <p id="name_errormsg"></p>
         </div>
         <div>
             <label for="phone">{Phone}</label>
             <input
                 id="phone"
                 type="tel"
+                name="phone"
                 placeholder="Enter your phone number here."
-                required
             />
+            <p id="phone_errormsg"></p>
         </div>
         <div>
             <label for={Email}>{Email}</label>
             <input
                 id="email"
-                type="email"
                 name="email"
                 placeholder="Enter your email address here."
             />
+            <p id="email_errormsg"></p>
         </div>
         <div>
             <label for={CompanyName}>{CompanyName}</label>
@@ -59,20 +62,29 @@ const {
         </div>
         <div>
             <label for="product-type">{ProductType}</label>
-            <select name="product-type" id="product-type">
-                <option value="#">Choose a product</option>
-                <option value="Pressure Seal">Pressure Seal</option>
+            <select name="_subject" id="product-type">
+                <option value="">Choose a product</option>
                 <option value="Linerless Label">Linerless Label</option>
-                <option value="Integrated Form">Integrated Form</option>
+                <option value="Pressure Seal">Pressure Seal Forms</option>
+                <option value="Integrated Form">Integrated Form/Labels</option>
+                <option value="Laser-Cut Sheet Form">Laser-Cut Sheet Forms</option>
+                <option value="Snapset Form">Snapset Form</option>
+                <option value="Continuous Form">Continuous Forms</option>
+                <option value="Custom Envelopes">Custom Envelopes</option>
+                <option value="Other">Other</option>
             </select>
+            <p id="subject_errormsg"></p>
         </div>
         <div>
             <label for="quantity">{Quantity}</label>
             <select name="quantity" id="quantity">
+                <option value="">Select Quantity</option>
                 <option value="10">10</option>
+                <option value="50">50</option>
                 <option value="100">100</option>
                 <option value="1000">1000</option>
             </select>
+            <p id="quantity_errormsg"></p>
         </div>
         <div>
             <label for={FileUpload}>{FileUpload}</label>
@@ -89,9 +101,15 @@ const {
                 id={AdditionalDetails}
                 name="message"
                 placeholder="Enter additional details here.
-Examples include sizes, materials, colours, specifications, questions, and details from file uploads."
-            ></textarea>
+Examples include sizes, materials, colours, specifications, questions, and details from file uploads."></textarea>
+            <p id="message_errormsg"></p>
         </div>
         <input type="submit" value={requestquoteBtn} />
     </form>
 </div>
+
+
+<script>
+    import { requestQuoteFormValidation } from "../../lib/formValidation";
+    requestQuoteFormValidation();
+</script>
