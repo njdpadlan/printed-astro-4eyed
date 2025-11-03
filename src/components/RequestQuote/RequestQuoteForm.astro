@@ -1,54 +1,97 @@
 ---
-const {Subject, FullName, Email, Phone, CompanyName, ProductType, Quantity, FileUpload, AdditionalDetails, requestquoteBtn} = Astro.props;
-
+const {
+    FullName,
+    Email,
+    Phone,
+    CompanyName,
+    ProductType,
+    Quantity,
+    FileUpload,
+    AdditionalDetails,
+    requestquoteBtn,
+} = Astro.props;
 ---
 
 <div>
-    <form action="#" method="post" name="requestquote">
-        <div>
-            <label for={Subject}>{Subject}</label>
-            <input id={Subject} type="text">
-        </div>
+    <!-- Add https://formsubmit.co/email-here later in the action -->
+    <form
+        action="#"
+        method="post"
+        name="requestquote"
+        enctype="multipart/form-data"
+    >
         <div>
             <label for={FullName}>{FullName}</label>
-            <input id={FullName} type="text">
+            <input
+                id={FullName}
+                type="text"
+                name="name"
+                placeholder="Enter your full name here."
+                required
+            />
         </div>
         <div>
             <label for="phone">{Phone}</label>
-            <input id="phone" type="text">
+            <input
+                id="phone"
+                type="tel"
+                placeholder="Enter your phone number here."
+                required
+            />
         </div>
         <div>
             <label for={Email}>{Email}</label>
-            <input id="email" type="text">
+            <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Enter your email address here."
+            />
         </div>
         <div>
             <label for={CompanyName}>{CompanyName}</label>
-            <input id={CompanyName} type="text">
+            <input
+                id={CompanyName}
+                type="text"
+                name="company"
+                placeholder="Enter your company name here."
+            />
         </div>
         <div>
             <label for="product-type">{ProductType}</label>
             <select name="product-type" id="product-type">
-            <option value="Pressure Seal">Pressure Seal</option>
-            <option value="Linerless Label">Linerless Label</option>
-            <option value="Integrated Form">Integrated Form</option>
+                <option value="#">Choose a product</option>
+                <option value="Pressure Seal">Pressure Seal</option>
+                <option value="Linerless Label">Linerless Label</option>
+                <option value="Integrated Form">Integrated Form</option>
             </select>
         </div>
         <div>
             <label for="quantity">{Quantity}</label>
             <select name="quantity" id="quantity">
-            <option value="10">10</option>
-            <option value="100">100</option>
-            <option value="1000">1000</option>
+                <option value="10">10</option>
+                <option value="100">100</option>
+                <option value="1000">1000</option>
             </select>
         </div>
         <div>
             <label for={FileUpload}>{FileUpload}</label>
-            <input id={FileUpload} type="text">
+            <input
+                id={FileUpload}
+                type="file"
+                name="attachment"
+                placeholder="Upload your file here."
+            />
         </div>
         <div>
             <label for={AdditionalDetails}>{AdditionalDetails}</label>
-            <input id={AdditionalDetails} type="text">
+            <textarea
+                id={AdditionalDetails}
+                name="message"
+                placeholder="Enter additional details here.
+Examples include sizes, materials, colours, specifications, questions, and details from file uploads."
+            ></textarea>
         </div>
-        <input type="submit" value={requestquoteBtn}>
+        <input type="submit" value={requestquoteBtn} />
     </form>
 </div>
