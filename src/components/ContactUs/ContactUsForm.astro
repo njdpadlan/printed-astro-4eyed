@@ -1,4 +1,5 @@
 ---
+
 const {
     FullName,
     Email,
@@ -13,10 +14,13 @@ const {
 <div>
     <!-- Add https://formsubmit.co/email-here later in the action -->
     <form
-        action="#"
+        action= "#"
         method="post"
         name="contactus"
     >
+    <!-- Template types -->
+    <input type="hidden" name="_template" value="table">
+    <!-- <input type="hidden" name="_template" value="box"> -->
         <div>
             <label for={FullName}>{FullName}</label>
             <input
@@ -24,35 +28,39 @@ const {
                 type="text"
                 name="name"
                 placeholder="Enter your full name here."
-                required
             />
+           <p id="name_errormsg"></p>
         </div>
         <div>
             <label for="phone">{Phone}</label>
-            <input id="phone" type="tel" name="phone" required />
+            <input id="phone" type="tel" name="phone" placeholder="Enter your phone number here."/>
+            <p id="phone_errormsg"></p>
         </div>
         <div>
             <label for={Email}>{Email}</label>
             <input
                 id="email"
-                type="email"
                 name="email"
-                placeholder="Enter your email here."
+                placeholder="Enter your email address here."
             />
+            <p id="email_errormsg"></p>
         </div>
         <div>
             <label for={Subject}>{Subject}</label>
-            <select id={Subject} name="_subject" required></select>
+            <select id={Subject} name="_subject">
+            <option value="">Choose a Subject</option>
             <option value="general-inquiry">General Inquiry</option>
             <option value="product-details"> Product Details</option>
             <option value="service-inquiry">Service Status</option>
-            <option value="order-status">Feedback</option>
-            <option value="feedback">Other</option>
-            <option value="other"></option>
+            <option value="order-status">Order Status</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+            </select>
+            <p id="subject_errormsg"></p>
         </div>
         <div>
             <label for={CompanyName}>{CompanyName}</label>
-            <input id={CompanyName} type="text" name="company" />
+            <input id={CompanyName} type="text" name="company" placeholder="Enter your company name here."/>
         </div>
         <div>
             <label for={Message}>{Message}</label>
@@ -60,7 +68,14 @@ const {
                 id={Message}
                 name="message"
                 placeholder="Enter your message here."></textarea>
+            <p id="message_errormsg"></p>
         </div>
         <input type="submit" value={sendmessageBtn} />
     </form>
+
 </div>
+
+<script>
+    import {contactFormValidate} from "../../lib/formValidation";
+    contactFormValidate();
+</script>
