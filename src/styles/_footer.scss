@@ -67,13 +67,15 @@ footer {
 
 footer a,
 footer p {
+  font-family: "Assistant", sans-serif;
+  font-size: 20px;
   text-decoration: none;
   font-weight: bold;
   color: $white;
-  font-family: "Assistant", sans-serif;
 }
 
 @media (min-width: 1000px) {
+
   .footer-container {
     display: flex;
     justify-content: space-evenly;
@@ -82,7 +84,7 @@ footer p {
   .footer-line {
     display: inline-block;
     width: 2px;
-    height: 280px;
+    height: 350px;
     background-color: $white;
     margin: 0;
   }
@@ -91,13 +93,18 @@ footer p {
     gap: 50px;
   }
 
+  footer a,
+  footer p {
+    font-size: 24px;
+  }
+
+  .footer-logo-details {
+    padding-top: 32px;
+  }
 }
 
 @media (min-width: 1400px) {
-
   .footer-nav-container {
     gap: 150px;
   }
-
 }
-
