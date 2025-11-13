@@ -1,0 +1,16 @@
+@mixin btn ($bg-colour, $text-colour, $hover-bg-colour) {
+    font-weight: bold;
+    background-color: $bg-colour;
+    color: $text-colour;
+    border-radius: 6px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $hover-bg-colour;
+    }
+}
