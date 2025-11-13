@@ -1,4 +1,5 @@
 @use 'colours' as *;
+@use 'mixins' as *;
 
 header {
     font-family: "Assistant", sans-serif;
@@ -120,20 +121,9 @@ main {
             }
 
             .request {
+                @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
                 display: inline-block;
                 font-weight: bold;
-                font-size: 20px;
-                text-decoration: none;
-                text-transform: uppercase;
-                color: $tertiary-dark-blue;
-                background-color: $secondary-yellow;
-                padding: 1rem;
-                border-radius: 6px;
-                transition: background-color 0.3s ease-in-out; 
-
-                &:hover {
-                    background-color: #FFEDAD;
-                }
             }
         }
 
