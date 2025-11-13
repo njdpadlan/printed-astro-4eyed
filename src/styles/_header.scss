@@ -14,12 +14,9 @@ header {
         background-color: $primary-blue;
         padding: 6px 1rem;
 
-        a {
+        a, span {
+            font-size: 20px;
             text-decoration: none;
-            color: $white;
-        }
-
-        span {
             color: $white;
         }
     }
@@ -29,7 +26,7 @@ header {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        padding: 0 1rem 0 1rem;
+        padding: 1rem;
 
         svg {
             width: 50px;
@@ -69,6 +66,7 @@ header {
                 a:hover,
                 a:active {
                     background-color: $secondary-yellow;
+                    transition: background-color 0.3s ease-in-out; 
                 }
             }
         }
@@ -100,7 +98,7 @@ main {
 
     .nav-container {
         img {
-            width: 100px;
+            width: 170px;
         }
     }
 }
@@ -117,7 +115,8 @@ main {
             }
 
             img {
-                width: 135px;
+                width: 220px;
+                padding: 20px 0 20px 0;
             }
 
             .request {
@@ -126,10 +125,15 @@ main {
                 font-size: 20px;
                 text-decoration: none;
                 text-transform: uppercase;
-                color: $button-blue;
+                color: $tertiary-dark-blue;
                 background-color: $secondary-yellow;
                 padding: 1rem;
                 border-radius: 6px;
+                transition: background-color 0.3s ease-in-out; 
+
+                &:hover {
+                    background-color: #FFEDAD;
+                }
             }
         }
 
@@ -143,7 +147,7 @@ main {
 
             ul {
                 display: flex;
-                gap: 55px;
+                gap: 2rem;
 
                 li {
                     border-bottom: none;
@@ -154,7 +158,7 @@ main {
                     }
 
                     a:hover {
-                        padding: 1rem 1rem 41px 1rem;
+                        padding: 1rem 1rem 3rem 1rem;
                         border-radius: 12px 12px 0 0;
                         box-shadow: 4px 0 3px 0 rgba(74, 68, 68, 0.50);
                     }
