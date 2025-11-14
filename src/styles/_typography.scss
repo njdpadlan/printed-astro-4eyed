@@ -1,4 +1,42 @@
 
+// Font Families
+$font-headers: 'Hepta Slab', serif;
+$font-body: 'Assistant', sans-serif;
+
+//Header Mobile Font Sizes
+$h1-mobile: 29px; //bold
+$h2-mobile: 24px; //bold
+$h3-mobile: 22px; //medium
+$h4-mobile: 20px; //medium
+
+//Header Desktop Font Sizes
+$h1-desktop: 56px; //bold
+$h2-desktop: 48px; //bold
+$h3-desktop: 32px; //medium
+$h4-desktop: 20px; //medium
+
+// Body Sizes
+$contact-banner-mobile: 15px; //bold
+$contact-banner-desktop: 20px; //bold
+
+$header-nav-mobile: 20px; // uppercase semi-bold
+$header-nav-desktop: 24px; // uppercase semi-bold
+
+$p-text-size: 20px;
+
+$button-text-mobile: 16px; // uppercase bold
+$button-text-desktop: 20px; //uppercase bold
+
+$footer-nav-mobile: 20px; //bold
+$footer-nav-desktop: 24px; //bold
+
+// Font weights
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+
+
 // Forms error message styling
 #name_errormsg,
 #phone_errormsg,
@@ -10,3 +48,4 @@
     color: red;
     display: none;
 }
+
