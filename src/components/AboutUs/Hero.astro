@@ -1,10 +1,13 @@
 ---
-const {aboutUsHeroHeader, aboutUsHeroDesc, aboutUsHeroImage, aboutUsAltText} = Astro.props;
+const {aboutUsHeroHeader, aboutUsHeroDesc, aboutUsHeroImg, aboutUsAltText, smartPrintingText ,trustedExpertiseText, canadianBasedText} = Astro.props;
 
 ---
 
 <div>
     <h1>{aboutUsHeroHeader}</h1>
-    <img src={aboutUsHeroImage} alt={aboutUsAltText}>
+    <img src={aboutUsHeroImg} alt={aboutUsAltText}>
+    <p>{smartPrintingText}</p>
+    <p>{trustedExpertiseText}</p>
+    <p>{canadianBasedText}</p>
     <p>{aboutUsHeroDesc}</p>
 </div>

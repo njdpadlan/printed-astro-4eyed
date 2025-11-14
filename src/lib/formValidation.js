@@ -5,14 +5,12 @@ export function contactFormValidate() {
   form.addEventListener("submit", (e) => {
     const name = form.querySelector('input[name="name"]');
     const email = form.querySelector('input[name="email"]');
-    const subjectSelect = form.querySelector('select[name="_subject"]');
     const phone = form.querySelector('input[name="phone"]');
     const message = form.querySelector('textarea[name="message"]');
-    const company = form.querySelector('input[name="company"]');
+
     const nameErrorMsg = form.querySelector('#name_errormsg');
     const emailErrorMsg = form.querySelector('#email_errormsg');
     const phoneErrorMsg = form.querySelector('#phone_errormsg');
-    const subjErrorMsg = form.querySelector('#subject_errormsg');
     const messageErrorMsg = form.querySelector('#message_errormsg');
     let isValid = true;
 
@@ -21,7 +19,7 @@ export function contactFormValidate() {
     email.value = sanitize(email.value);
     phone.value = sanitize(phone.value);
     message.value = sanitize(message.value);
-    company.value = sanitize(company.value);
+
 
 
     //validation checks
@@ -41,13 +39,6 @@ export function contactFormValidate() {
       emailErrorMsg.style.display = 'none';
     }
 
-    if (!subjectSelect.value) {
-      subjErrorMsg.style.display = 'inline'; // show the error
-      subjErrorMsg.innerHTML = "Please select a subject.";
-      isValid = false;
-    } else {
-      subjErrorMsg.style.display = 'none';
-    }
 
     if (!/^[0-9\-\+\s\(\)]{7,15}$/.test(phone.value)) {
       phoneErrorMsg.style.display = 'inline'; // show the error

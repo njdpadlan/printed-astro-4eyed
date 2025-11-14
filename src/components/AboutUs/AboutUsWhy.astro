@@ -1,36 +1,32 @@
 ---
 const {
-    aboutUsWhyTitle, 
-    aboutUsWhyDesc, 
-    aboutUsWhatTitle, 
-    aboutUsWhatDesc, 
-    aboutUsWhyBtn, 
-    aboutUsWhyImage,
+    whyChooseHeader,
+    whyChooseDesc,
+    whatSetsApartHeader,
+    atPrintedDesc,
+    withDecadesDesc,
+    printSmarterText,
+    printedText,
+    aboutUsBtn,
+    aboutusWhyImage,
     aboutUsWhyAltText,
-    onlineservicesText,
-    customercareText,
-    qualityText,
-    localexpertiseText
 } = Astro.props;
 
 
 ---
 
 <div>
-    <section>
-        <h2>{aboutUsWhyTitle}</h2>
-        <p>{aboutUsWhyDesc}</p>
-    </section>
-    <section>
-        <h2>{aboutUsWhatTitle}</h2>
-        <p>{aboutUsWhatDesc}</p>
-        <p>{onlineservicesText}</p>
-        <p>{customercareText}</p>
-        <p>{qualityText}</p>
-        <p>{localexpertiseText}</p>
-    </section>
     <div>
-        <img src={aboutUsWhyImage} alt={aboutUsWhyAltText}>
-        <a href="#">{aboutUsWhyBtn}</a>
+        <h2>{whyChooseHeader}</h2>
+        <p>{whyChooseDesc}</p>
     </div>
+    <div>
+        <h2>{whatSetsApartHeader}</h2>
+        <p>{atPrintedDesc}</p>
+        <p>{withDecadesDesc}</p>
+        <p>{printSmarterText}</p>
+        <p>{printedText}</p>
+    </div>
+    <img src={aboutusWhyImage} alt={aboutUsWhyAltText}>
+    <p>{aboutUsBtn}</p>
 </div>

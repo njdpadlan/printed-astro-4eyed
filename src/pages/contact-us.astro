@@ -24,10 +24,10 @@ const heroData = pageData.find(pd => pd.__component === "contactushero.contactus
 const {contactusHeader, contactusText, callusTitle, callusText, emailTitle, emailText} = heroData;
 
 const contactusFormData = pageData.find(pd => pd.__component === "contactusform.contactus-form") || {};
-const {FullName, Email, Phone, Subject, CompanyName, Message, sendmessageBtn} = contactusFormData;
+const {FullName, Email, Phone, Message, sendmessageBtn} = contactusFormData;
 ---
 
 <Layout>
     <Hero {contactusHeader} {contactusText} {callusTitle} {callusText} {emailTitle} {emailText} />
-    <ContactUsForm {FullName} {Email} {Phone} {Subject} {CompanyName} {Message} {sendmessageBtn} />
+    <ContactUsForm {FullName} {Email} {Phone} {Message} {sendmessageBtn} />
 </Layout>

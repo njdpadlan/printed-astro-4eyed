@@ -21,14 +21,14 @@ const pageData = aboutusPage?.AboutUsPage || [];
 
 // fetch about us hero components
 const heroData = pageData.find(pd => pd.__component === "aboutushero.about-us-hero") || {};
-const {aboutUsHeroHeader, aboutUsHeroDesc} = heroData;
+const {aboutUsHeroHeader, aboutUsHeroDesc, smartPrintingText ,trustedExpertiseText, canadianBasedText} = heroData;
 
 
-const { aboutUsHeroImage: {
-	url: aboutUsHeroImage
+const { aboutUsHeroImg: {
+	url: aboutUsHeroImg
 }} = heroData;
 
-const { aboutUsHeroImage: {
+const { aboutUsHeroImg: {
 	alternativeText: aboutUsAltText
 }} = heroData;
 
@@ -36,28 +36,36 @@ const { aboutUsHeroImage: {
 
 const aboutusWhyData = pageData.find(pd => pd.__component === "aboutuswhy.about-us-why") || {};
 const {    
-    aboutUsWhyTitle, 
-    aboutUsWhyDesc, 
-    aboutUsWhatTitle, 
-    aboutUsWhatDesc, 
-    aboutUsWhyBtn, 
-    onlineservicesText,
-    customercareText,
-    qualityText,
-    localexpertiseText} = aboutusWhyData;
+    whyChooseHeader,
+    whyChooseDesc,
+    whatSetsApartHeader,
+    atPrintedDesc,
+    withDecadesDesc,
+    printSmarterText,
+    printedText,
+    aboutUsBtn
+  } = aboutusWhyData;
 
-const { aboutUsWhyImage: {
-	url: aboutUsWhyImage
+const { aboutusWhyImage: {
+	url: aboutusWhyImage
 }} = aboutusWhyData;
 
-const { aboutUsWhyImage: {
+const { aboutusWhyImage: {
 	alternativeText: aboutUsWhyAltText
 }} = aboutusWhyData;
 
 ---
 
 <Layout>
-    <Hero {aboutUsHeroHeader} {aboutUsHeroDesc} {aboutUsHeroImage} {aboutUsAltText}/>
-    <AboutUsWhy {aboutUsWhyTitle} {aboutUsWhyDesc} {aboutUsWhatTitle} {aboutUsWhatDesc} {onlineservicesText} {customercareText} {qualityText} {localexpertiseText} 
-    {aboutUsWhyBtn} {aboutUsWhyImage} {aboutUsWhyAltText} />
+    <Hero {aboutUsHeroHeader} {aboutUsHeroDesc} {aboutUsHeroImg} {aboutUsAltText} {smartPrintingText} {trustedExpertiseText} {canadianBasedText}/>
+    <AboutUsWhy 
+      {whyChooseHeader}
+      {whyChooseDesc}
+      {whatSetsApartHeader}
+      {atPrintedDesc}
+      {withDecadesDesc}
+      {printSmarterText}
+      {printedText}
+      {aboutUsBtn}
+    {aboutusWhyImage} {aboutUsWhyAltText} />
 </Layout>
