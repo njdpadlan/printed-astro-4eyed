@@ -16,6 +16,10 @@ footer {
 
     li {
       margin-top: 32px;
+
+      a:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -97,8 +101,7 @@ footer p {
     gap: 50px;
   }
 
-  footer a,
-  footer p {
+  footer a {
     font-size: 24px;
   }
 
