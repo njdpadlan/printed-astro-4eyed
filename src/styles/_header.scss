@@ -16,7 +16,7 @@ header {
         padding: 6px 1rem;
 
         a, span {
-            font-size: 20px;
+            font-size: 16px;
             text-decoration: none;
             color: $white;
         }
@@ -107,6 +107,12 @@ main {
 @media (min-width: 1000px) {
     header {
         position: unset;
+
+        .top-nav {
+            a, span {
+                font-size: 20px;
+            }
+        }
 
         .nav-container {
             flex-wrap: unset;
