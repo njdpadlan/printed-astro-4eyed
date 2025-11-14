@@ -1,0 +1,24 @@
+/* Styles for both contact us and request a qoute page here */
+@use "colours" as *;
+
+.contact-info-card{
+    padding-top: 1rem;
+}
+.form-h1{
+    background-color: $secondary-yellow ;
+    padding: 1rem;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    left: -20px;
+    max-width: 793px;
+
+    h1{
+        padding: 1rem;
+    }
+}
+.form-svg{
+    width: 60px;
+    height: 63px;
+    margin-bottom: 0.5rem;
+}
