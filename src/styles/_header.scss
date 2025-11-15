@@ -63,8 +63,7 @@ header {
                     width: 100%;
                 }
 
-                a:hover,
-                a:active {
+                a:hover {
                     background-color: $secondary-yellow;
                     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
                 }
@@ -142,7 +141,7 @@ main {
 
             ul {
                 display: flex;
-                gap: 2rem;
+                gap: 1rem;
 
                 li {
                     border-bottom: none;
