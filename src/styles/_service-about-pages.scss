@@ -1,0 +1,7 @@
+@use 'colours' as *;
+@use 'mixins' as *;
+
+.service-btn {
+    @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
+    display: inline-block;
+}
