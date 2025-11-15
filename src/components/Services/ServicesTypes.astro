@@ -13,9 +13,10 @@ const {
     serviceWarehouseImage,
     serviceWarehouseAltText
 } = Astro.props;
+import "../../styles/styles.scss";
 ---
 
-<div>
+<div class="service-bg">
     <section>
         <h2>{servicePortalTitle}</h2>
         <img src={servicePortalImage} alt={servicePortalAltText}>
