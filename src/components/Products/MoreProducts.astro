@@ -4,7 +4,9 @@ const {
     lasercutTitle, 
     lasercutImage,
     lasercutAltText,
+    laserCutAbout,
     highqualitylaserTitle,
+    laserCutChooseFrom,
     lasercutText,
     partsText,
     featuresText,
@@ -12,7 +14,9 @@ const {
     snapsetTitle,
     snapsetImage,
     snapsetAltText,
+    snapsetAbout,
     durableTitle,
+    snapsetChooseFrom,
     multipartText,
     snapsetpartsText,
     commonuseText,
@@ -20,7 +24,9 @@ const {
     continuousTitle,
     continuousImage,
     continuousAltText,
+    continuousAbout,
     reliableTitle,
+    continuousChooseFrom,
     continuousText,
     continuouspartsText,
     idealforText,
@@ -28,7 +34,9 @@ const {
     customenvelopeTitle,
     customenvelopeImage,
     customenvelopeAltText,
+    customEnvelopeAbout,
     deliverbrandfirstTitle,
+    customEnvelopeChooseFrom,
     daytodayText,
     regularText,
     availableoptionsText,
@@ -41,37 +49,69 @@ const {
     <section>
         <h3>{lasercutTitle}</h3>
         <img src={lasercutImage} alt={lasercutAltText}>
-        <p>{highqualitylaserTitle}</p>
-        <p>{lasercutText}</p>
-        <p>{partsText}</p>
-        <p>{featuresText}</p>
-        <p>{customsizesText}</p>
+        <h4>{highqualitylaserTitle}</h4>
+        <!-- accordion -->
+        <div>
+            <!-- About -->
+            <h4>{laserCutAbout}</h4> 
+            <p>{lasercutText}</p>
+            <!-- Choose From -->
+            <h4>{laserCutChooseFrom}</h4>
+            <p>{partsText}</p>
+            <!-- Available Options -->
+            <h4>{featuresText}</h4>
+            <p>{customsizesText}</p>
+        </div>
     </section>
     <section>
         <h3>{snapsetTitle}</h3>
         <img src={snapsetImage} alt={snapsetAltText}>
-        <p>{durableTitle}</p>
-        <p>{multipartText}</p>
-        <p>{snapsetpartsText}</p>
-        <p>{commonuseText}</p>
-        <p>{fieldserviceText}</p>
+        <h4>{durableTitle}</h4>
+        <!-- accordion -->
+        <div>
+            <!-- About -->
+            <h4>{snapsetAbout}</h4>
+            <p>{multipartText}</p>
+            <!-- Choose From -->
+            <h4>{snapsetChooseFrom}</h4>
+            <p>{snapsetpartsText}</p>
+            <!-- Available Options -->
+            <h4>{commonuseText}</h4>
+            <p>{fieldserviceText}</p>
+        </div>
     </section>
     <section>
         <h3>{continuousTitle}</h3>
         <img src={continuousImage} alt={continuousAltText}>
-        <p>{reliableTitle}</p>
-        <p>{continuousText}</p>
-        <p>{continuouspartsText}</p>
-        <p>{idealforText}</p>
-        <p>{accountingText}</p>
+        <h4>{reliableTitle}</h4>
+        <!-- accordion -->
+        <div>
+            <!-- About -->
+            <h4>{continuousAbout}</h4>
+            <p>{continuouspartsText}</p>
+            <!-- Choose From -->
+            <h4>{continuousChooseFrom}</h4>
+            <p>{continuousText}</p>
+            <!-- Available Options -->
+            <h4>{idealforText}</h4>
+            <p>{accountingText}</p>
+        </div>
     </section>
     <section>
         <h3>{customenvelopeTitle}</h3>
         <img src={customenvelopeImage} alt={customenvelopeAltText}>
-        <p>{deliverbrandfirstTitle}</p>
-        <p>{daytodayText}</p>
-        <p>{regularText}</p>
-        <p>{availableoptionsText}</p>
-        <p>{regularwindowText}</p>
+        <h4>{deliverbrandfirstTitle}</h4>
+        <!-- accordion -->
+        <div>
+             <!-- About -->
+            <h4>{customEnvelopeAbout}</h4>
+            <p>{daytodayText}</p>
+            <!-- Choose From -->
+            <h4>{customEnvelopeChooseFrom}</h4>
+            <p>{regularText}</p>
+            <!-- Available Options -->
+            <h4>{availableoptionsText}</h4>
+            <p>{regularwindowText}</p>
+        </div>
     </section>
 </div>

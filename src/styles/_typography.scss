@@ -1,4 +1,60 @@
 
+h1{
+    font-family: 'hepta slab', serif;
+    font-weight: bold;
+    font-size: 29px;
+}
+h2{
+    font-family: 'hepta slab', serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+h3{
+    font-family: 'hepta slab', serif;
+    font-weight: 500;
+    font-size: 22px;
+}
+h4{
+    font-family: 'hepta slab', serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+p{
+    font-family: 'assistant', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+a{
+    font-family: 'assistant', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    font-style: uppercase;
+    text-decoration: none;
+}
+
+
+@media (min-width: 768px) {
+    h1{
+        font-size: 56px;
+    }
+    h2{
+        font-size: 48px;
+    }
+    h3{
+        font-size: 32px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    a{
+        font-size: 20px;
+    }
+}
+
+
+
 // Forms error message styling
 #name_errormsg,
 #phone_errormsg,
@@ -10,3 +66,4 @@
     color: red;
     display: none;
 }
+
