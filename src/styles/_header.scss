@@ -10,15 +10,14 @@ header {
 
     .top-nav {
         font-weight: bold;
-        display: flex;
-        gap: .5rem;
         background-color: $primary-blue;
-        padding: 6px 1rem;
+        padding: 6px 0;
 
         a, span {
             font-size: 16px;
             text-decoration: none;
             color: $white;
+            padding-right: .5rem;
         }
     }
 
@@ -27,7 +26,7 @@ header {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        padding: 1rem;
+        padding: 1rem 0;
 
         svg {
             width: 50px;
@@ -109,7 +108,6 @@ main {
         position: unset;
 
         .top-nav {
-            padding: 6px 30px;
             a, span {
                 font-size: 20px;
             }
@@ -117,7 +115,7 @@ main {
 
         .nav-container {
             flex-wrap: unset;
-            padding: 1rem 30px;
+
             button {
                 display: none;
             }
