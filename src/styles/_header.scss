@@ -13,7 +13,7 @@ header {
         display: flex;
         gap: .5rem;
         background-color: $primary-blue;
-        padding: 6px 1rem;
+        padding: 6px 0;
 
         a, span {
             font-size: 16px;
@@ -27,7 +27,7 @@ header {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        padding: 1rem;
+        padding: 1rem 0;
 
         svg {
             width: 50px;
