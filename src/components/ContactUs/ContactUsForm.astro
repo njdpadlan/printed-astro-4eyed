@@ -9,7 +9,7 @@ const {
 } = Astro.props;
 ---
 
-<div>
+<div class="form-card">
     <!-- Add https://formsubmit.co/email-here later in the action -->
     <form
         action= "#"
@@ -30,7 +30,7 @@ const {
            <p id="name_errormsg"></p>
         </div>
         <div>
-            <label for="phone">{Phone}</label>
+            <label for="phone" class="label">{Phone}</label>
             <input id="phone" type="tel" name="phone" placeholder="Enter your phone number here."/>
             <p id="phone_errormsg"></p>
         </div>
@@ -48,10 +48,11 @@ const {
             <textarea
                 id={Message}
                 name="message"
+                class="message-box"
                 placeholder="Enter your message here."></textarea>
             <p id="message_errormsg"></p>
         </div>
-        <input type="submit" value={sendmessageBtn} />
+        <input type="submit" value={sendmessageBtn} class="submit-btn" />
     </form>
 
 </div>
