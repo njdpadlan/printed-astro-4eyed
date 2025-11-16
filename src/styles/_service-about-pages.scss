@@ -99,7 +99,8 @@
     .about-flex {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
+        padding: 1rem ;
 
         .set-apart-flex {
             display: flex;
@@ -111,6 +112,10 @@
                     font-weight: 600;
                 }
             }
+        }
+
+        .about-btn {
+            @include btn ($white, $tertiary-dark-blue, #A0D3FF);
         }
     }
 }
