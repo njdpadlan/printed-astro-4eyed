@@ -16,23 +16,25 @@ import "../../styles/styles.scss";
 ---
 
 <div class="about-bg">
-    <div class="about-flex container">
-        <div>
-            <h2>{whyChooseHeader}</h2>
-            <p>{whyChooseDesc}</p>
-        </div>
-        <div class="set-apart-flex">
+    <div class="about-wide-flex container">
+        <div class="about-flex">
             <div>
-                <h2>{whatSetsApartHeader}</h2>
-                <p>{atPrintedDesc}</p>
+                <h2>{whyChooseHeader}</h2>
+                <p>{whyChooseDesc}</p>
             </div>
-            <p>{withDecadesDesc}</p>
-            <div class="set-apart-tag">
-                <p>{printSmarterText}</p>
-                <p>{printedText}</p>
+            <div class="set-apart-flex">
+                <div>
+                    <h2>{whatSetsApartHeader}</h2>
+                    <p>{atPrintedDesc}</p>
+                </div>
+                <p>{withDecadesDesc}</p>
+                <div class="set-apart-tag">
+                    <p>{printSmarterText}</p>
+                    <p>{printedText}</p>
+                </div>
+                <a href="/contact-us" class="about-btn">{aboutUsBtn}</a>
             </div>
         </div>
         <img src={aboutusWhyImage} alt={aboutUsWhyAltText}>
-        <a href="/contact-us" class="about-btn">{aboutUsBtn}</a>
     </div>
 </div>
