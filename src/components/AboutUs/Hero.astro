@@ -1,13 +1,15 @@
 ---
 const {aboutUsHeroHeader, aboutUsHeroDesc, aboutUsHeroImg, aboutUsAltText, smartPrintingText ,trustedExpertiseText, canadianBasedText} = Astro.props;
-
+import "../../styles/styles.scss";
 ---
 
-<div>
+<div class="about-hero">
     <h1>{aboutUsHeroHeader}</h1>
     <img src={aboutUsHeroImg} alt={aboutUsAltText}>
-    <p>{smartPrintingText}</p>
-    <p>{trustedExpertiseText}</p>
-    <p>{canadianBasedText}</p>
+    <div class="hero-tag">
+        <p>{smartPrintingText}</p>
+        <p>{trustedExpertiseText}</p>
+        <p>{canadianBasedText}</p>
+    </div>
     <p>{aboutUsHeroDesc}</p>
 </div>

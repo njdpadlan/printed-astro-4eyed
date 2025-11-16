@@ -11,22 +11,28 @@ const {
     aboutusWhyImage,
     aboutUsWhyAltText,
 } = Astro.props;
-
+import "../../styles/styles.scss";
 
 ---
 
-<div>
-    <div>
-        <h2>{whyChooseHeader}</h2>
-        <p>{whyChooseDesc}</p>
+<div class="about-bg">
+    <div class="about-flex container">
+        <div>
+            <h2>{whyChooseHeader}</h2>
+            <p>{whyChooseDesc}</p>
+        </div>
+        <div class="set-apart-flex">
+            <div>
+                <h2>{whatSetsApartHeader}</h2>
+                <p>{atPrintedDesc}</p>
+            </div>
+            <p>{withDecadesDesc}</p>
+            <div class="set-apart-tag">
+                <p>{printSmarterText}</p>
+                <p>{printedText}</p>
+            </div>
+        </div>
+        <img src={aboutusWhyImage} alt={aboutUsWhyAltText}>
+        <a href="/contact-us" class="about-btn">{aboutUsBtn}</a>
     </div>
-    <div>
-        <h2>{whatSetsApartHeader}</h2>
-        <p>{atPrintedDesc}</p>
-        <p>{withDecadesDesc}</p>
-        <p>{printSmarterText}</p>
-        <p>{printedText}</p>
-    </div>
-    <img src={aboutusWhyImage} alt={aboutUsWhyAltText}>
-    <p>{aboutUsBtn}</p>
 </div>

@@ -59,13 +59,58 @@
 
     .service {
         margin: 9rem 0;
-        
+
         section {
             max-width: 1234px;
             flex-direction: row;
             align-items: center;
             gap: 20px;
 
+        }
+    }
+}
+
+//About Us Page Styles
+.about-hero {
+    @include white-card;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+
+    h1 {
+        color: $primary-blue;
+        margin-top: 1rem
+    }
+
+    .hero-tag {
+        p {
+            font-weight: 600;
+        }
+    }
+}
+
+.about-bg {
+    background-color: $tertiary-dark-blue;
+    color: $white;
+    margin: 6rem 0 6rem 0;
+
+    .about-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .set-apart-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .set-apart-tag {
+                p {
+                    font-weight: 600;
+                }
+            }
         }
     }
 }
