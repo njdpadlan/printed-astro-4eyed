@@ -12,7 +12,7 @@ const {
 } = Astro.props;
 ---
 
-<div>
+<div class="form-card">
     <!-- Add https://formsubmit.co/email-here later in the action -->
     <form
         action="#"
@@ -60,31 +60,34 @@ const {
                 placeholder="Enter your company name here."
             />
         </div>
-        <div>
-            <label for="product-type">{ProductType}</label>
-            <select name="_subject" id="product-type">
-                <option value="">Choose a product</option>
-                <option value="Linerless Label">Linerless Label</option>
-                <option value="Pressure Seal">Pressure Seal Forms</option>
-                <option value="Integrated Form">Integrated Form/Labels</option>
-                <option value="Laser-Cut Sheet Form">Laser-Cut Sheet Forms</option>
-                <option value="Snapset Form">Snapset Form</option>
-                <option value="Continuous Form">Continuous Forms</option>
-                <option value="Custom Envelopes">Custom Envelopes</option>
-                <option value="Other">Other</option>
-            </select>
-            <p id="subject_errormsg"></p>
-        </div>
-        <div>
-            <label for="quantity">{Quantity}</label>
-            <select name="quantity" id="quantity">
-                <option value="">Select Quantity</option>
-                <option value="10">10</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="1000">1000</option>
-            </select>
-            <p id="quantity_errormsg"></p>
+        <div class="product-type-quantity">
+            
+            <div>
+                <label for="product-type">{ProductType}</label>
+                <select name="_subject" id="product-type">
+                    <option value="">Choose a product</option>
+                    <option value="Linerless Label">Linerless Label</option>
+                    <option value="Pressure Seal">Pressure Seal Forms</option>
+                    <option value="Integrated Form">Integrated Form/Labels</option>
+                    <option value="Laser-Cut Sheet Form">Laser-Cut Sheet Forms</option>
+                    <option value="Snapset Form">Snapset Form</option>
+                    <option value="Continuous Form">Continuous Forms</option>
+                    <option value="Custom Envelopes">Custom Envelopes</option>
+                    <option value="Other">Other</option>
+                </select>
+                <p id="subject_errormsg"></p>
+            </div>
+            <div>
+                <label for="quantity">{Quantity}</label>
+                <select name="quantity" id="quantity">
+                    <option value="">Select Quantity</option>
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="1000">1000</option>
+                </select>
+                <p id="quantity_errormsg"></p>
+            </div>
         </div>
         <div>
             <label for={FileUpload}>{FileUpload}</label>
@@ -100,11 +103,12 @@ const {
             <textarea
                 id={AdditionalDetails}
                 name="message"
+                class="message-box"
                 placeholder="Enter additional details here.
 Examples include sizes, materials, colours, specifications, questions, and details from file uploads."></textarea>
             <p id="message_errormsg"></p>
         </div>
-        <input type="submit" value={requestquoteBtn} />
+        <input type="submit" value={requestquoteBtn} class="submit-btn" />
     </form>
 </div>
 

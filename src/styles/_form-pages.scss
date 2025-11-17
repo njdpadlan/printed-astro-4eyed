@@ -1,8 +1,10 @@
 /* Styles for both contact us and request a qoute page here */
 @use "colours" as *;
+@use "mixins" as *;
 
 .contact-info-card{
     padding-top: 1rem;
+    color: $tertiary-dark-blue;
 }
 .form-h1{
     background-color: $secondary-yellow ;
@@ -21,4 +23,113 @@
     width: 60px;
     height: 63px;
     margin-bottom: 0.5rem;
+}
+.contact-row{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+.contact-card{
+    background-color: $white;
+    border-radius: 15px;
+
+}
+
+.form-card{
+    background-color: $tertiary-dark-blue;
+    font-family: 'assistant', sans-serif;
+    color: $white;
+    margin-bottom: 96px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+
+    input,
+    select{
+        width: 100%;
+        height: 55px;
+        margin-bottom: 1rem;
+
+    }
+}
+
+
+label{
+    
+    font-weight: bold;
+}
+
+input::placeholder,
+textarea::placeholder,
+option{
+    font-family: 'assistant', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: $grey;
+}
+.message-box{
+    height: 256px;
+    width: 100%;
+   
+}
+.product-type-quantity{
+    display: flex;
+    gap: 1rem;
+
+    div{
+        flex: 1;
+    }   
+    
+}
+.submit-btn {
+  @include btn ($white, $tertiary-dark-blue, #FFEDAD);
+  display: inline-block;
+  margin-top: 32px;
+  width: 100%;
+}
+
+//desktop layout
+@media (min-width: 1000px) {
+   
+
+    .hero-grid{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap:1rem;
+        align-items: start;
+    }
+
+    .form-h1{
+        grid-column: 1 / span 12;
+    }
+    .form-h1 h1{
+        grid-column: 6/ span 6;
+    }
+    .contact-card{
+        grid-column: 6/ span 6;
+    }
+
+    .forms-page-wrapper{
+
+          margin-bottom: 144px;
+          gap: 1rem;
+          display:grid;
+          grid-template-columns: repeat(12, 1fr);
+          align-items: start;
+          padding: 20px;
+      }
+    
+    .forms-page-wrapper > :first-child{
+        grid-column: 1 / span 5;
+
+    
+    }
+
+    .form-card{
+        grid-column: 7/ span 3;
+        margin-top: 144px;
+        
+    }
+
 }
