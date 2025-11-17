@@ -16,20 +16,26 @@ const {
 import "../../styles/styles.scss";
 ---
 
-<div class="service-bg">
+<div class="service">
     <section>
-        <h2>{servicePortalTitle}</h2>
+        <div>
+            <h2>{servicePortalTitle}</h2>
+            <p>{servicePortalDesc}</p>
+        </div>
         <img src={servicePortalImage} alt={servicePortalAltText}>
-        <p>{servicePortalDesc}</p>
     </section>
     <section>
-        <h2>{servicePoofingTitle}</h2>
+        <div>
+            <h2>{servicePoofingTitle}</h2>
+            <p>{servicePoofingDesc}</p>
+        </div>
         <img src={servicePoofingImage} alt={servicePoofingAltText}>
-        <p>{servicePoofingDesc}</p>
     </section>
     <section>
-        <h2>{serviceWarehouseTitle}</h2>
+        <div>
+            <h2>{serviceWarehouseTitle}</h2>
+            <p>{serviceWarehouseDesc}</p>
+        </div>
         <img src={serviceWarehouseImage} alt={serviceWarehouseAltText}>
-        <p>{serviceWarehouseDesc}</p>
     </section>
 </div>

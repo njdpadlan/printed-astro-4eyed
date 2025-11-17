@@ -17,12 +17,12 @@
 
     .service-btn {
         @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
-        display: inline-block;
+        display: block;
         width: 100%;
     }
 }
 
-.service-bg {
+.service {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -41,5 +41,31 @@
 }
 
 @media (min-width: 1000px) {
-    
+    .service-hero {
+        padding: 0 2rem 2rem 2rem;
+        max-width: unset;
+        width: 763px;
+        border-radius: 15px;
+        margin: 9rem 0 9rem 10vw;
+
+        img {
+            display: none;
+        }
+
+        .service-btn {
+            width: 288px;
+        }
+    }
+
+    .service {
+        margin: 9rem 0;
+        
+        section {
+            max-width: 1234px;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+
+        }
+    }
 }
