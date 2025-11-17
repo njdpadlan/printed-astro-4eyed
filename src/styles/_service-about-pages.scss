@@ -98,6 +98,8 @@
 }
 
 @media (min-width: 1000px) {
+
+    //Online Services
     .service-hero {
         padding: 0 2rem 2rem 2rem;
         max-width: unset;
@@ -116,7 +118,7 @@
 
     .service {
         margin: 9rem 0;
-        
+
         section {
             max-width: 1234px;
             flex-direction: row;
@@ -125,4 +127,41 @@
 
         }
     }
-}
+
+    //About Us 
+    .about-hero {
+        padding: 0 2rem 2rem 2rem;
+        max-width: unset;
+        width: 763px;
+        border-radius: 15px;
+        margin: 9rem 0 9rem 10vw;
+
+        img {
+            display: none;
+        }
+    }
+
+    .about-bg {
+        margin: 9rem 0 9rem 0;
+
+        .about-wide-flex {
+            flex-direction: row;
+            align-items: center;
+            max-width: 1254px;
+            gap: 1rem;
+            padding: 4rem 0;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .about-flex {
+            .about-btn {
+                width: 316px;
+            }
+        }
+
+    }
+
+} 
