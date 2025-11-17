@@ -15,9 +15,7 @@
     left: -20px;
     max-width: 793px;
 
-    h1{
-        padding: 1rem;
-    }
+   
 }
 .form-svg{
     width: 60px;
@@ -90,25 +88,35 @@ option{
 }
 
 //desktop layout
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
    
 
     .hero-grid{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap:1rem;
         align-items: start;
+    }
+    .h1-grid{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
     }
 
     .form-h1{
         grid-column: 1 / span 12;
+        left: 0;
+        border-radius: 0 15px 15px 0;
+        
     }
     .form-h1 h1{
         grid-column: 6/ span 6;
+        
     }
     .contact-card{
         grid-column: 6/ span 6;
+        
     }
+   
 
     .forms-page-wrapper{
 
@@ -117,7 +125,7 @@ option{
           display:grid;
           grid-template-columns: repeat(12, 1fr);
           align-items: start;
-          padding: 20px;
+          
       }
     
     .forms-page-wrapper > :first-child{
@@ -125,11 +133,15 @@ option{
 
     
     }
+    .background-form{
+        background-color: $tertiary-dark-blue;
+        margin-top: 2rem;
+    }
 
     .form-card{
-        grid-column: 7/ span 3;
+        grid-column: 7/ span 4;
         margin-top: 144px;
-        
+        box-shadow: none;
     }
 
 }
