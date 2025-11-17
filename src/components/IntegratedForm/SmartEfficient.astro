@@ -1,18 +1,23 @@
 ---
 const {smartefficientformTitle, commonapplicationsText, ecommerce, distribution, retail, healthcare, insurance, logistics, smartefficientImage, smartefficientAltText, smartefficientBtn} = Astro.props;
+import "../../styles/styles.scss";
 ---
 
-<div>
-    <h2>{smartefficientformTitle}</h2>
-    <p>{commonapplicationsText}</p>
-    <ul>
-        <li>{ecommerce}</li>
-        <li>{distribution}</li>
-        <li>{retail}</li>
-        <li>{healthcare}</li>
-        <li>{insurance}</li>
-        <li>{logistics}</li>
-    </ul>
-    <img src={smartefficientImage} alt={smartefficientAltText}>
-    <a href="#">{smartefficientBtn}</a>
+<div class="featured-products-additional-info">
+    <h2 class="featured-products-header">{smartefficientformTitle}</h2>
+    <div class="featured-products-infolist">
+        <p>{commonapplicationsText}</p>
+        <ul>
+            <li>{ecommerce}</li>
+            <li>{distribution}</li>
+            <li>{retail}</li>
+            <li>{healthcare}</li>
+            <li>{insurance}</li>
+            <li>{logistics}</li>
+        </ul>
+        <div>
+            <img src={smartefficientImage} alt={smartefficientAltText}>
+            <a href="/request-quote" class="featured-products-btn">{smartefficientBtn}</a>
+        </div>
+    </div>
 </div>

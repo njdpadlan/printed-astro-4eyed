@@ -10,13 +10,16 @@ const {
     pressuresealImage3,
     pressuresealAltText3
 } = Astro.props;
+import "../../styles/styles.scss";
 ---
 
-<div>
-    <h2>{pressuresealWhatIsTitle}</h2>
-    <p>{pressuresealWhatIsDesc}</p>
-    <p>{sealedbypressureText}</p>
-    <div>
+<div class="featured-products-container">
+    <div class="featured-products-info">
+        <h2>{pressuresealWhatIsTitle}</h2>
+        <p>{pressuresealWhatIsDesc}</p>
+        <p>{sealedbypressureText}</p>
+    </div>
+    <div class="pressure-seal-img">
         <img src={pressuresealImage1} alt={pressuresealAltText1}>
         <img src={pressuresealImage2} alt={pressuresealAltText2}>
         <img src={pressuresealImage3} alt={pressuresealAltText3}>

@@ -1,9 +1,14 @@
 ---
 const {integratedformlabelHeader, integratedformlabelDesc, integratedformlabelImage, integratedformlabelAltText} = Astro.props;
+import "../../styles/styles.scss";
 ---
 
-<div>
-    <h1>{integratedformlabelHeader}</h1>
-    <p>{integratedformlabelDesc}</p>
-    <img src={integratedformlabelImage} alt={integratedformlabelAltText}>
+<div class="featured-products-hero">
+    <div class="product-hero-container">
+        <h1>{integratedformlabelHeader}</h1>
+        <p>{integratedformlabelDesc}</p>
+    </div>
+    <div class="product-hero-img">
+        <img src={integratedformlabelImage} alt={integratedformlabelAltText}>
+    </div>
 </div>
