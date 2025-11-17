@@ -1,10 +1,11 @@
 ---
 const {serviceHeroHeader, serviceHeroDesc, serviceHeroBtn, serviceHeroImage, servicesAltText } = Astro.props;
+import "../../styles/styles.scss";
 ---
 
-<div>
+<div class="service-hero">
     <h1>{serviceHeroHeader}</h1>
     <img src={serviceHeroImage} alt={servicesAltText}>
     <p>{serviceHeroDesc}</p>
-    <a href="#">{serviceHeroBtn}</a>
+    <a href="/request-quote" class="service-btn">{serviceHeroBtn}</a>
 </div>
