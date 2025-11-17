@@ -70,3 +70,17 @@ label{
   margin-top: 32px;
   width: 100%;
 }
+
+//desktop layout
+@media (min-width: 1000px) {
+   
+    .forms-page-wrapper{
+          gap: 2rem;
+          margin: 0 auto;
+          display:grid;
+          grid-template-columns: 350px 1fr;
+      }
+
+
+
+}
