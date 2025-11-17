@@ -11,14 +11,17 @@ const {
     linerlesslabelImage3,
     linerlesslabelAltText3
 } = Astro.props;
+import "../../styles/styles.scss";
 ---
 
-<div>
-    <h2>{linerlesslabelWhatIsTitle}</h2>
-    <p>{linerlesslabelWhatIsDesc}</p>
-    <p>{perfectforwindowText}</p>
-    <p>{printedmanufactureText}</p>
-    <div>
+<div class="featured-products-container">
+    <div class="featured-products-info">
+        <h2>{linerlesslabelWhatIsTitle}</h2>
+        <p>{linerlesslabelWhatIsDesc}</p>
+        <p class="middle-text">{perfectforwindowText}</p>
+        <p>{printedmanufactureText}</p>
+    </div>
+    <div class="linerless-img">
         <img src={linerlesslabelImage1} alt={linerlesslabelAltText1}>
         <img src={linerlesslabelImage2} alt={linerlesslabelAltText2}>
         <img src={linerlesslabelImage3} alt={linerlesslabelAltText3}>

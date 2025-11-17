@@ -1,16 +1,21 @@
 ---
 const {keyadvantagesTitle, nolinerText, continuousrollText, custombrandingText, excellentforText, sustainableImage, sustainableAltText, sustainableBtn, sustainableTitle} = Astro.props;
+import "../../styles/styles.scss";
 ---
 
-<div>
-    <h2>{sustainableTitle}</h2>
-    <p>{keyadvantagesTitle}</p>
-    <ul>
-        <li>{nolinerText}</li>
-        <li>{continuousrollText}</li>
-        <li>{custombrandingText}</li>
-        <li>{excellentforText}</li>
-    </ul>
-    <img src={sustainableImage} alt={sustainableAltText}>
-    <a href="#">{sustainableBtn}</a>
+<div class="featured-products-additional-info">
+    <h2 class="featured-products-header">{sustainableTitle}</h2>
+    <div class="featured-products-infolist">
+        <p>{keyadvantagesTitle}</p>
+        <ul>
+            <li>{nolinerText}</li>
+            <li>{continuousrollText}</li>
+            <li>{custombrandingText}</li>
+            <li>{excellentforText}</li>
+        </ul>
+        <div>
+            <img src={sustainableImage} alt={sustainableAltText}>
+            <a href="/request-quote" class="featured-products-btn">{sustainableBtn}</a>
+        </div>
+    </div>
 </div>
