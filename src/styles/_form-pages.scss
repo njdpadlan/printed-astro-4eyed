@@ -26,7 +26,11 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+
+}
+.contact-info-card p ,
+.contact-row{
+    padding-left: 1rem;
 }
 .contact-card{
     background-color: $white;
@@ -113,9 +117,12 @@ option{
         
     }
     .contact-card{
-        grid-column: 6/ span 6;
-        
+        grid-column: 6 / span 12;
+        padding: 2rem 1rem 1rem 1rem;
+        border-radius: 0 0 15px 15px;
+        margin-top: -1rem;
     }
+   
    
 
     .forms-page-wrapper{
