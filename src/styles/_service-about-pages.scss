@@ -19,11 +19,8 @@
     img {
         display: block;
         width: calc(100% + 2rem);
-        /* 2rem left + 2rem right */
         max-width: none;
-        /* allow overflow beyond container */
         margin-left: -1rem;
-        /* negative half the added width */
         margin-right: -1rem;
     }
 
@@ -69,6 +66,14 @@
     h1 {
         color: $primary-blue;
         margin-top: 1rem
+    }
+
+    img {
+        display: block;
+        width: calc(100% + 2rem);
+        max-width: none;
+        margin-left: -1rem;
+        margin-right: -1rem;
     }
 
     .hero-tag {
@@ -117,7 +122,7 @@
 @media (min-width: 1000px) {
 
     //Online Services
-    .banner {
+    .service-banner {
         background-image: url("https://stylish-dinosaurs-39d17e40aa.media.strapiapp.com/poster_printing_banner_650b9eb00a.webp");
         background-size: cover;
         background-position: center;
@@ -168,6 +173,16 @@
     }
 
     //About Us 
+
+    .about-banner {
+        background-image: url("https://stylish-dinosaurs-39d17e40aa.media.strapiapp.com/about_us_hero_b00d4326ec.webp");
+        background-size: cover;
+        background-position: center;
+        padding: 1rem;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
     .about-hero {
         padding: 0 2rem 2rem 2rem;
         max-width: unset;
