@@ -3,9 +3,11 @@ const {serviceHeroHeader, serviceHeroDesc, serviceHeroBtn, serviceHeroImage, ser
 import "../../styles/styles.scss";
 ---
 
-<div class="service-hero">
-    <h1>{serviceHeroHeader}</h1>
-    <img src={serviceHeroImage} alt={servicesAltText}>
-    <p>{serviceHeroDesc}</p>
-    <a href="/request-quote" class="service-btn">{serviceHeroBtn}</a>
+<div class="banner">
+    <div class="service-hero">
+        <h1>{serviceHeroHeader}</h1>
+        <img src={serviceHeroImage} alt={servicesAltText}>
+        <p>{serviceHeroDesc}</p>
+        <a href="/request-quote" class="service-btn">{serviceHeroBtn}</a>
+    </div>
 </div>
