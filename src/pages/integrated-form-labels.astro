@@ -24,12 +24,16 @@ const heroData = pageData.find(pd => pd.__component === "integratedformlabelhero
 const {integratedformlabelHeader, integratedformlabelDesc} = heroData;
 
 
-const { integratedformlabelImage: {
-	url: integratedformlabelImage
+const { integratedformlabelImageMobile: {
+	url: integratedformlabelImageMobile
 }} = heroData;
 
-const { integratedformlabelImage: {
-	alternativeText: integratedformlabelAltText
+const { integratedformlabelImageDesktop: {
+	url: integratedformlabelImageDesktop
+}} = heroData;
+
+const { integratedformlabelImageMobile: {
+	alternativeText: integratedformlabelAltTextMobile
 }} = heroData;
 
 //fetch integratedformWhatIs components
@@ -90,7 +94,7 @@ const { smartefficientImage: {
 ---
 
 <Layout>
-    <Hero {integratedformlabelHeader} {integratedformlabelDesc} {integratedformlabelImage} {integratedformlabelAltText} />
+    <Hero {integratedformlabelHeader} {integratedformlabelDesc} {integratedformlabelImageMobile} {integratedformlabelAltTextMobile} {integratedformlabelImageDesktop} />
     <WhatIs {integratedformlabelWhatIsTitle} {integratedformlabelWhatIsDesc} {integratedsolutionText} {integratedformImage1} {integratedformImage2} {integratedformImage3}
     {integratedformAltText1} {integratedformAltText2} {integratedformAltText3} />
     <SmartEfficient {smartefficientformTitle} {commonapplicationsText} {ecommerce} {distribution} {retail}

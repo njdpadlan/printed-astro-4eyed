@@ -1,6 +1,7 @@
 @use 'colours' as *;
 @use 'mixins' as *;
 
+
 //Online Services Page Styles
 .service-hero {
     @include white-card;
@@ -14,6 +15,15 @@
         color: $primary-blue;
         margin-top: 1rem
     }
+
+    img {
+        display: block;
+        width: calc(100% + 2rem);
+        max-width: none;
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
 
     .service-btn {
         @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
@@ -37,6 +47,10 @@
         padding: 1rem;
         max-width: 700px;
         margin: 0 auto;
+
+        img {
+            border-radius: 12px
+        }
     }
 }
 
@@ -52,6 +66,14 @@
     h1 {
         color: $primary-blue;
         margin-top: 1rem
+    }
+
+    img {
+        display: block;
+        width: calc(100% + 2rem);
+        max-width: none;
+        margin-left: -1rem;
+        margin-right: -1rem;
     }
 
     .hero-tag {
@@ -98,6 +120,17 @@
 }
 
 @media (min-width: 1000px) {
+
+    //Online Services
+    .service-banner {
+        background-image: url("https://stylish-dinosaurs-39d17e40aa.media.strapiapp.com/poster_printing_banner_650b9eb00a.webp");
+        background-size: cover;
+        background-position: center;
+        padding: 1rem;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
     .service-hero {
         padding: 0 2rem 2rem 2rem;
         max-width: unset;
@@ -116,13 +149,73 @@
 
     .service {
         margin: 9rem 0;
-        
+        gap: 4rem;
+
+        .portal {
+            padding-top: 5rem;
+        }
+
+        .warehouse {
+            padding-bottom: 5rem;
+        }
+
         section {
             max-width: 1234px;
             flex-direction: row;
             align-items: center;
+            padding: 0 1rem;
             gap: 20px;
 
+            img {
+                max-width: 50%;
+            }
         }
     }
+
+    //About Us 
+
+    .about-banner {
+        background-image: url("https://stylish-dinosaurs-39d17e40aa.media.strapiapp.com/about_us_hero_b00d4326ec.webp");
+        background-size: cover;
+        background-position: center;
+        padding: 1rem;
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+
+    .about-hero {
+        padding: 0 2rem 2rem 2rem;
+        max-width: unset;
+        width: 763px;
+        border-radius: 15px;
+        margin: 9rem 0 9rem 10vw;
+
+        img {
+            display: none;
+        }
+    }
+
+    .about-bg {
+        margin: 9rem 0 9rem 0;
+
+        .about-wide-flex {
+            flex-direction: row;
+            align-items: center;
+            max-width: 1254px;
+            gap: 1rem;
+            padding: 4rem 0;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .about-flex {
+            .about-btn {
+                width: 316px;
+            }
+        }
+
+    }
+
 }

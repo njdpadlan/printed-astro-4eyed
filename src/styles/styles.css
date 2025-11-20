@@ -551,6 +551,32 @@ footer p {
     align-items: center;
     gap: 20px;
   }
+  .about-hero {
+    padding: 0 2rem 2rem 2rem;
+    max-width: unset;
+    width: 763px;
+    border-radius: 15px;
+    margin: 9rem 0 9rem 10vw;
+  }
+  .about-hero img {
+    display: none;
+  }
+  .about-bg {
+    margin: 9rem 0 9rem 0;
+  }
+  .about-bg .about-wide-flex {
+    flex-direction: row;
+    align-items: center;
+    max-width: 1254px;
+    gap: 1rem;
+    padding: 4rem 0;
+  }
+  .about-bg .about-wide-flex img {
+    width: 100%;
+  }
+  .about-bg .about-flex .about-btn {
+    width: 316px;
+  }
 }
 /* Styles for both contact us and request a qoute page here */
 .contact-info-card {
@@ -567,42 +593,26 @@ footer p {
   left: -20px;
   max-width: 793px;
 }
-
-h1 {
-  padding-left: 1rem;
-}
-
-h2 {
-  font-family: "assistant";
-  font-size: 22px;
-  padding: 1rem 0 0 1rem;
+.form-h1 h1 {
+  padding: 1rem;
 }
 
 .form-svg {
-  width: 30px;
-  height: 30px;
-  margin: 1rem 0 1rem 0;
+  width: 60px;
+  height: 63px;
+  margin-bottom: 0.5rem;
 }
 
 .contact-row {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-}
-
-.contact-info-card p,
-.contact-row {
-  padding-left: 1rem;
-  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .contact-card {
   background-color: #FFFFFF;
   border-radius: 15px;
-}
-
-.form-p {
-  margin-bottom: 1rem;
 }
 
 .form-card {
@@ -619,12 +629,10 @@ h2 {
   width: 100%;
   height: 55px;
   margin-bottom: 1rem;
-  border-radius: 4px;
 }
 
 label {
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 input::-moz-placeholder, textarea::-moz-placeholder {
@@ -632,7 +640,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   font-weight: 400;
   font-size: 16px;
   color: #939393;
-  padding: 0.5rem;
 }
 
 input::placeholder,
@@ -642,13 +649,11 @@ option {
   font-weight: 400;
   font-size: 16px;
   color: #939393;
-  padding: 0.5rem;
 }
 
 .message-box {
   height: 256px;
   width: 100%;
-  border-radius: 4px;
 }
 
 .product-type-quantity {
@@ -657,21 +662,6 @@ option {
 }
 .product-type-quantity div {
   flex: 1;
-}
-
-.file-upload input[type=file] {
-  border-radius: none;
-}
-
-.file-upload {
-  display: inline-block;
-  width: 100%;
-  background: #FFFFFF;
-  color: #124D80;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 18px;
-  border: 1px solid #ccc;
 }
 
 .submit-btn {
@@ -693,72 +683,21 @@ option {
   background-color: #FFEDAD;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .hero-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    align-items: start;
-  }
-  .h1-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
+    align-items: start;
   }
   .form-h1 {
     grid-column: 1/span 12;
-    left: 0;
-    border-radius: 0 15px 15px 0;
-  }
-  .form-h1 h1 {
-    grid-column: 3/span 6;
-    padding-left: 0;
-  }
-  .contact-card {
-    grid-column: 3/span 12;
-    padding: 2rem 1rem 1rem 1rem;
-    border-radius: 0 0 15px 15px;
-    margin-top: -1rem;
-  }
-  .forms-page-wrapper {
-    margin-bottom: 144px;
-    gap: 1rem;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: start;
-  }
-  .forms-page-wrapper > :first-child {
-    grid-column: 1/span 5;
-  }
-  .background-form {
-    background-color: #124D80;
-    margin-top: 2rem;
-  }
-  .form-card {
-    grid-column: 7/span 6;
-    margin-top: 72px;
-    box-shadow: none;
-  }
-}
-@media (min-width: 1200px) {
-  .hero-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: start;
-  }
-  .h1-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1rem;
-  }
-  .form-h1 {
-    grid-column: 1/span 12;
-    left: 0;
   }
   .form-h1 h1 {
     grid-column: 6/span 6;
   }
   .contact-card {
-    grid-column: 6/span 12;
+    grid-column: 6/span 6;
   }
   .forms-page-wrapper {
     margin-bottom: 144px;
@@ -766,12 +705,14 @@ option {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: start;
+    padding: 20px;
   }
   .forms-page-wrapper > :first-child {
     grid-column: 1/span 5;
   }
   .form-card {
-    grid-column: 7/span 4;
+    grid-column: 7/span 3;
+    margin-top: 144px;
   }
 }
 .featured-products-hero {
