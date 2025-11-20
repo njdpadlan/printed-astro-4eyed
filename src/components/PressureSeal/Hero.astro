@@ -1,5 +1,5 @@
 ---
-const {pressuresealHeader, pressuresealDesc, pressuresealImage, pressuresealAltText} = Astro.props;
+const {pressuresealHeader, pressuresealDesc, pressuresealImageMobile, pressuresealAltTextMobile, pressuresealImageDesktop} = Astro.props;
 import "../../styles/styles.scss";
 ---
 
@@ -9,6 +9,10 @@ import "../../styles/styles.scss";
         <p>{pressuresealDesc}</p>
     </div>
     <div class="product-hero-img">
-        <img src={pressuresealImage} alt={pressuresealAltText}>
+        <!-- <img src={pressuresealImage} alt={pressuresealAltText}> -->
+        <picture>
+            <source  media="(min-width: 1400px)" srcset={pressuresealImageDesktop}>
+            <img class="pressureseal-hero-img" src={pressuresealImageMobile} alt={pressuresealAltTextMobile}>
+        </picture>
     </div>
 </div>

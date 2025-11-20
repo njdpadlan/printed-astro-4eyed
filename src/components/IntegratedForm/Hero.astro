@@ -1,5 +1,5 @@
 ---
-const {integratedformlabelHeader, integratedformlabelDesc, integratedformlabelImage, integratedformlabelAltText} = Astro.props;
+const {integratedformlabelHeader, integratedformlabelDesc, integratedformlabelImageMobile, integratedformlabelAltTextMobile, integratedformlabelImageDesktop} = Astro.props;
 import "../../styles/styles.scss";
 ---
 
@@ -9,6 +9,10 @@ import "../../styles/styles.scss";
         <p>{integratedformlabelDesc}</p>
     </div>
     <div class="product-hero-img">
-        <img src={integratedformlabelImage} alt={integratedformlabelAltText}>
+        <!-- <img src={integratedformlabelImage} alt={integratedformlabelAltText}> -->
+         <picture>
+            <source  media="(min-width: 1400px)" srcset={integratedformlabelImageDesktop}>
+            <img class="integratedform-hero-img" src={integratedformlabelImageMobile} alt={integratedformlabelAltTextMobile}>
+        </picture>
     </div>
 </div>

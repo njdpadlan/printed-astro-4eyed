@@ -26,12 +26,16 @@ const heroData = pageData.find(pd => pd.__component === "pressuresealhero.pressu
 const {pressuresealHeader, pressuresealDesc} = heroData;
 
 
-const { pressuresealImage: {
-	url: pressuresealImage
+const { pressuresealImageMobile: {
+	url: pressuresealImageMobile
 }} = heroData;
 
-const { pressuresealImage: {
-	alternativeText: pressuresealAltText
+const { pressuresealImageDesktop: {
+	url: pressuresealImageDesktop
+}} = heroData;
+
+const { pressuresealImageMobile: {
+	alternativeText: pressuresealAltTextMobile
 }} = heroData;
 
 //fetch pressuresealWhatIs components
@@ -93,7 +97,7 @@ const { securefoldImage: {
 ---
 
 <Layout>
-    <Hero {pressuresealHeader} {pressuresealDesc} {pressuresealImage} {pressuresealAltText} />
+    <Hero {pressuresealHeader} {pressuresealDesc} {pressuresealImageMobile} {pressuresealAltTextMobile} {pressuresealImageDesktop} />
     <WhatIs {pressuresealWhatIsTitle} {pressuresealWhatIsDesc} {sealedbypressureText} {pressuresealImage1} {pressuresealImage2} {pressuresealImage3}
     {pressuresealAltText1} {pressuresealAltText2} {pressuresealAltText3}/>
     <SecureFold {idealforText} {payroll} {taxforms} {statements} {utilitybills} {directmail} {securefoldBtn} {securefoldTitle} {securefoldImage} {securefoldAltText}/>
