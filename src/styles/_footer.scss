@@ -5,6 +5,10 @@ footer {
   background-color: $primary-blue;
   padding: 32px 0 1rem 0;
 
+  img {
+    max-width: 316px;
+  }
+
   .footer-navigation {
     display: flex;
     justify-content: space-between;
