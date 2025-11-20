@@ -31,6 +31,14 @@
     border-radius: 15px;
 }
 
+@mixin products-hero-card-desktop ($bg-colour) {
+    background-color: $bg-colour;
+    padding: 0 1rem 1rem 1rem;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    // remove right border edges
+    border-radius: 15px 0 0 15px;
+}
+
 @mixin yellow-header-products {
     background-color: $secondary-yellow ;
     padding: 1rem 1rem 1rem 2rem;
@@ -40,5 +48,17 @@
     left: -20px;
     top: 25px;
     max-width: 793px;
+    color: $tertiary-dark-blue;
+}
+
+@mixin yellow-header-products-desktop {
+    background-color: $secondary-yellow ;
+    padding: 1rem 1rem 1rem 2rem;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    top: 25px;
+    left: -20px;
+    max-width: 1000px;
     color: $tertiary-dark-blue;
 }
