@@ -28,8 +28,11 @@ const {FullName, Email, Phone, Message, sendmessageBtn} = contactusFormData;
 ---
 
 <Layout>
+   <div class="background-form">
     <div class="forms-page-wrapper">
-      <Hero {contactusHeader} {contactusText} {callusTitle} {callusText} {emailTitle} {emailText} />
-      <ContactUsForm {FullName} {Email} {Phone} {Message} {sendmessageBtn} />
+     
+        <Hero {contactusHeader} {contactusText} {callusTitle} {callusText} {emailTitle} {emailText} />
+        <ContactUsForm {FullName} {Email} {Phone} {Message} {sendmessageBtn} />
+      </div>
     </div>
 </Layout>

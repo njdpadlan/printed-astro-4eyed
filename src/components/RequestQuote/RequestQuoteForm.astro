@@ -14,6 +14,10 @@ const {
 
 <div class="form-card">
     <!-- Add https://formsubmit.co/email-here later in the action -->
+
+    <div class="form-p">
+        <p>Input fields that are marked with * are required. </p>
+     </div>
     <form
         action="#"
         method="post"
@@ -23,7 +27,7 @@ const {
     <!-- Template type -->
     <input type="hidden" name="_template" value="table">
         <div>
-            <label for={FullName}>{FullName}</label>
+            <label for={FullName}>{FullName} *</label>
             <input
                 id={FullName}
                 type="text"
@@ -33,7 +37,7 @@ const {
             <p id="name_errormsg"></p>
         </div>
         <div>
-            <label for="phone">{Phone}</label>
+            <label for="phone">{Phone} *</label>
             <input
                 id="phone"
                 type="tel"
@@ -63,7 +67,7 @@ const {
         <div class="product-type-quantity">
             
             <div>
-                <label for="product-type">{ProductType}</label>
+                <label for="product-type">{ProductType} *</label>
                 <select name="_subject" id="product-type">
                     <option value="">Choose a product</option>
                     <option value="Linerless Label">Linerless Label</option>
@@ -78,7 +82,7 @@ const {
                 <p id="subject_errormsg"></p>
             </div>
             <div>
-                <label for="quantity">{Quantity}</label>
+                <label for="quantity">{Quantity} *</label>
                 <select name="quantity" id="quantity">
                     <option value="">Select Quantity</option>
                     <option value="10">10</option>
@@ -90,22 +94,23 @@ const {
             </div>
         </div>
         <div>
-            <label for={FileUpload}>{FileUpload}</label>
+            <label class="label-upload" for={FileUpload}>{FileUpload}</label>
             <input
                 id={FileUpload}
+                class="file-upload"
                 type="file"
                 name="attachment"
                 placeholder="Upload your file here."
             />
         </div>
         <div>
-            <label for={AdditionalDetails}>{AdditionalDetails}</label>
+            <label for={AdditionalDetails}>{AdditionalDetails} *</label>
             <textarea
                 id={AdditionalDetails}
                 name="message"
                 class="message-box"
                 placeholder="Enter additional details here.
-Examples include sizes, materials, colours, specifications, questions, and details from file uploads."></textarea>
+                Examples include sizes, materials, colours, specifications, questions, and details from file uploads."></textarea>
             <p id="message_errormsg"></p>
         </div>
         <input type="submit" value={requestquoteBtn} class="submit-btn" />
