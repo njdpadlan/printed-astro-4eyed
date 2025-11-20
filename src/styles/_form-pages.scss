@@ -14,28 +14,40 @@
     z-index: 1;
     left: -20px;
     max-width: 793px;
+}
+h1{
+    padding-left: 1rem;
+}
+h2{
+    font-family: 'assistant';
+    font-size: 22px;
+    padding: 1rem 0 0 1rem;
+    
 
-   
 }
 .form-svg{
-    width: 60px;
-    height: 63px;
-    margin-bottom: 0.5rem;
+    width: 30px;
+    height: 30px;
+    margin: 1rem 0 1rem 0;
 }
 .contact-row{
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.35rem;
 
 }
 .contact-info-card p ,
 .contact-row{
     padding-left: 1rem;
+    flex-wrap: wrap;
 }
 .contact-card{
     background-color: $white;
     border-radius: 15px;
 
+}
+.form-p{
+    margin-bottom: 1rem;
 }
 
 .form-card{
@@ -46,7 +58,7 @@
     border-radius: 15px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 1rem;
-
+  
     input,
     select{
         width: 100%;
@@ -56,7 +68,6 @@
 
     }
 }
-
 
 label{
     
@@ -88,6 +99,20 @@ option{
     }   
     
 }
+
+.file-upload input[type="file"]{
+     border-radius: none;
+}
+.file-upload{
+    display: inline-block;
+  width: 100%;
+  background: $white;
+  color: $tertiary-dark-blue;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+}
 .submit-btn {
   @include btn ($white, $tertiary-dark-blue, #FFEDAD);
   display: inline-block;
@@ -96,8 +121,7 @@ option{
 }
 
 
-@media (min-width: 750px){
-
+@media (min-width: 800px){
 
    
     .hero-grid{
@@ -116,10 +140,10 @@ option{
         left: 0;
         border-radius: 0 15px 15px 0;
         
-        
     }
     .form-h1 h1{
         grid-column: 3/ span 6;
+        padding-left: 0;
         
     }
     .contact-card{
@@ -128,8 +152,6 @@ option{
         border-radius: 0 0 15px 15px;
         margin-top: -1rem;
     }
-   
-   
 
     .forms-page-wrapper{
 
@@ -152,14 +174,12 @@ option{
         
     }
     
-
     .form-card{
         grid-column: 7/ span 6;
         margin-top: 72px;
         box-shadow: none;
     }
    
-
 
 }
 
@@ -181,9 +201,7 @@ option{
     .form-h1{
         grid-column: 1 / span 12;
         left: 0;
-        border-radius: 0 15px 15px 0;
-        
-        
+    
     }
     .form-h1 h1{
         grid-column: 6/ span 6;
@@ -191,15 +209,10 @@ option{
     }
     .contact-card{
         grid-column: 6 / span 12;
-        padding: 2rem 1rem 1rem 1rem;
-        border-radius: 0 0 15px 15px;
-        margin-top: -1rem;
+    
     }
    
-   
-
     .forms-page-wrapper{
-
           margin-bottom: 144px;
           gap: 1rem;
           display:grid;
@@ -213,17 +226,8 @@ option{
 
     
     }
-    .background-form{
-        background-color: $tertiary-dark-blue;
-        margin-top: 2rem;
-        
-    }
-    
-
     .form-card{
         grid-column: 7/ span 4;
-        margin-top: 72px;
-        box-shadow: none;
     }
 
 }

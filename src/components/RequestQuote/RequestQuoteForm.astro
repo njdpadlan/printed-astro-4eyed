@@ -15,7 +15,7 @@ const {
 <div class="form-card">
     <!-- Add https://formsubmit.co/email-here later in the action -->
 
-    <div>
+    <div class="form-p">
         <p>Input fields that are marked with * are required. </p>
      </div>
     <form
@@ -94,9 +94,10 @@ const {
             </div>
         </div>
         <div>
-            <label for={FileUpload}>{FileUpload}</label>
+            <label class="label-upload" for={FileUpload}>{FileUpload}</label>
             <input
                 id={FileUpload}
+                class="file-upload"
                 type="file"
                 name="attachment"
                 placeholder="Upload your file here."
@@ -109,7 +110,7 @@ const {
                 name="message"
                 class="message-box"
                 placeholder="Enter additional details here.
-Examples include sizes, materials, colours, specifications, questions, and details from file uploads."></textarea>
+                Examples include sizes, materials, colours, specifications, questions, and details from file uploads."></textarea>
             <p id="message_errormsg"></p>
         </div>
         <input type="submit" value={requestquoteBtn} class="submit-btn" />
