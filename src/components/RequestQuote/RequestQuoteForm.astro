@@ -83,13 +83,20 @@ const {
             </div>
             <div>
                 <label for="quantity">{Quantity} *</label>
-                <select name="quantity" id="quantity">
+                <!-- <select name="quantity" id="quantity"> 
                     <option value="">Select Quantity</option>
                     <option value="10">10</option>
                     <option value="50">50</option>
                     <option value="100">100</option>
                     <option value="1000">1000</option>
                 </select>
+                -->
+                   <input
+                id={Quantity}
+                type="number"
+                name="quantity"
+                placeholder="Enter your quantity here."
+                />
                 <p id="quantity_errormsg"></p>
             </div>
         </div>
@@ -102,6 +109,7 @@ const {
                 name="attachment"
                 placeholder="Upload your file here."
             />
+            <p class="upload-p">Upload a file upto 5MB.</p>
         </div>
         <div>
             <label for={AdditionalDetails}>{AdditionalDetails} *</label>
@@ -109,8 +117,7 @@ const {
                 id={AdditionalDetails}
                 name="message"
                 class="message-box"
-                placeholder="Enter additional details here.
-                Examples include sizes, materials, colours, specifications, questions, and details from file uploads."></textarea>
+                placeholder="Enter additional details here. Examples include sizes, materials, colours, specifications, questions, and details from file uploads."></textarea>
             <p id="message_errormsg"></p>
         </div>
         <input type="submit" value={requestquoteBtn} class="submit-btn" />
