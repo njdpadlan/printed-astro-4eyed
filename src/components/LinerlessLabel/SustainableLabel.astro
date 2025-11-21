@@ -4,8 +4,8 @@ import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
-    <div class="featured-products-header">
-        <h2>{sustainableTitle}</h2>
+    <div class="yellow-header">
+         <h2>{sustainableTitle}</h2>
     </div>
     <div class="featured-products-infolist">
         <p>{keyadvantagesTitle}</p>
@@ -15,9 +15,9 @@ import "../../styles/styles.scss";
             <li>{custombrandingText}</li>
             <li>{excellentforText}</li>
         </ul>
+        <a href="/request-quote" class="featured-products-btn linerless-btn">{sustainableBtn}</a>
         <div>
-            <img src={sustainableImage} alt={sustainableAltText}>
-            <a href="/request-quote" class="featured-products-btn">{sustainableBtn}</a>
+            <img class="linerless-img" src={sustainableImage} alt={sustainableAltText}>
         </div>
     </div>
 </div>

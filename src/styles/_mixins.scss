@@ -54,11 +54,12 @@
 @mixin yellow-header-products-desktop {
     background-color: $secondary-yellow ;
     padding: 1rem 1rem 1rem 2rem;
-    border-radius: 15px;
+    border-radius: 0 15px 15px 0;
     position: relative;
     z-index: 1;
     top: 25px;
-    left: -20px;
-    max-width: 1000px;
+    left: 0;
     color: $tertiary-dark-blue;
+    max-width: 1300px;
+    padding-left: 22rem;
 }
