@@ -1,0 +1,47 @@
+@use "colours" as *;
+@use "mixins" as *;
+
+
+.container-four{
+    background-color: $tertiary-dark-blue;
+    justify-self: center;
+    padding: 2rem;
+    margin:96px 0 96px 0;
+    border-radius: 15px;
+
+}
+.container-four h1, .container-four p{
+    color: $white;
+}
+.container-four h1{
+    font-size: 122px;
+}
+.container-four p{
+    font-weight: bold
+}
+
+
+.btn-four {
+  @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
+  display: inline-block;
+  margin-top: 32px;
+  width: 100%;
+}
+
+@media (min-width:1000px){
+    .container-four h1{
+    font-size: 250px;
+    justify-self: center;
+}
+
+.container-four{
+    padding: 2rem 7rem;
+    margin:144px 0 144px 0;
+}
+
+.container-four p{
+    justify-self: center;
+    font-size: 44px;
+
+}
+}
