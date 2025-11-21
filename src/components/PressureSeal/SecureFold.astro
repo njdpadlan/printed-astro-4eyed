@@ -4,16 +4,20 @@ import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
-    <h2 class="featured-products-header">{securefoldTitle}</h2>
-    <div class="featured-products-infolist">
-        <p>{idealforText}</p>
-        <ul>
-            <li>{payroll}</li>
-            <li>{taxforms}</li>
-            <li>{statements}</li>
-            <li>{utilitybills}</li>
-            <li>{directmail}</li>
-        </ul>
+    <div>
+        <h2 class="featured-products-header">{securefoldTitle}</h2>
+    </div>
+    <div class="featured-products-infolist featured-products-flex">
+        <div>
+            <p>{idealforText}</p>
+            <ul>
+                <li>{payroll}</li>
+                <li>{taxforms}</li>
+                <li>{statements}</li>
+                <li>{utilitybills}</li>
+                <li>{directmail}</li>
+            </ul>
+        </div>
         <div>
             <img src={securefoldImage} alt={securefoldAltText}>
             <a href="/request-quote" class="featured-products-btn">{securefoldBtn}</a>
