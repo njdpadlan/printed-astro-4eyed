@@ -1,0 +1,32 @@
+@use "colours" as *;
+@use "mixins" as *;
+
+// mobile style for products page
+.products-hero {
+    @include white-card;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+
+    h1 {
+        color: $primary-blue;
+        margin-top: 1rem
+    }
+
+    img {
+        display: block;
+        width: calc(100% + 2rem);
+        max-width: none;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        min-height: 180px;
+    }
+
+}
+
+
+@media(min-width:1000px){
+
+}

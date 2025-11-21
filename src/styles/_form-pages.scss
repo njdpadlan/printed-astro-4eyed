@@ -92,7 +92,7 @@ option{
 
 
 .file-upload{
-    display: inline-block;
+ display: inline-block;
   width: 100%;
   background: $white;
   color: $tertiary-dark-blue;
@@ -107,10 +107,10 @@ option{
 .submit-btn {
   @include btn ($white, $tertiary-dark-blue, #FFEDAD);
   display: inline-block;
-  margin-top: 32px;
+  margin-top: 1rem;
   width: 100%;
+  padding: 0;
 }
-
 
 @media (min-width: 800px){
 
