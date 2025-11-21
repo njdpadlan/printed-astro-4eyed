@@ -32,17 +32,15 @@
     display: flex;
     align-items: center;
     gap: 0.35rem;
-
 }
-.contact-info-card p ,
-.contact-row{
+.contact-row p{
     padding-left: 1rem;
-    flex-wrap: wrap;
 }
 .contact-card{
     background-color: $white;
     border-radius: 15px;
-
+    padding: 2rem 1rem 1rem 1rem;
+    
 }
 .form-p{
     margin-bottom: 1rem;
@@ -63,7 +61,6 @@
         height: 55px;
         margin-bottom: 1rem;
         border-radius: 4px;
-
     }
 }
 
@@ -88,19 +85,12 @@ option{
     border-radius: 4px;
    
 }
-.product-type-quantity{
-    display: flex;
-    gap: 1rem;
-
-    div{
-        flex: 1;
-    }   
-    
+.label-upload input{
+    display: none;
+    border: none;
 }
 
-.file-upload input[type="file"]{
-     border-radius: none;
-}
+
 .file-upload{
     display: inline-block;
   width: 100%;
@@ -110,6 +100,9 @@ option{
   border-radius: 8px;
   font-size: 18px;
   border: 1px solid #ccc;
+}
+.upload-p{
+    margin: -1rem 0 0.5rem 0;
 }
 .submit-btn {
   @include btn ($white, $tertiary-dark-blue, #FFEDAD);
@@ -121,7 +114,6 @@ option{
 
 @media (min-width: 800px){
 
-   
     .hero-grid{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -146,7 +138,6 @@ option{
     }
     .contact-card{
         grid-column: 3/ span 12;
-        padding: 2rem 1rem 1rem 1rem;
         border-radius: 0 0 15px 15px;
         margin-top: -1rem;
     }
@@ -158,6 +149,7 @@ option{
           display:grid;
           grid-template-columns: repeat(12, 1fr);
           align-items: start;
+          margin-top: 80px;
           
       }
     
@@ -177,29 +169,24 @@ option{
         margin-top: 72px;
         box-shadow: none;
     }
-   
+
+    .product-type-quantity{
+    display: flex;
+    gap: 1rem;
+
+    div{
+        flex: 1;
+    }   
+    
+}  
 
 }
 
 //desktop layout
 @media (min-width: 1200px) {
-   
-
-    .hero-grid{
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        align-items: start;
-    }
-    .h1-grid{
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1rem;
-    }
-
     .form-h1{
         grid-column: 1 / span 12;
         left: 0;
-    
     }
     .form-h1 h1{
         grid-column: 6/ span 6;
@@ -209,23 +196,11 @@ option{
         grid-column: 6 / span 12;
     
     }
-   
-    .forms-page-wrapper{
-          margin-bottom: 144px;
-          gap: 1rem;
-          display:grid;
-          grid-template-columns: repeat(12, 1fr);
-          align-items: start;
-          
-      }
-    
     .forms-page-wrapper > :first-child{
         grid-column: 1 / span 5;
-
     
     }
     .form-card{
         grid-column: 7/ span 4;
     }
-
 }

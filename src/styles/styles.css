@@ -146,7 +146,7 @@ a {
 
 header {
   font-family: "Assistant", sans-serif;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100%;
   box-shadow: 0 4px 8px 0 rgba(143, 143, 143, 0.25);
@@ -217,10 +217,6 @@ header ul {
   list-style-type: none;
 }
 
-main {
-  margin-top: 130px;
-}
-
 @media (min-width: 320px) {
   .request {
     display: none;
@@ -244,7 +240,6 @@ main {
   }
   header .nav-container img {
     width: 220px;
-    padding: 20px 0 20px 0;
   }
   header .nav-container .request {
     font-weight: bold;
@@ -297,6 +292,9 @@ main {
 footer {
   background-color: #0F72DA;
   padding: 32px 0 1rem 0;
+}
+footer img {
+  max-width: 316px;
 }
 footer .footer-navigation {
   display: flex;
@@ -660,15 +658,14 @@ footer p {
   gap: 0.35rem;
 }
 
-.contact-info-card p,
-.contact-row {
+.contact-row p {
   padding-left: 1rem;
-  flex-wrap: wrap;
 }
 
 .contact-card {
   background-color: #FFFFFF;
   border-radius: 15px;
+  padding: 2rem 1rem 1rem 1rem;
 }
 
 .form-p {
@@ -721,16 +718,9 @@ option {
   border-radius: 4px;
 }
 
-.product-type-quantity {
-  display: flex;
-  gap: 1rem;
-}
-.product-type-quantity div {
-  flex: 1;
-}
-
-.file-upload input[type=file] {
-  border-radius: none;
+.label-upload input {
+  display: none;
+  border: none;
 }
 
 .file-upload {
@@ -742,6 +732,10 @@ option {
   border-radius: 8px;
   font-size: 18px;
   border: 1px solid #ccc;
+}
+
+.upload-p {
+  margin: -1rem 0 0.5rem 0;
 }
 
 .submit-btn {
@@ -785,7 +779,6 @@ option {
   }
   .contact-card {
     grid-column: 3/span 12;
-    padding: 2rem 1rem 1rem 1rem;
     border-radius: 0 0 15px 15px;
     margin-top: -1rem;
   }
@@ -795,6 +788,7 @@ option {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: start;
+    margin-top: 80px;
   }
   .forms-page-wrapper > :first-child {
     grid-column: 1/span 5;
@@ -808,18 +802,15 @@ option {
     margin-top: 72px;
     box-shadow: none;
   }
-}
-@media (min-width: 1200px) {
-  .hero-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: start;
-  }
-  .h1-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+  .product-type-quantity {
+    display: flex;
     gap: 1rem;
   }
+  .product-type-quantity div {
+    flex: 1;
+  }
+}
+@media (min-width: 1200px) {
   .form-h1 {
     grid-column: 1/span 12;
     left: 0;
@@ -829,13 +820,6 @@ option {
   }
   .contact-card {
     grid-column: 6/span 12;
-  }
-  .forms-page-wrapper {
-    margin-bottom: 144px;
-    gap: 1rem;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items: start;
   }
   .forms-page-wrapper > :first-child {
     grid-column: 1/span 5;
