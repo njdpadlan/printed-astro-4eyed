@@ -4,8 +4,8 @@ import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
-    <div>
-        <h2 class="featured-products-header">{securefoldTitle}</h2>
+    <div class="yellow-header">
+         <h2>{securefoldTitle}</h2>
     </div>
     <div class="featured-products-infolist featured-products-flex">
         <div>
@@ -17,10 +17,10 @@ import "../../styles/styles.scss";
                 <li>{utilitybills}</li>
                 <li>{directmail}</li>
             </ul>
+            <a href="/request-quote" class="featured-products-btn">{securefoldBtn}</a>
         </div>
         <div>
             <img src={securefoldImage} alt={securefoldAltText}>
-            <a href="/request-quote" class="featured-products-btn">{securefoldBtn}</a>
         </div>
     </div>
 </div>

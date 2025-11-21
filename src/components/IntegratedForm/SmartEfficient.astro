@@ -4,7 +4,9 @@ import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
-    <h2 class="featured-products-header">{smartefficientformTitle}</h2>
+    <div class="yellow-header">
+        <h2>{smartefficientformTitle}</h2>
+    </div>
     <div class="featured-products-infolist featured-products-flex">
         <div>
             <p>{commonapplicationsText}</p>
@@ -16,10 +18,10 @@ import "../../styles/styles.scss";
                 <li>{insurance}</li>
                 <li>{logistics}</li>
             </ul>
+            <a href="/request-quote" class="featured-products-btn">{smartefficientBtn}</a>
         </div>
         <div>
             <img src={smartefficientImage} alt={smartefficientAltText}>
-            <a href="/request-quote" class="featured-products-btn">{smartefficientBtn}</a>
         </div>
     </div>
 </div>
