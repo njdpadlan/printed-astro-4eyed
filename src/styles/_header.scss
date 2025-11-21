@@ -136,19 +136,21 @@ header {
 
             ul {
                 display: flex;
-                gap: 1rem;
+                flex-flow: nowrap;
 
                 li {
                     border-bottom: none;
+    
 
                     a {
                         display: inline;
+                        white-space: nowrap;
                         padding: 1rem 1rem;
                     }
 
                     a:hover {
-                        padding: 1rem 1rem 51px 1rem;
-                        border-radius: 12px 12px 0 0;
+                        padding: 1rem;
+                        border-radius: 12px;
                         box-shadow: 4px 0 3px 0 rgba(74, 68, 68, 0.50);
                     }
                 }
@@ -158,9 +160,5 @@ header {
         .show-nav {
             position: unset;
         }
-    }
-
-    main {
-        margin-top: unset;
     }
 }

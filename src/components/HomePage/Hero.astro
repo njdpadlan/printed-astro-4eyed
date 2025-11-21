@@ -5,28 +5,33 @@ const {heroHeader, heroBanner, heroText, heroAltText,
     promoProductsHeader, promoProductsText, promoProductsBtn
  } = Astro.props;
 
+import "../../styles/styles.scss";
 ---
 
-<div>
+<section class="hero-section container">
     <h1>{heroHeader}</h1>
-    <video width="320" height="240" autoplay muted loop>
-        <source src={heroBanner} type="video/mp4" title={heroAltText}>
-    </video>
+    <div class="video-container">
+        <video playsinline autoplay muted loop>
+            <source src={heroBanner} type="video/mp4" title={heroAltText}>
+        </video>
+    </div>
     <p>{heroText}</p>
     <!-- cards -->
-    <div>
-        <h2>{ourProductsHeader}</h2>
-        <p>{ourProductsText}</p>
-        <a href="#">{ourProductsBtn}</a>
+    <div class="card-flex">
+        <div class="hero-card">
+            <h2>{ourProductsHeader}</h2>
+            <p>{ourProductsText}</p>
+            <a href="#">{ourProductsBtn}</a>
+        </div>
+        <div class="hero-card">
+            <h2>{onlineServicesHeader}</h2>
+            <p>{onlineServicesText}</p>
+            <a href="#">{onlineServicesBtn}</a>
+        </div>
+        <div class="hero-card">
+            <h2>{promoProductsHeader}</h2>
+            <p>{promoProductsText}</p>
+            <a href="#">{promoProductsBtn}</a>
+        </div>
     </div>
-    <div>
-        <h2>{onlineServicesHeader}</h2>
-        <p>{onlineServicesText}</p>
-        <a href="#">{onlineServicesBtn}</a>
-    </div>
-    <div>
-        <h2>{promoProductsHeader}</h2>
-        <p>{promoProductsText}</p>
-        <a href="#">{promoProductsBtn}</a>
-    </div>
-</div>
+</section>
