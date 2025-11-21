@@ -5,16 +5,18 @@ import "../../styles/styles.scss";
 
 <div class="featured-products-additional-info">
     <h2 class="featured-products-header">{smartefficientformTitle}</h2>
-    <div class="featured-products-infolist">
-        <p>{commonapplicationsText}</p>
-        <ul>
-            <li>{ecommerce}</li>
-            <li>{distribution}</li>
-            <li>{retail}</li>
-            <li>{healthcare}</li>
-            <li>{insurance}</li>
-            <li>{logistics}</li>
-        </ul>
+    <div class="featured-products-infolist featured-products-flex">
+        <div>
+            <p>{commonapplicationsText}</p>
+            <ul>
+                <li>{ecommerce}</li>
+                <li>{distribution}</li>
+                <li>{retail}</li>
+                <li>{healthcare}</li>
+                <li>{insurance}</li>
+                <li>{logistics}</li>
+            </ul>
+        </div>
         <div>
             <img src={smartefficientImage} alt={smartefficientAltText}>
             <a href="/request-quote" class="featured-products-btn">{smartefficientBtn}</a>
