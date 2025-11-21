@@ -5,13 +5,16 @@ const {heroHeader, heroBanner, heroText, heroAltText,
     promoProductsHeader, promoProductsText, promoProductsBtn
  } = Astro.props;
 
+import "../../styles/styles.scss";
 ---
 
-<div class="hero-section">
+<section class="hero-section container">
     <h1>{heroHeader}</h1>
-    <video width="320" height="240" playsinline autoplay muted loop>
-        <source src={heroBanner} type="video/mp4" title={heroAltText}>
-    </video>
+    <div class="video-container">
+        <video playsinline autoplay muted loop>
+            <source src={heroBanner} type="video/mp4" title={heroAltText}>
+        </video>
+    </div>
     <p>{heroText}</p>
     <!-- cards -->
     <div class="card-flex">
@@ -31,4 +34,4 @@ const {heroHeader, heroBanner, heroText, heroAltText,
             <a href="#">{promoProductsBtn}</a>
         </div>
     </div>
-</div>
+</section>
