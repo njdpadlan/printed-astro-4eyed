@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {
     featuredProductsHeader, 
     pressureSealTitle, 
@@ -21,17 +22,26 @@ const {
     <h2>{featuredProductsHeader}</h2>
     <section>
         <h3>{pressureSealTitle}</h3>
-        <img src={pressureSealImage} alt={pressureSealAltText}>
+        <Image 
+            src={pressureSealImage} 
+            alt={pressureSealAltText}
+            inferSize={true}/>
         <a href="/pressuresealenvelope">{pressureSealBtn}</a>
     </section>
     <section>
         <h3>{linerlessLabelTitle}</h3>
-        <img src={linerlessLabelImage} alt={linerlessLabelAltText}>
+        <Image 
+            src={linerlessLabelImage} 
+            alt={linerlessLabelAltText}
+            inferSize={true}/>
         <a href="/linerlesslabel">{linerlessLabelBtn}</a>
     </section>
     <section>
         <h3>{integratedFormText}</h3>
-        <img src={integratedFormImage} alt={integratedFormAltText}>
+        <Image 
+            src={integratedFormImage} 
+            alt={integratedFormAltText}
+            inferSize={true}/>
         <a href="/integratedformlabel">{integratedFormBtn}</a>
     </section>
 </div>

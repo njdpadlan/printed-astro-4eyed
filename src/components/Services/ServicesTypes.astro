@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {
     servicePortalTitle, 
     servicePortalDesc, 
@@ -22,20 +23,29 @@ import "../../styles/styles.scss";
             <h2>{servicePortalTitle}</h2>
             <p>{servicePortalDesc}</p>
         </div>
-        <img src={servicePortalImage} alt={servicePortalAltText}>
+        <Image 
+            src={servicePortalImage} 
+            alt={servicePortalAltText}
+            inferSize={true}/>
     </section>
     <section>
         <div>
             <h2>{servicePoofingTitle}</h2>
             <p>{servicePoofingDesc}</p>
         </div>
-        <img src={servicePoofingImage} alt={servicePoofingAltText}>
+        <Image
+            src={servicePoofingImage}
+            alt={servicePoofingAltText}
+            inferSize={true}/>
     </section>
     <section class="warehouse">
         <div>
             <h2>{serviceWarehouseTitle}</h2>
             <p>{serviceWarehouseDesc}</p>
         </div>
-        <img src={serviceWarehouseImage} alt={serviceWarehouseAltText}>
+        <Image
+            src={serviceWarehouseImage}
+            alt={serviceWarehouseAltText}
+            inferSize={true}/>
     </section>
 </div>

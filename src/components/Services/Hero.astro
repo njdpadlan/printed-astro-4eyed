@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {serviceHeroHeader, serviceHeroDesc, serviceHeroBtn, serviceHeroImage, servicesAltText } = Astro.props;
 import "../../styles/styles.scss";
 ---
@@ -6,7 +7,10 @@ import "../../styles/styles.scss";
 <div class="service-banner">
     <div class="service-hero">
         <h1>{serviceHeroHeader}</h1>
-        <img src={serviceHeroImage} alt={servicesAltText}>
+        <Image 
+            src={serviceHeroImage} 
+            alt={servicesAltText}
+            inferSize={true}/>
         <p>{serviceHeroDesc}</p>
         <a href="/request-quote" class="service-btn">{serviceHeroBtn}</a>
     </div>
