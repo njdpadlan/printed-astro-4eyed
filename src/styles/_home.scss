@@ -109,6 +109,7 @@
     .high-quality-card {
         @include white-card;
         border-radius: 12px;
+        margin-bottom: 1rem;
 
         h2 {
             padding: 1rem 0;
@@ -117,7 +118,8 @@
 
     a {
         @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
-        margin-bottom: 1rem;
+        display: block;
+        margin-top: 1rem;
     }
 }
 
