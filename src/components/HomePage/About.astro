@@ -1,7 +1,13 @@
 ---
-const {aboutHeader, aboutImage, aboutText, requestQuoteBtn, aboutAltText, contactUsBtn } = Astro.props;
-
-
+import { Image } from "astro:assets";
+const {
+    aboutHeader,
+    aboutImage,
+    aboutText,
+    requestQuoteBtn,
+    aboutAltText,
+    contactUsBtn,
+} = Astro.props;
 ---
 
 <section class="about-section">
@@ -12,6 +18,6 @@ const {aboutHeader, aboutImage, aboutText, requestQuoteBtn, aboutAltText, contac
             <a href="/request-quote" class="about-request">{requestQuoteBtn}</a>
             <a href="/contact-us" class="about-contact">{contactUsBtn}</a>
         </div>
-        <img src={aboutImage} alt={aboutAltText}>
+        <Image src={aboutImage} alt={aboutAltText} inferSize={true} />
     </div>
 </section>

@@ -1,5 +1,5 @@
 ---
-
+import { Image } from 'astro:assets';
 const {highQualityHeader, highQualityImage, highQualityText, highQualityAltText, highQualityBtn } = Astro.props;
 ---
 
@@ -8,6 +8,6 @@ const {highQualityHeader, highQualityImage, highQualityText, highQualityAltText,
     <div class="high-quality-card">
         <h2>{highQualityHeader}</h2>
         <p>{highQualityText}</p>
+        <a href="/about-us">{highQualityBtn}</a>
     </div>
-    <a href="#">{highQualityBtn}</a>
 </section>

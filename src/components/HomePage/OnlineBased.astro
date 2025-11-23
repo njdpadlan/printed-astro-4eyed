@@ -1,9 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 const {onlineBasedHeader, onlineBasedImage, onlineBasedText, onlineBasedBtn, onlineBasedAltText} = Astro.props;
 ---
 
 <section class="online-services container">
-    <img src={onlineBasedImage} alt={onlineBasedAltText}>
+        <Image 
+        src={onlineBasedImage} 
+        alt={onlineBasedAltText}
+        inferSize={true}/>
     <div class="online-card">
         <h2>{onlineBasedHeader}</h2>
         <p>{onlineBasedText}</p>

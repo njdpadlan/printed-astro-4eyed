@@ -1,7 +1,8 @@
 ---
+import { Image } from "astro:assets";
 const {
-    featuredProductsHeader, 
-    pressureSealTitle, 
+    featuredProductsHeader,
+    pressureSealTitle,
     pressureSealImage,
     pressureSealAltText,
     pressureSealBtn,
@@ -12,7 +13,7 @@ const {
     integratedFormText,
     integratedFormImage,
     integratedFormAltText,
-    integratedFormBtn
+    integratedFormBtn,
 } = Astro.props;
 
 import "../../styles/styles.scss";
@@ -23,17 +24,29 @@ import "../../styles/styles.scss";
     <div class="products-section container">
         <section class="pressure-seal-section">
             <h3>{pressureSealTitle}</h3>
-            <img src={pressureSealImage} alt={pressureSealAltText}>
+            <Image
+                src={pressureSealImage}
+                alt={pressureSealAltText}
+                inferSize={true}
+            />
             <a href="/pressure-seal-forms">{pressureSealBtn}</a>
         </section>
         <section class="linerless-label-section">
             <h3>{linerlessLabelTitle}</h3>
-            <img src={linerlessLabelImage} alt={linerlessLabelAltText}>
+            <Image
+                src={linerlessLabelImage}
+                alt={linerlessLabelAltText}
+                inferSize={true}
+            />
             <a href="/linerless-labels">{linerlessLabelBtn}</a>
         </section>
         <section class="integrated-section">
             <h3>{integratedFormText}</h3>
-            <img src={integratedFormImage} alt={integratedFormAltText}>
+            <Image
+                src={integratedFormImage}
+                alt={integratedFormAltText}
+                inferSize={true}
+            />
             <a href="/integrated-form-labels">{integratedFormBtn}</a>
         </section>
     </div>
