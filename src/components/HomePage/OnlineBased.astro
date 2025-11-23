@@ -2,9 +2,11 @@
 const {onlineBasedHeader, onlineBasedImage, onlineBasedText, onlineBasedBtn, onlineBasedAltText} = Astro.props;
 ---
 
-<div>
-    <h2>{onlineBasedHeader}</h2>
+<div class="online-services">
     <img src={onlineBasedImage} alt={onlineBasedAltText}>
-    <p>{onlineBasedText}</p>
-    <a href="#">{onlineBasedBtn}</a>
+    <div class="online-card">
+        <h2>{onlineBasedHeader}</h2>
+        <p>{onlineBasedText}</p>
+    </div>
+    <a href="/online-services">{onlineBasedBtn}</a>
 </div>

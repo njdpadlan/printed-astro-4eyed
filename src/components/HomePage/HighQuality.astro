@@ -3,9 +3,11 @@
 const {highQualityHeader, highQualityImage, highQualityText, highQualityAltText, highQualityBtn } = Astro.props;
 ---
 
-<div>
+<div class="high-quality-section container">
     <img src={highQualityImage} alt={highQualityAltText}>
-    <h2>{highQualityHeader}</h2>
-    <p>{highQualityText}</p>
+    <div class="high-quality-card">
+        <h2>{highQualityHeader}</h2>
+        <p>{highQualityText}</p>
+    </div>
     <a href="#">{highQualityBtn}</a>
 </div>

@@ -15,23 +15,26 @@ const {
     integratedFormBtn
 } = Astro.props;
 
+import "../../styles/styles.scss";
 ---
 
-<div>
+<div class="featured-products">
     <h2>{featuredProductsHeader}</h2>
-    <section>
-        <h3>{pressureSealTitle}</h3>
-        <img src={pressureSealImage} alt={pressureSealAltText}>
-        <a href="/pressuresealenvelope">{pressureSealBtn}</a>
-    </section>
-    <section>
-        <h3>{linerlessLabelTitle}</h3>
-        <img src={linerlessLabelImage} alt={linerlessLabelAltText}>
-        <a href="/linerlesslabel">{linerlessLabelBtn}</a>
-    </section>
-    <section>
-        <h3>{integratedFormText}</h3>
-        <img src={integratedFormImage} alt={integratedFormAltText}>
-        <a href="/integratedformlabel">{integratedFormBtn}</a>
-    </section>
+    <div class="products-section container">
+        <section class="pressure-seal-section">
+            <h3>{pressureSealTitle}</h3>
+            <img src={pressureSealImage} alt={pressureSealAltText}>
+            <a href="/pressure-seal-forms">{pressureSealBtn}</a>
+        </section>
+        <section class="linerless-label-section">
+            <h3>{linerlessLabelTitle}</h3>
+            <img src={linerlessLabelImage} alt={linerlessLabelAltText}>
+            <a href="/linerless-labels">{linerlessLabelBtn}</a>
+        </section>
+        <section class="integrated-section">
+            <h3>{integratedFormText}</h3>
+            <img src={integratedFormImage} alt={integratedFormAltText}>
+            <a href="/integrated-form-labels">{integratedFormBtn}</a>
+        </section>
+    </div>
 </div>

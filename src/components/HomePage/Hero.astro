@@ -1,37 +1,47 @@
 ---
-const {heroHeader, heroBanner, heroText, heroAltText,
-    ourProductsHeader, ourProductsText, ourProductsBtn,
-    onlineServicesHeader, onlineServicesText, onlineServicesBtn,
-    promoProductsHeader, promoProductsText, promoProductsBtn
- } = Astro.props;
+const {
+    heroHeader,
+    heroBanner,
+    heroText,
+    heroAltText,
+    ourProductsHeader,
+    ourProductsText,
+    ourProductsBtn,
+    onlineServicesHeader,
+    onlineServicesText,
+    onlineServicesBtn,
+    promoProductsHeader,
+    promoProductsText,
+    promoProductsBtn,
+} = Astro.props;
 
 import "../../styles/styles.scss";
 ---
 
-<section class="hero-section container">
+<section class="hero-section">
     <h1>{heroHeader}</h1>
     <div class="video-container">
         <video playsinline autoplay muted loop>
-            <source src={heroBanner} type="video/mp4" title={heroAltText}>
+            <source src={heroBanner} type="video/mp4" title={heroAltText} />
         </video>
+        <p>{heroText}</p>
     </div>
-    <p>{heroText}</p>
     <!-- cards -->
     <div class="card-flex">
-        <div class="hero-card">
-            <h2>{ourProductsHeader}</h2>
+        <div class="products-card">
+            <h2><img src="/assets/products-icon.svg" alt="Paper with lines and folded corner icon.">{ourProductsHeader}</h2>
             <p>{ourProductsText}</p>
-            <a href="#">{ourProductsBtn}</a>
+            <a href="/products">{ourProductsBtn}</a>
         </div>
-        <div class="hero-card">
-            <h2>{onlineServicesHeader}</h2>
+        <div class="services-card">
+            <h2><img src="/assets/service-icon.svg" alt="A browser window for services icon.">{onlineServicesHeader}</h2>
             <p>{onlineServicesText}</p>
-            <a href="#">{onlineServicesBtn}</a>
+            <a href="/online-services">{onlineServicesBtn}</a>
         </div>
-        <div class="hero-card">
-            <h2>{promoProductsHeader}</h2>
+        <div class="promo-card">
+            <h2><img src="/assets/promo-icon.svg" alt="Pen icon for promotional products">{promoProductsHeader}</h2>
             <p>{promoProductsText}</p>
-            <a href="#">{promoProductsBtn}</a>
+            <a href="https://printedonline.espwebsite.com/" target="_blank">{promoProductsBtn}</a>
         </div>
     </div>
 </section>

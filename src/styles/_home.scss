@@ -1,8 +1,178 @@
 @use 'colours' as *;
 @use 'mixins' as *;
 
-// .hero-section {
-//     h1 {
+.hero-section {
+    @include white-card;
+    max-width: 700px;
+    margin: 0 auto;
 
-//     }
-// }
+    h1 {
+        color: $primary-blue;
+        padding: 1rem 0;
+    }
+
+    .video-container {
+        margin-bottom: 1rem;
+
+        video {
+            width: calc(100% + 2rem);
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+    }
+
+    .card-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        h2 {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+
+            img {
+                max-width: 35px;
+            }
+        }
+
+        .products-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: $primary-blue;
+            color: $white;
+            padding: 1rem;
+            border-radius: 12px;
+
+            p {
+                font-weight: 600;
+            }
+
+            a {
+                @include btn ($white, $primary-blue, #A0D3FF);
+            }
+        }
+
+        .services-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: $tertiary-dark-blue;
+            color: $white;
+            padding: 1rem;
+            border-radius: 12px;
+
+            p {
+                font-weight: 600;
+            }
+
+            a {
+                @include btn ($tertiary-dark-blue, $white, $primary-blue);
+                border: 2px solid $white;
+            }
+        }
+
+        .promo-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: $secondary-yellow;
+            color: $black;
+            padding: 1rem;
+            border-radius: 12px;
+
+            p {
+                font-weight: 600;
+            }
+
+            a {
+                @include btn ($secondary-yellow, $black, #FFEDAD);
+                border: 2px solid $black;
+            }
+        }
+    }
+}
+
+.high-quality-section {
+    background-color: $primary-blue;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    img {
+        border-radius: 12px;
+        margin-top: 1rem;
+    }
+
+    .high-quality-card {
+        @include white-card;
+        border-radius: 12px;
+
+        h2 {
+            padding: 1rem 0;
+        }
+    }
+
+    a {
+        @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
+        margin-bottom: 1rem;
+    }
+}
+
+.featured-products {
+    margin-top: 6rem;
+    color: $white;
+
+    h2 {
+        @include yellow-header-products;
+        padding-top: 27px;
+        padding-bottom: 27px;
+    }
+
+    .products-section {
+        background-color: $tertiary-dark-blue;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+        img {
+            border-radius: 12px;
+        }
+        
+        .pressure-seal-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 3rem;
+
+            a {
+                @include btn ($white, $tertiary-dark-blue, #A0D3FF);
+            }
+        }
+
+        .linerless-label-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            a {
+                @include btn ($white, $tertiary-dark-blue, #A0D3FF);
+            }
+        }
+
+        .integrated-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
+
+            a {
+                @include btn ($white, $tertiary-dark-blue, #A0D3FF);
+                padding: 4.5px 12px;
+            }
+        }
+    }
+}
