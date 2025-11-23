@@ -4,10 +4,12 @@ const {aboutHeader, aboutImage, aboutText, requestQuoteBtn, aboutAltText, contac
 
 ---
 
-<div>
+<section class="about-section container">
     <h2>{aboutHeader}</h2>
-    <img src={aboutImage} alt={aboutAltText}>
-    <p>{aboutText}</p>
-    <a href="#">{requestQuoteBtn}</a>
-    <a href="#">{contactUsBtn}</a>
-</div>
+    <div class="about-info">
+        <p>{aboutText}</p>
+        <a href="#">{requestQuoteBtn}</a>
+        <a href="#">{contactUsBtn}</a>
+        <img src={aboutImage} alt={aboutAltText}>
+    </div>
+</section>
