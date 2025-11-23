@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {keyadvantagesTitle, nolinerText, continuousrollText, custombrandingText, excellentforText, sustainableImage, sustainableAltText, sustainableBtn, sustainableTitle} = Astro.props;
 import "../../styles/styles.scss";
 ---
@@ -17,7 +18,12 @@ import "../../styles/styles.scss";
         </ul>
         <a href="/request-quote" class="featured-products-btn linerless-btn">{sustainableBtn}</a>
         <div>
-            <img class="linerless-img" src={sustainableImage} alt={sustainableAltText}>
+            <Image
+                src={sustainableImage} 
+                alt={sustainableAltText}
+                inferSize={true}
+                class:list="linerless-img"/>
+            <!-- <img class="linerless-img" src={sustainableImage} alt={sustainableAltText}> -->
         </div>
     </div>
 </div>

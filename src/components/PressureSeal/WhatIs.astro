@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {
     pressuresealWhatIsTitle, 
     pressuresealWhatIsDesc, 
@@ -20,8 +21,17 @@ import "../../styles/styles.scss";
         <p>{sealedbypressureText}</p>
     </div>
     <div class="pressure-seal-img">
-        <img src={pressuresealImage1} alt={pressuresealAltText1}>
-        <img src={pressuresealImage2} alt={pressuresealAltText2}>
-        <img src={pressuresealImage3} alt={pressuresealAltText3}>
+        <Image 
+            src={pressuresealImage1} 
+            alt={pressuresealAltText1}
+            inferSize={true}/>
+        <Image 
+            src={pressuresealImage2} 
+            alt={pressuresealAltText2}
+            inferSize={true}/>
+        <Image 
+            src={pressuresealImage3} 
+            alt={pressuresealAltText3}
+            inferSize={true}/>
     </div>
 </div>

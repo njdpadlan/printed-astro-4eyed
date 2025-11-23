@@ -1,10 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 const {onlineBasedHeader, onlineBasedImage, onlineBasedText, onlineBasedBtn, onlineBasedAltText} = Astro.props;
 ---
 
 <div>
     <h2>{onlineBasedHeader}</h2>
-    <img src={onlineBasedImage} alt={onlineBasedAltText}>
+    <Image 
+        src={onlineBasedImage} 
+        alt={onlineBasedAltText}
+        inferSize={true}/>
     <p>{onlineBasedText}</p>
     <a href="#">{onlineBasedBtn}</a>
 </div>

@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {
     linerlesslabelWhatIsTitle, 
     linerlesslabelWhatIsDesc, 
@@ -22,8 +23,17 @@ import "../../styles/styles.scss";
         <p>{printedmanufactureText}</p>
     </div>
     <div class="linerless-img">
-        <img src={linerlesslabelImage1} alt={linerlesslabelAltText1}>
-        <img src={linerlesslabelImage2} alt={linerlesslabelAltText2}>
-        <img src={linerlesslabelImage3} alt={linerlesslabelAltText3}>
+        <Image 
+            src={linerlesslabelImage1} 
+            alt={linerlesslabelAltText1}
+            inferSize={true}/>
+        <Image 
+            src={linerlesslabelImage2} 
+            alt={linerlesslabelAltText2}
+            inferSize={true}/>
+        <Image 
+            src={linerlesslabelImage3} 
+            alt={linerlesslabelAltText3}
+            inferSize={true}/>
     </div>
 </div>

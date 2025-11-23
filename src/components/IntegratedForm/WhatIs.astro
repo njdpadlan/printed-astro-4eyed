@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {
     integratedformlabelWhatIsTitle, 
     integratedformlabelWhatIsDesc, 
@@ -20,8 +21,17 @@ import "../../styles/styles.scss";
         <p>{integratedsolutionText}</p>
     </div>
     <div class="integrated-form-img">
-        <img src={integratedformImage1} alt={integratedformAltText1}>
-        <img src={integratedformImage2} alt={integratedformAltText2}>
-        <img src={integratedformImage3} alt={integratedformAltText3}>
+        <Image 
+            src={integratedformImage1} 
+            alt={integratedformAltText1}
+            inferSize={true}/>
+        <Image 
+            src={integratedformImage2} 
+            alt={integratedformAltText2}
+            inferSize={true}/>
+        <Image 
+            src={integratedformImage3} 
+            alt={integratedformAltText3}
+            inferSize={true}/>
     </div>
 </div>
