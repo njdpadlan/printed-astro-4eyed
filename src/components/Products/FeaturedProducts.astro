@@ -13,22 +13,18 @@ const {
     integratedformTitle,
     integratedformImage,
     integratedFormAltText,
-    integratedformBtn
+    integratedformBtn,
+    pressuresealDesc,
+    linerlessDesc,
+    integratedformDesc
     } = Astro.props;
 ---
 
 <div>
     <h2>{featureProductsHeader}</h2>
     <section>
-        <h3>{pressuresealTitle}</h3>
-        <Image 
-            src={pressuresealImage} 
-            alt={pressureSealAltText}
-            inferSize={true}/>
-        <a href="/pressure-seal-forms">{pressuresealBtn}</a>
-    </section>
-    <section>
         <h3>{linerlessTitle}</h3>
+        <p>{linerlessDesc}</p>
         <Image 
             src={linerlessImage} 
             alt={linerlessLabelAltText}
@@ -36,7 +32,17 @@ const {
         <a href="/linerless-labels">{linerlessBtn}</a>
     </section>
     <section>
+        <h3>{pressuresealTitle}</h3>
+        <p>{pressuresealDesc}</p>
+        <Image 
+            src={pressuresealImage} 
+            alt={pressureSealAltText}
+            inferSize={true}/>
+        <a href="/pressure-seal-forms">{pressuresealBtn}</a>
+    </section>
+    <section>
         <h3>{integratedformTitle}</h3>
+        <p>{integratedformDesc}</p>
         <Image 
             src={integratedformImage} 
             alt={integratedFormAltText}
