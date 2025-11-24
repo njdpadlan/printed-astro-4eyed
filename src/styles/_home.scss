@@ -101,34 +101,38 @@
 
 .high-quality-section {
     background-color: $primary-blue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
     margin-top: 6rem;
 
-    img {
-        border-radius: 12px;
-        margin-top: 1rem;
-        width: 100%;
-        max-width: 700px;
-    }
-
-    .high-quality-card {
-        @include white-card;
+    .quality-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 1rem;
-        padding-top: 1rem;
-        border-radius: 12px;
-        margin-bottom: 1rem;
-        max-width: 700px;
+
+        img {
+            border-radius: 12px;
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .high-quality-card {
+            @include white-card;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            max-width: 700px;
+        }
+
+        a {
+            @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
+            display: block;
+        }
     }
 
-    a {
-        @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
-        display: block;
-    }
 }
 
 .featured-products {
@@ -211,16 +215,16 @@
         img {
             border-radius: 12px;
         }
-    
+
         .online-card {
             @include white-card;
             border-radius: 12px;
-    
+
             h2 {
                 padding: 1rem 0;
             }
         }
-    
+
         a {
             @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
             max-width: 700px;
@@ -322,19 +326,47 @@
     }
 
     .high-quality-section {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        flex-direction: unset;
 
-        img {
-            max-width: none;
-            margin-top: unset;
-            grid-column: 2 / span 5;
+        .quality-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            flex-direction: unset;
+            max-width: 1920px;
+
+            img {
+                max-width: none;
+                width: 100%;
+                height: auto;
+                margin-top: unset;
+                grid-column: 2 / span 5;
+            }
+
+            .high-quality-card {
+                grid-column: 8 / span 4;
+                padding: 2rem;
+                margin-bottom: unset;
+                margin: 64px 0;
+
+                h2 {
+                    font-size: 32px;
+                }
+            }
         }
 
-        .high-quality-card {
-            grid-column: 8 / span 4;
-            margin-bottom: unset;
+    }
+
+    
+}
+
+@media (min-width: 1600px) {
+    .high-quality-section {
+        .quality-container {
+            .high-quality-card {
+                h2 {
+                    font-size: 48px;
+                }
+            }
         }
+
     }
 }
