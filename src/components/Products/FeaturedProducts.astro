@@ -21,32 +21,38 @@ const {
 ---
 
 <div>
-    <h2>{featureProductsHeader}</h2>
-    <section>
-        <h3>{linerlessTitle}</h3>
-        <p>{linerlessDesc}</p>
-        <Image 
-            src={linerlessImage} 
-            alt={linerlessLabelAltText}
-            inferSize={true}/>
-        <a href="/linerless-labels">{linerlessBtn}</a>
-    </section>
-    <section>
-        <h3>{pressuresealTitle}</h3>
-        <p>{pressuresealDesc}</p>
-        <Image 
-            src={pressuresealImage} 
-            alt={pressureSealAltText}
-            inferSize={true}/>
-        <a href="/pressure-seal-forms">{pressuresealBtn}</a>
-    </section>
-    <section>
-        <h3>{integratedformTitle}</h3>
-        <p>{integratedformDesc}</p>
-        <Image 
-            src={integratedformImage} 
-            alt={integratedFormAltText}
-            inferSize={true}/>
-        <a href="/integrated-form-labels">{integratedformBtn}</a>
-    </section>
+    <div class="featured-h2-grid">
+        <h2>{featureProductsHeader}</h2>
+    </div>
+    <div class="featured-products-bg">
+        <div class="products-container">
+            <section>
+                <h3>{linerlessTitle}</h3>
+                <p>{linerlessDesc}</p>
+                <Image
+                    src={linerlessImage}
+                    alt={linerlessLabelAltText}
+                    inferSize={true}/>
+                <a href="/linerless-labels" class="featured-btn">{linerlessBtn}</a>
+            </section>
+            <section>
+                <h3>{pressuresealTitle}</h3>
+                <p>{pressuresealDesc}</p>
+                <Image
+                    src={pressuresealImage}
+                    alt={pressureSealAltText}
+                    inferSize={true}/>
+                <a href="/pressure-seal-forms" class="featured-btn">{pressuresealBtn}</a>
+            </section>
+            <section>
+                <h3>{integratedformTitle}</h3>
+                <p>{integratedformDesc}</p>
+                <Image
+                    src={integratedformImage}
+                    alt={integratedFormAltText}
+                    inferSize={true}/>
+                <a href="/integrated-form-labels" class="featured-btn">{integratedformBtn}</a>
+            </section>
+    </div>
+    </div>
 </div>
