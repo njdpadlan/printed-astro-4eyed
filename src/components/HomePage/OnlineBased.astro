@@ -4,13 +4,15 @@ const {onlineBasedHeader, onlineBasedImage, onlineBasedText, onlineBasedBtn, onl
 ---
 
 <section class="online-services container">
-        <Image 
-        src={onlineBasedImage} 
-        alt={onlineBasedAltText}
-        inferSize={true}/>
-    <div class="online-card">
-        <h2>{onlineBasedHeader}</h2>
-        <p>{onlineBasedText}</p>
-    </div>
-    <a href="/online-services">{onlineBasedBtn}</a>
+        <div class="service-container">
+            <Image
+            src={onlineBasedImage}
+            alt={onlineBasedAltText}
+            inferSize={true}/>
+                <div class="online-card">
+            <h2>{onlineBasedHeader}</h2>
+            <p>{onlineBasedText}</p>
+                </div>
+                <a href="/online-services">{onlineBasedBtn}</a>
+        </div>
 </section>
