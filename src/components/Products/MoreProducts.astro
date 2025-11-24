@@ -1,58 +1,16 @@
 ---
+import { Accordion, AccordionItem } from 'accessible-astro-components';
+import { Image } from 'astro:assets';
 const {
-    moreproductsHeader, 
-    lasercutTitle, 
-    lasercutImage,
-    lasercutAltText,
-    laserCutAbout,
-    highqualitylaserTitle,
-    laserCutChooseFrom,
-    lasercutText,
-    partsText,
-    featuresText,
-    customsizesText,
-    snapsetTitle,
-    snapsetImage,
-    snapsetAltText,
-    snapsetAbout,
-    durableTitle,
-    snapsetChooseFrom,
-    multipartText,
-    snapsetpartsText,
-    commonuseText,
-    fieldserviceText,
-    continuousTitle,
-    continuousImage,
-    continuousAltText,
-    continuousAbout,
-    reliableTitle,
-    continuousChooseFrom,
-    continuousText,
-    continuouspartsText,
-    idealforText,
-    accountingText,
-    customenvelopeTitle,
-    customenvelopeImage,
-    customenvelopeAltText,
-    customEnvelopeAbout,
-    deliverbrandfirstTitle,
-    customEnvelopeChooseFrom,
-    daytodayText,
-    regularText,
-    availableoptionsText,
-    regularwindowText,
-    ProductsHeader,
-    ProductsImage,
-    ProductDesc,
-    About,
+    productsHeader,
+    productsImage,
+    productsDesc,
     AboutDesc,
-    ChooseFrom,
     ChooseFromList1,
     ChooseFromList2,
     ChooseFromList3,
     ChooseFromList4,
     ChooseFromList5,
-    IdealFor,
     IdealForList1,
     IdealForList2,
     IdealForList3,
@@ -60,100 +18,54 @@ const {
     IdealForList5
 } = Astro.props;
 ---
-
-<!-- <div>
-    <h2>{ProductsHeader}</h2>
-    <img src={ProductsImage} alt="qwe">
-    <p>{ProductDesc}</p>
-    <p>{About}</p>
-    <p>{AboutDesc}</p>
-    <p>{ChooseFrom}</p>
-    <ul>
-        <li>{ChooseFromList1}</li>
-        <li>{ChooseFromList2}</li>
-        <li>{ChooseFromList3}</li>
-        <li>{ChooseFromList4}</li>
-        <li>{ChooseFromList5}</li>
-    </ul>
-    <p>{IdealFor}</p>
-    <ul>
-        <li>{IdealForList1}</li>
-        <li>{IdealForList2}</li>
-        <li>{IdealForList3}</li>
-        <li>{IdealForList4}</li>
-        <li>{IdealForList5}</li>
-    </ul>
-</div> -->
-
 <div>
-    <h2>{moreproductsHeader}</h2>
-    <section>
-        <h3>{lasercutTitle}</h3>
-        <img src={lasercutImage} alt={lasercutAltText}>
-        <h4>{highqualitylaserTitle}</h4>
-        <!-- accordion -->
-        <div>
-            <!-- About -->
-            <h4>{laserCutAbout}</h4> 
-            <p>{lasercutText}</p>
-            <!-- Choose From -->
-            <h4>{laserCutChooseFrom}</h4>
-            <p>{partsText}</p>
-            <!-- Available Options -->
-            <h4>{featuresText}</h4>
-            <p>{customsizesText}</p>
-        </div>
-    </section>
-    <section>
-        <h3>{snapsetTitle}</h3>
-        <img src={snapsetImage} alt={snapsetAltText}>
-        <h4>{durableTitle}</h4>
-        <!-- accordion -->
-        <div>
-            <!-- About -->
-            <h4>{snapsetAbout}</h4>
-            <p>{multipartText}</p>
-            <!-- Choose From -->
-            <h4>{snapsetChooseFrom}</h4>
-            <p>{snapsetpartsText}</p>
-            <!-- Available Options -->
-            <h4>{commonuseText}</h4>
-            <p>{fieldserviceText}</p>
-        </div>
-    </section>
-    <section>
-        <h3>{continuousTitle}</h3>
-        <img src={continuousImage} alt={continuousAltText}>
-        <h4>{reliableTitle}</h4>
-        <!-- accordion -->
-        <div>
-            <!-- About -->
-            <h4>{continuousAbout}</h4>
-            <p>{continuouspartsText}</p>
-            <!-- Choose From -->
-            <h4>{continuousChooseFrom}</h4>
-            <p>{continuousText}</p>
-            <!-- Available Options -->
-            <h4>{idealforText}</h4>
-            <p>{accountingText}</p>
-        </div>
-    </section>
-    <section>
-        <h3>{customenvelopeTitle}</h3>
-        <img src={customenvelopeImage} alt={customenvelopeAltText}>
-        <h4>{deliverbrandfirstTitle}</h4>
-        <!-- accordion -->
-        <div>
-             <!-- About -->
-            <h4>{customEnvelopeAbout}</h4>
-            <p>{daytodayText}</p>
-            <!-- Choose From -->
-            <h4>{customEnvelopeChooseFrom}</h4>
-            <p>{regularText}</p>
-            <!-- Available Options -->
-            <h4>{availableoptionsText}</h4>
-            <p>{regularwindowText}</p>
-        </div>
-    </section>
+    <h3>{productsHeader}</h3>
+        <Image 
+            src={productsImage?.url} 
+            alt={productsImage?.alternativeText}
+            inferSize={true}/>
+    <h4>{productsDesc}</h4>
+    <!-- accordion -->
+     <Accordion>
+        <AccordionItem
+            title="About"
+            variant="chevron">
+            <div>
+                <!-- About -->
+                <p>{AboutDesc}</p>
+            </div>
+        </AccordionItem>
+     </Accordion>
+    <div>
+        <!-- Choose From -->
+        <Accordion>
+            <AccordionItem
+                title="Choose From"
+                variant="chevron">
+                <ul>
+                    <li>{ChooseFromList1}</li>
+                    <li>{ChooseFromList2}</li>
+                    <li>{ChooseFromList3}</li>
+                    <li>{ChooseFromList4}</li>
+                    <li>{ChooseFromList5}</li>
+                </ul>
+            </AccordionItem>
+        </Accordion>
+    </div>
+    <div>
+        <Accordion>
+            <AccordionItem
+                title="Ideal For"
+                variant="chevron">
+                <!-- Ideal For / Available Options -->
+                <ul>
+                    <li>{IdealForList1}</li>
+                    <li>{IdealForList2}</li>
+                    <li>{IdealForList3}</li>
+                    <li>{IdealForList4}</li>
+                    <li>{IdealForList5}</li>
+                </ul>
+            </AccordionItem>
+        </Accordion>
+    </div>
 </div>
-
