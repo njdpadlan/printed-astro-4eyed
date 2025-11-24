@@ -1571,4 +1571,32 @@ option {
   margin-left: -1rem;
   margin-right: -1rem;
   min-height: 180px;
+}
+
+.featured-products-container {
+  background-color: #124D80;
+}
+
+@media (min-width: 1000px) {
+  .products-banner {
+    background-image: url("https://stylish-dinosaurs-39d17e40aa.media.strapiapp.com/products_hero_8adc45541a.webp");
+    background-size: cover;
+    background-position: center;
+    padding: 1rem;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  .products-hero {
+    padding: 0 2rem 2rem 2rem;
+    max-width: unset;
+    width: 763px;
+    border-radius: 15px;
+    margin: 9rem 0 9rem 10vw;
+  }
+  .products-hero img {
+    display: none;
+  }
+  .products-hero .service-btn {
+    width: 288px;
+  }
 }/*# sourceMappingURL=styles.css.map */
