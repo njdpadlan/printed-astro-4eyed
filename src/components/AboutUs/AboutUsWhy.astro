@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {
     whyChooseHeader,
     whyChooseDesc,
@@ -35,6 +36,9 @@ import "../../styles/styles.scss";
                 <a href="/contact-us" class="about-btn">{aboutUsBtn}</a>
             </div>
         </div>
-        <img src={aboutusWhyImage} alt={aboutUsWhyAltText}>
+        <Image 
+            src={aboutusWhyImage} 
+            alt={aboutUsWhyAltText}
+            inferSize={true}/>
     </div>
 </div>

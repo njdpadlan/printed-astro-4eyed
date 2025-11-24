@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 const {smartefficientformTitle, commonapplicationsText, ecommerce, distribution, retail, healthcare, insurance, logistics, smartefficientImage, smartefficientAltText, smartefficientBtn} = Astro.props;
 import "../../styles/styles.scss";
 ---
@@ -21,7 +22,10 @@ import "../../styles/styles.scss";
             <a href="/request-quote" class="featured-products-btn">{smartefficientBtn}</a>
         </div>
         <div>
-            <img src={smartefficientImage} alt={smartefficientAltText}>
+            <Image 
+                src={smartefficientImage} 
+                alt={smartefficientAltText}
+                inferSize={true}/>
         </div>
     </div>
 </div>

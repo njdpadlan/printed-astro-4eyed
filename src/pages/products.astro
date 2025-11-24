@@ -150,6 +150,31 @@ const { featuredpromoImage: {
 	alternativeText: featuredpromoAltText
 }} = promoProductsData;
 
+// const moreProductsTest = pageData.find(pd => pd.__component === "moreproductstest.more-products-test");
+// const {
+//     ProductsHeader,
+//     ProductDesc,
+//     About,
+//     AboutDesc,
+//     ChooseFrom,
+//     ChooseFromList1,
+//     ChooseFromList2,
+//     ChooseFromList3,
+//     ChooseFromList4,
+//     ChooseFromList5,
+//     IdealFor,
+//     IdealForList1,
+//     IdealForList2,
+//     IdealForList3,
+//     IdealForList4,
+//     IdealForList5
+// } = moreProductsTest;
+
+// const { ProductsImage: {
+// 	url: ProductsImage
+// }} = moreProductsTest;
+
+
 ---
 
 <Layout>
@@ -172,6 +197,7 @@ const { featuredpromoImage: {
     {laserCutAbout}  {snapsetAbout} {continuousAbout} {customEnvelopeAbout}
     {laserCutChooseFrom} {snapsetChooseFrom} {continuousChooseFrom} {customEnvelopeChooseFrom}/>
 
-    <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}/>
+    <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}
+    />
 
 </Layout>

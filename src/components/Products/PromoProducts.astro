@@ -1,10 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 const {featuredpromoTitle, featuredpromoBtn, featuredpromoText, featuredpromoImage, featuredpromoAltText} = Astro.props;
 ---
 
 <div>
     <h2>{featuredpromoTitle}</h2>
     <p>{featuredpromoText}</p>
-    <img src={featuredpromoImage} alt={featuredpromoAltText}>
+        <Image 
+            src={featuredpromoImage} 
+            alt={featuredpromoAltText}
+            inferSize={true}/>
     <a href="#">{featuredpromoBtn}</a>
 </div>

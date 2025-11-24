@@ -1,11 +1,15 @@
 ---
+import { Image } from 'astro:assets';
 const {productHeroHeader, productHeroText, productHeroImage, productsAltText} = Astro.props;
 ---
 
 <div class="products-banner">
     <div class="products-hero">
         <h1>{productHeroHeader}</h1>
-        <img src={productHeroImage} alt={productsAltText}>
+        <Image 
+            src={productHeroImage} 
+            alt={productsAltText}
+            inferSize={true}/>
         <p>{productHeroText}</p>
     </div>
 </div>
