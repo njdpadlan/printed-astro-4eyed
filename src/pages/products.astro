@@ -71,75 +71,6 @@ const { integratedformImage: {
 	alternativeText: integratedFormAltText
 }} = featuredproductData;
 
-// fetch  more products component
-const moreProductsData = pageData.find(pd => pd.__component === "moreproducts.more-products");
-const { 
-    moreproductsHeader, 
-    lasercutTitle, 
-    highqualitylaserTitle,
-    lasercutText,
-    partsText,
-    featuresText,
-    customsizesText,
-    snapsetTitle,
-    durableTitle,
-    multipartText,
-    snapsetpartsText,
-    commonuseText,
-    fieldserviceText,
-    continuousTitle,
-    reliableTitle,
-    continuousText,
-    continuouspartsText,
-    idealforText,
-    accountingText,
-    customenvelopeTitle,
-    deliverbrandfirstTitle,
-    daytodayText,
-    regularText,
-    availableoptionsText,
-    regularwindowText,
-    laserCutAbout,
-    snapsetAbout,
-    continuousAbout,
-    customEnvelopeAbout,
-    laserCutChooseFrom,
-    snapsetChooseFrom,
-    continuousChooseFrom,
-    customEnvelopeChooseFrom
-} = moreProductsData;
-
-const { lasercutImage: {
-	url: lasercutImage
-}} = moreProductsData;
-
-const { snapsetImage: {
-	url: snapsetImage
-}} = moreProductsData;
-
-const { continuousImage: {
-	url: continuousImage
-}} = moreProductsData;
-
-const { customenvelopeImage: {
-	url: customenvelopeImage
-}} = moreProductsData;
-
-const { lasercutImage: {
-	alternativeText: lasercutAltText
-}} = moreProductsData;
-
-const { snapsetImage: {
-	alternativeText: snapsetAltText
-}} = moreProductsData;
-
-const { continuousImage: {
-	alternativeText: continuousAltText
-}} = moreProductsData;
-
-const { customenvelopeImage: {
-	alternativeText: customenvelopeAltText
-}} = moreProductsData;
 
 //fetch promo products components
 const promoProductsData = pageData.find(pd => pd.__component === "featuredpromoproducts.featured-promo-products");
@@ -153,29 +84,10 @@ const { featuredpromoImage: {
 	alternativeText: featuredpromoAltText
 }} = promoProductsData;
 
-// const moreProductsTest = pageData.find(pd => pd.__component === "moreproductstest.more-products-test");
-// const {
-//     ProductsHeader,
-//     ProductDesc,
-//     About,
-//     AboutDesc,
-//     ChooseFrom,
-//     ChooseFromList1,
-//     ChooseFromList2,
-//     ChooseFromList3,
-//     ChooseFromList4,
-//     ChooseFromList5,
-//     IdealFor,
-//     IdealForList1,
-//     IdealForList2,
-//     IdealForList3,
-//     IdealForList4,
-//     IdealForList5
-// } = moreProductsTest;
-
-// const { ProductsImage: {
-// 	url: ProductsImage
-// }} = moreProductsTest;
+//fetch Add More Products components
+const moreProductsTestLoop = pageData.filter(
+  (pd) => pd.__component === "addmoreproducts.add-more-products"
+);
 
 
 ---
@@ -191,15 +103,10 @@ const { featuredpromoImage: {
     {pressureSealAltText} {linerlessLabelAltText} {integratedFormAltText}
     {pressuresealDesc} {linerlessDesc} {integratedformDesc}/>
 
-    <MoreProducts {moreproductsHeader} {lasercutTitle} {lasercutImage} {snapsetImage} {continuousImage} {customenvelopeImage}
-    {highqualitylaserTitle} {lasercutText} 
-    {partsText} {featuresText} 
-    {customsizesText} {snapsetTitle}  {durableTitle} {multipartText} {snapsetpartsText} {commonuseText} {fieldserviceText} {continuousTitle} 
-    {reliableTitle} {continuousText} {continuouspartsText} {idealforText} {accountingText} {customenvelopeTitle} {deliverbrandfirstTitle} {daytodayText} 
-    {regularText} {availableoptionsText} {regularwindowText} 
-    {lasercutAltText} {snapsetAltText} {continuousAltText} {customenvelopeAltText}
-    {laserCutAbout}  {snapsetAbout} {continuousAbout} {customEnvelopeAbout}
-    {laserCutChooseFrom} {snapsetChooseFrom} {continuousChooseFrom} {customEnvelopeChooseFrom}/>
+    <h2>More Products</h2>
+    {moreProductsTestLoop.map(product => (
+    <MoreProducts {...product} />
+    ))}
 
     <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}
     />
