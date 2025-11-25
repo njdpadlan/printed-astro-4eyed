@@ -63,10 +63,14 @@
     margin-top: 1rem
 }
 
-.more-products-bg{
+.more-products{
+    background-color: $primary-blue
+}
+.more-products{
 
     @include products-hero-card($primary-blue);
     border-radius: 0;
+    margin: 96px 0 96px 0;
 }
 .more-products-container{
     max-width: 700px;
@@ -85,6 +89,8 @@
     background-color: white;
     padding: 1rem;
     border-radius: 12px;
+    margin-bottom: 64px;
+    align-items: center;
 }
 
 
@@ -216,10 +222,11 @@
 
 .more-products-section{
     display: flex;
-    grid-column: 2 / span 9;
+    grid-column: 3 / span 8;
 }
 .product-header-group img{
-    width: 80%;
+    width: 70%;
+    align-items: center;
 }
 .product-header-group{
     width: 50%;

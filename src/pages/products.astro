@@ -103,9 +103,12 @@ const moreProductsTestLoop = pageData.filter(
     {pressureSealAltText} {linerlessLabelAltText} {integratedFormAltText}
     {pressuresealDesc} {linerlessDesc} {integratedformDesc}/>
 
-    {moreProductsTestLoop.map(product => (
-    <MoreProducts {...product} />
-    ))}
+    <div class="more-products">
+      <h2>More Products</h2>
+      {moreProductsTestLoop.map(product => (
+      <MoreProducts  {...product} />
+      ))}
+    </div>
 
     <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}
     />
