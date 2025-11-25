@@ -244,6 +244,7 @@
 
         .about-flex {
             grid-column: span 4;
+            padding: unset;
 
             h2 {
                 max-width: 500px;
