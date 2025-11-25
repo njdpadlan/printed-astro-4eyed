@@ -141,11 +141,10 @@
     margin-left: auto;
     margin-right: auto;
 
-    h2 {
+    .featured-header-grid {
         @include yellow-header-products;
         padding-top: 27px;
         padding-bottom: 27px;
-        max-width: 700px;
     }
 
     .products-section {
@@ -156,6 +155,7 @@
         gap: 2rem;
         border-radius: 15px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        margin-bottom: 1rem;
 
         img {
             border-radius: 12px;
@@ -165,7 +165,6 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            padding-top: 3rem;
             max-width: 294px;
 
             a {
@@ -177,6 +176,7 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            padding-top: 3rem;
             max-width: 294px;
 
             a {
@@ -188,8 +188,9 @@
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            margin-bottom: 1rem;
+            padding-bottom: 1rem;
             max-width: 294px;
+
 
             a {
                 @include btn ($white, $tertiary-dark-blue, #A0D3FF);
@@ -219,17 +220,20 @@
         .online-card {
             @include white-card;
             border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
 
             h2 {
-                padding: 1rem 0;
+                padding-top: 1rem;
+            }
+
+            a {
+                @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
+                display: block;
             }
         }
 
-        a {
-            @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
-            max-width: 700px;
-            width: 100%;
-        }
     }
 
 }
@@ -237,7 +241,7 @@
 .about-section {
     margin: 6rem 0 6rem 0;
 
-    h2 {
+    .about-header-grid {
         @include yellow-header-products;
         padding-top: 27px;
         padding-bottom: 27px;
@@ -326,6 +330,7 @@
     }
 
     .high-quality-section {
+        margin-top: 9rem;
 
         .quality-container {
             display: grid;
@@ -355,7 +360,136 @@
 
     }
 
-    
+    .featured-products {
+        margin-top: 9rem;
+        max-width: 1920px;
+
+        .featured-header-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            max-width: unset;
+            width: 950px;
+
+            h2 {
+                grid-column: 2 / span 8;
+            }
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+
+            .products-section {
+                display: grid;
+                flex-direction: unset;
+                align-items: end;
+                grid-template-columns: repeat(10, 1fr);
+                grid-column: 2 / span 10;
+                gap: 20px;
+                box-shadow: unset;
+                padding: 2rem 0 4rem 0;
+                margin-bottom: 144px;
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                a {
+                    font-size: 18px;
+                }
+
+                .pressure-seal-section {
+                    grid-column: 5 / span 2;
+                }
+
+                .linerless-label-section {
+                    grid-column: 2 / span 2;
+
+                    h3 {
+                        width: 250px;
+                    }
+                }
+
+                .integrated-section {
+                    grid-column: 8 / span 2;
+                    padding-bottom: unset;
+
+                    a {
+                        padding: 2.5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .online-services {
+        margin-top: unset;
+
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+            max-width: 1920px;
+            padding: 64px 0;
+
+            img {
+                grid-column: 2 / span 5;
+                height: auto;
+                width: 100%;
+                margin-top: unset;
+            }
+
+            .online-card {
+                grid-column: 8 / span 4;
+                padding: 2rem;
+                margin-bottom: unset;
+
+                h2 {
+                    font-size: 32px;
+                    padding-top: unset;
+                }
+            }
+        }
+    }
+
+    .about-section {
+        margin: 9rem 0;
+        max-width: 1920px;
+
+        .about-header-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            max-width: unset;
+            width: 950px;
+
+            h2 {
+                grid-column: 2 / span 8;
+            }
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+
+            .about-info {
+                grid-column: 2 / span 10;
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                gap: 20px;
+                align-items: center;
+                max-width: unset;
+                padding: 5rem 0 5rem 0;
+
+                .about-flex {
+                    grid-column: 2 / span 4;
+                }
+
+                img {
+                    grid-column: 6 / span 4;
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 1600px) {
@@ -368,5 +502,39 @@
             }
         }
 
+    }
+
+    .featured-products {
+        .featured-header-grid {
+            h2 {
+                grid-column: 5 / span 8;
+            }
+        }
+
+        .product-grid {
+            .products-section {
+                h3 {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
+    .online-services {
+        .service-container {
+            .online-card {
+                h2 {
+                    font-size: 48px;
+                }
+            }
+        }
+    }
+
+    .about-section {
+        .about-header-grid {
+            h2 {
+                grid-column: 5 / span 8;
+            }
+        }
     }
 }
