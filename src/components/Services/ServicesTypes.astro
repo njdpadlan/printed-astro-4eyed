@@ -17,35 +17,37 @@ const {
 import "../../styles/styles.scss";
 ---
 
-<div class="service">
-    <section class="portal">
-        <div>
-            <h2>{servicePortalTitle}</h2>
-            <p>{servicePortalDesc}</p>
-        </div>
-        <Image 
-            src={servicePortalImage} 
-            alt={servicePortalAltText}
-            inferSize={true}/>
-    </section>
-    <section>
-        <div>
-            <h2>{servicePoofingTitle}</h2>
-            <p>{servicePoofingDesc}</p>
-        </div>
-        <Image
-            src={servicePoofingImage}
-            alt={servicePoofingAltText}
-            inferSize={true}/>
-    </section>
-    <section class="warehouse">
-        <div>
-            <h2>{serviceWarehouseTitle}</h2>
-            <p>{serviceWarehouseDesc}</p>
-        </div>
-        <Image
-            src={serviceWarehouseImage}
-            alt={serviceWarehouseAltText}
-            inferSize={true}/>
-    </section>
+<div class="service container">
+    <div class="service-grid">
+        <section class="portal">
+            <div>
+                <h2>{servicePortalTitle}</h2>
+                <p>{servicePortalDesc}</p>
+            </div>
+            <Image
+                src={servicePortalImage}
+                alt={servicePortalAltText}
+                inferSize={true}/>
+        </section>
+        <section>
+            <div>
+                <h2>{servicePoofingTitle}</h2>
+                <p>{servicePoofingDesc}</p>
+            </div>
+            <Image
+                src={servicePoofingImage}
+                alt={servicePoofingAltText}
+                inferSize={true}/>
+        </section>
+        <section class="warehouse">
+            <div>
+                <h2>{serviceWarehouseTitle}</h2>
+                <p>{serviceWarehouseDesc}</p>
+            </div>
+            <Image
+                src={serviceWarehouseImage}
+                alt={serviceWarehouseAltText}
+                inferSize={true}/>
+        </section>
+    </div>
 </div>

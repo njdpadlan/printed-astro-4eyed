@@ -33,25 +33,29 @@
 }
 
 .service {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     background-color: $tertiary-dark-blue;
-    color: $white;
-    margin: 6rem 0 6rem 0;
 
-    section {
+    .service-grid {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-        max-width: 700px;
-        margin: 0 auto;
+        gap: 2rem;
+        color: $white;
+        margin: 6rem 0 6rem 0;
 
-        img {
-            border-radius: 12px
+        section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem 0;
+            max-width: 700px;
+            margin: 0 auto;
+
+            img {
+                border-radius: 12px
+            }
         }
     }
+
 }
 
 //About Us Page Styles
@@ -129,14 +133,17 @@
         padding: 1rem;
         max-width: 1920px;
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
     }
 
     .service-hero {
+        grid-column: 2 / span 5;
         padding: 0 2rem 2rem 2rem;
         max-width: unset;
-        width: 763px;
         border-radius: 15px;
-        margin: 9rem 0 9rem 10vw;
+        margin: 9rem 0;
 
         img {
             display: none;
@@ -151,24 +158,35 @@
         margin: 9rem 0;
         gap: 4rem;
 
-        .portal {
-            padding-top: 5rem;
+        h2 {
+            font-size: 32px;
         }
 
-        .warehouse {
-            padding-bottom: 5rem;
-        }
-
-        section {
-            max-width: 1234px;
-            flex-direction: row;
-            align-items: center;
-            padding: 0 1rem;
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
             gap: 20px;
+            padding: 5rem 0;
 
-            img {
-                max-width: 50%;
+            section {
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-column: 3 / span 8;
+                flex-direction: unset;
+                align-items: center;
+                gap: 20px;
+                padding: unset;
+                max-width: unset;
+
+                div {
+                    grid-column: 1 /span 4;
+                }
+
+                img {
+                    grid-column: 5 / span 4;
+                }
             }
+
         }
     }
 
@@ -181,14 +199,17 @@
         padding: 1rem;
         max-width: 1920px;
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 20px;
     }
 
     .about-hero {
+        grid-column: 2 / span 5;
         padding: 0 2rem 2rem 2rem;
         max-width: unset;
-        width: 763px;
         border-radius: 15px;
-        margin: 9rem 0 9rem 10vw;
+        margin: 9rem 0;
 
         img {
             display: none;
@@ -227,4 +248,12 @@
 
     }
 
+}
+
+@media (min-width: 1600px) {
+.service {
+    h2 {
+        font-size: 48px;
+    }
+}
 }
