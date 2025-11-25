@@ -95,7 +95,7 @@
     .about-wide-flex {
         display: flex;
         flex-direction: column;
-        padding-bottom: 1rem;
+        padding: 0 1rem 1rem 1rem;;
         max-width: 700px;
         margin: 0 auto;
 
@@ -234,6 +234,7 @@
             grid-column: 3 / span 8;
             align-items: center;
             max-width: unset;
+            padding: 4rem 0;
 
             img {
                 grid-column: span 4;
