@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 const {
-    featuredProductsHeader, 
-    pressureSealTitle, 
+    featuredProductsHeader,
+    pressureSealTitle,
     pressureSealImage,
     pressureSealAltText,
     pressureSealBtn,
@@ -13,35 +13,45 @@ const {
     integratedFormText,
     integratedFormImage,
     integratedFormAltText,
-    integratedFormBtn
+    integratedFormBtn,
 } = Astro.props;
 
+import "../../styles/styles.scss";
 ---
 
-<div>
-    <h2>{featuredProductsHeader}</h2>
-    <section>
-        <h3>{pressureSealTitle}</h3>
-        <Image 
-            src={pressureSealImage} 
-            alt={pressureSealAltText}
-            inferSize={true}/>
-        <a href="/pressuresealenvelope">{pressureSealBtn}</a>
-    </section>
-    <section>
-        <h3>{linerlessLabelTitle}</h3>
-        <Image 
-            src={linerlessLabelImage} 
-            alt={linerlessLabelAltText}
-            inferSize={true}/>
-        <a href="/linerlesslabel">{linerlessLabelBtn}</a>
-    </section>
-    <section>
-        <h3>{integratedFormText}</h3>
-        <Image 
-            src={integratedFormImage} 
-            alt={integratedFormAltText}
-            inferSize={true}/>
-        <a href="/integratedformlabel">{integratedFormBtn}</a>
-    </section>
-</div>
+<section class="featured-products">
+    <div class="featured-header-grid">
+        <h2>{featuredProductsHeader}</h2>
+    </div>
+    <div class="product-grid">
+        <div class="products-section container">
+            <section class="linerless-label-section">
+                <h3>{linerlessLabelTitle}</h3>
+                <Image
+                    src={linerlessLabelImage}
+                    alt={linerlessLabelAltText}
+                    inferSize={true}
+                />
+                <a href="/linerless-labels">{linerlessLabelBtn}</a>
+            </section>
+            <section class="pressure-seal-section">
+                <h3>{pressureSealTitle}</h3>
+                <Image
+                    src={pressureSealImage}
+                    alt={pressureSealAltText}
+                    inferSize={true}
+                />
+                <a href="/pressure-seal-forms">{pressureSealBtn}</a>
+            </section>
+            <section class="integrated-section">
+                <h3>{integratedFormText}</h3>
+                <Image
+                    src={integratedFormImage}
+                    alt={integratedFormAltText}
+                    inferSize={true}
+                />
+                <a href="/integrated-form-labels">{integratedFormBtn}</a>
+            </section>
+        </div>
+    </div>
+</section>

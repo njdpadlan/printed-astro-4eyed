@@ -6,6 +6,7 @@ header {
     position: relative;
     top: 0;
     width: 100%;
+    border-bottom: 1px solid $primary-blue;
     box-shadow: 0 4px 8px 0 rgba(143, 143, 143, 0.25);
 
     .top-nav {
