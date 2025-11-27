@@ -66,21 +66,27 @@
        }
 }
 .featured-btn{
-    @include  btn ($white, $tertiary-dark-blue, #FFEDAD);
+    @include  btn ($white, $tertiary-dark-blue, #A0D3FF);
     display: block;
     max-width: 100%; 
     margin-top: 1rem;
     font-size: 18px;
 }
 
-.more-products{
-    background-color: $primary-blue
-}
+
 .more-products{
 
     @include products-hero-card($primary-blue);
     border-radius: 0;
     margin: 96px 0 96px 0;
+   
+    
+    .more-products-h2{
+        color: $white;
+        max-width: 700px;
+         margin: 0 auto;
+    }
+   
 }
 
 .more-products-container{
@@ -126,6 +132,9 @@
     
     @include products-hero-card($tertiary-dark-blue);
     margin-bottom: 96px;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 96px;
        h2, p{
         color: $white;
         padding-top: 1rem;
@@ -138,9 +147,8 @@
     }
 
     .promo-btn{
-        @include btn ($white, $tertiary-dark-blue, #FFEDAD);
-        display: block;
-        max-width: 400px;   
+        @include btn ($white, $tertiary-dark-blue, #A0D3FF);
+        display: block;  
         margin: 1rem auto 1rem 0;
     }
 
@@ -224,19 +232,7 @@
     }
 
 
-    .more-products-container{
-    max-width: 700px;
-    margin: 0 auto;
-
-    h4{
-        margin: 1rem 0 1rem 0;
-    }
-
-     ul h3{
-        font-family: 'assistant', sans-serif;
-    }
-
-}
+   
 
     .more-products-container{
     max-width: unset;
@@ -244,6 +240,29 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
+
+
+    .more-products{
+    .more-products-h2{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+        max-width: unset;
+        margin: unset;
+
+        h2{
+            grid-column: 6 / span 6;
+        }
+    }
+    }
+    
+    h4{
+        margin: 1rem 0 1rem 0;
+    }
+
+     ul h3{
+        font-family: 'assistant', sans-serif;
+     }
 }
 
 .more-products-section{
@@ -266,6 +285,7 @@
         grid-template-columns: repeat(10,1fr);
         margin: 0 150px 96px 150px;
         align-items: center;
+        max-width: unset;
 
         div:nth-child(1){
             grid-column: 2 / span 3;
@@ -273,7 +293,7 @@
 
         div:nth-child(2){
             grid-column: 6 / span 4;
-            align-items: center;
+            padding-top: 1rem;
         }
     }
     

@@ -104,7 +104,9 @@ const moreProductsTestLoop = pageData.filter(
     {pressuresealDesc} {linerlessDesc} {integratedformDesc}/>
 
     <div class="more-products">
-      <h2>More Products</h2>
+      <div class="more-products-h2">
+        <h2>More Products</h2>
+      </div>
       {moreProductsTestLoop.map(product => (
       <MoreProducts  {...product} />
       ))}
