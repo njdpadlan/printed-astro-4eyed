@@ -48,7 +48,7 @@
         display: block;
         max-width: 294px;
         min-height: 300px;
-        flex-grow: 1;
+        
         border-radius: 15px;
         margin: 0 auto;
         
@@ -75,13 +75,12 @@
 
 
 .more-products{
-
     @include products-hero-card($primary-blue);
     border-radius: 0;
     margin: 96px 0 96px 0;
-   
-    
+ 
     .more-products-h2{
+        padding: 1rem 0 1rem 0;
         color: $white;
         max-width: 700px;
          margin: 0 auto;
@@ -108,8 +107,16 @@
     border-radius: 12px;
     margin-bottom: 64px;
     align-items: center;
-}
 
+    .product-header-group {
+        text-align: center;
+        margin-bottom: 2rem;
+        img {
+            margin: 0 auto;
+        }
+    }
+
+}
 
 .accordion .title {
     font-size: 1.5rem;
@@ -187,13 +194,11 @@
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
-       
 
         h2{
             grid-column: 5 / span 10;
         }
     }
-   
 
     .featured-products-bg{
         // margin: 0 150px 0 150px;
@@ -209,7 +214,6 @@
         align-items: end;
         grid-column: 2 / span 10;
 
-        
     }
    
     .products-container section:nth-child(1){
@@ -240,22 +244,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
-
-
-    .more-products{
-    .more-products-h2{
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1rem;
-        max-width: unset;
-        margin: unset;
-
-        h2{
-            grid-column: 6 / span 6;
-        }
-    }
-    }
-    
+        
     h4{
         margin: 1rem 0 1rem 0;
     }
@@ -263,6 +252,21 @@
      ul h3{
         font-family: 'assistant', sans-serif;
      }
+}
+
+.more-products{
+
+    margin: 144px 0 144px 0;    
+    .more-products-h2{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: unset;
+
+    h2{
+        grid-column: 3 / span 5;
+    }
+    }
+   
 }
 
 .more-products-section{
@@ -279,11 +283,10 @@
 .accordion-group{
     width: 50%;
 }
-
     .promo-products-container{
         display: grid;
         grid-template-columns: repeat(10,1fr);
-        margin: 0 150px 96px 150px;
+        margin: 144px 150px 144px 150px;
         align-items: center;
         max-width: unset;
 
