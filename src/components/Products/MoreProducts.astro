@@ -18,54 +18,66 @@ const {
     IdealForList5
 } = Astro.props;
 ---
-<div>
-    <h3>{productsHeader}</h3>
-        <Image 
-            src={productsImage?.url} 
-            alt={productsImage?.alternativeText}
-            inferSize={true}/>
-    <h4>{productsDesc}</h4>
-    <!-- accordion -->
-     <Accordion>
-        <AccordionItem
-            title="About"
-            variant="chevron">
+<div class="more-products-bg">
+    
+    <div class="more-products-container">
+    
+        
+        <div class="more-products-section">
+        <div class="product-header-group">
+            <h3>{productsHeader}</h3>
+                <Image
+                    src={productsImage?.url}
+                    alt={productsImage?.alternativeText}
+                    inferSize={true}/>
+        </div>
+
+        <div class="accordion-group">
+            <h4>{productsDesc}</h4>
+            <!-- accordion -->
+             <Accordion>
+                <AccordionItem
+                    title="About"
+                    variant="chevron">
+                    <div>
+                        <!-- About -->
+                        <p>{AboutDesc}</p>
+                    </div>
+                </AccordionItem>
+             </Accordion>
             <div>
-                <!-- About -->
-                <p>{AboutDesc}</p>
+                <!-- Choose From -->
+                <Accordion>
+                    <AccordionItem
+                        title="Choose From"
+                        variant="chevron">
+                        <ul>
+                            <li>{ChooseFromList1}</li>
+                            <li>{ChooseFromList2}</li>
+                            <li>{ChooseFromList3}</li>
+                            <li>{ChooseFromList4}</li>
+                            <li>{ChooseFromList5}</li>
+                        </ul>
+                    </AccordionItem>
+                </Accordion>
             </div>
-        </AccordionItem>
-     </Accordion>
-    <div>
-        <!-- Choose From -->
-        <Accordion>
-            <AccordionItem
-                title="Choose From"
-                variant="chevron">
-                <ul>
-                    <li>{ChooseFromList1}</li>
-                    <li>{ChooseFromList2}</li>
-                    <li>{ChooseFromList3}</li>
-                    <li>{ChooseFromList4}</li>
-                    <li>{ChooseFromList5}</li>
-                </ul>
-            </AccordionItem>
-        </Accordion>
+            <div>
+                <Accordion>
+                    <AccordionItem
+                        title="Ideal For"
+                        variant="chevron">
+                        <!-- Ideal For / Available Options -->
+                        <ul>
+                            <li>{IdealForList1}</li>
+                            <li>{IdealForList2}</li>
+                            <li>{IdealForList3}</li>
+                            <li>{IdealForList4}</li>
+                            <li>{IdealForList5}</li>
+                        </ul>
+                    </AccordionItem>
+                </Accordion>
+        </div>
+        </div>
     </div>
-    <div>
-        <Accordion>
-            <AccordionItem
-                title="Ideal For"
-                variant="chevron">
-                <!-- Ideal For / Available Options -->
-                <ul>
-                    <li>{IdealForList1}</li>
-                    <li>{IdealForList2}</li>
-                    <li>{IdealForList3}</li>
-                    <li>{IdealForList4}</li>
-                    <li>{IdealForList5}</li>
-                </ul>
-            </AccordionItem>
-        </Accordion>
-    </div>
+    
 </div>
