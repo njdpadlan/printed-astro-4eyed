@@ -33,7 +33,7 @@ export function contactFormValidate() {
 
     if (email.value.trim() && !validateEmail(email.value)) {
       emailErrorMsg.style.display = 'inline'; // show the error
-      emailErrorMsg.innerHTML = "Please enter your email address.";
+      emailErrorMsg.innerHTML = "Please enter a valid email.";
       isValid = false;
     } else {
       emailErrorMsg.style.display = 'none';
@@ -116,7 +116,7 @@ export function requestQuoteFormValidation() {
 
     if (email.value.trim() && !validateEmail(email.value)) {
       emailErrorMsg.style.display = 'inline'; // show the error
-      emailErrorMsg.innerHTML = "Please enter your email address.";
+      emailErrorMsg.innerHTML = "Please enter a valid email.";
       isValid = false;
     } else {
       emailErrorMsg.style.display = 'none';
