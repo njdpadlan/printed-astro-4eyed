@@ -129,9 +129,11 @@ const initialCount = 4;
     }
   </div>
   <!-- Load more button -->
-  {pageMoreProducts.length > initialCount && (
-    <button id="load-more-btn">Load More</button>
-  )}
+  <div class="load-more-grid">
+    {pageMoreProducts.length > initialCount && (
+      <button id="load-more-btn">Load More</button>
+    )}
+  </div>
 
 </div>
     <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}/>

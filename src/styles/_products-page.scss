@@ -25,7 +25,6 @@
     }
 
 }
-
 .featured-h2-grid{
     @include yellow-header-products;
     margin-top: 96px;
@@ -43,12 +42,10 @@
     color: $white;
     padding: 1rem ;
  
-
        img {
         display: block;
         max-width: 294px;
         min-height: 300px;
-        
         border-radius: 15px;
         margin: 0 auto;
         
@@ -57,7 +54,6 @@
             max-width: 300px;
             margin: 0 auto;
         }
-        
         h3{
             padding-top: 1rem;
         }
@@ -72,8 +68,6 @@
     margin-top: 1rem;
     font-size: 18px;
 }
-
-
 .more-products{
     @include products-hero-card($primary-blue);
     border-radius: 0;
@@ -85,9 +79,17 @@
         max-width: 700px;
         margin: 0 auto;
     }
-   
+     #load-more-btn{
+        @include btn ($white, $tertiary-dark-blue, #A0D3FF);
+        display: block;  
+        font-family: 'assistant', sans-serif;
+        max-width: 100%;
+        margin: 0 auto;
+        width: 700px;
+        border: none;
+        margin-bottom: 1rem;
+    }
 }
-
 .more-products-container{
     max-width: 700px;
     margin: 0 auto;
@@ -99,7 +101,6 @@
      ul h3{
         font-family: 'assistant', sans-serif;
     }
-
 }
 .more-products-section{
     background-color: white;
@@ -118,7 +119,6 @@
 
 }
 
-}
 .accordion .title {
     font-size: 1.5rem;
     color: $tertiary-dark-blue;
@@ -211,7 +211,6 @@
         max-width: unset;
         align-items: end;
         grid-column: 2 / span 10;
-
     }
    
     .products-container section:nth-child(1){
@@ -230,11 +229,9 @@
     .products-container section img{
         max-width: 100%;
         height: auto;
+        min-height: unset;
         display: block;
     }
-
-
-   
 
     .more-products-container{
     max-width: unset;
@@ -250,6 +247,7 @@
      ul h3{
         font-family: 'assistant', sans-serif;
      }
+
 }
 
 .more-products{
@@ -264,6 +262,16 @@
         grid-column: 3 / span 5;
     }
     }
+
+    .load-more-grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    #load-more-btn{
+    grid-column: 2 / span 4;
+    width: 50%;
+
+    }
+}
    
 }
 
