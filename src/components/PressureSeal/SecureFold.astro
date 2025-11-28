@@ -1,31 +1,47 @@
 ---
-import { Image } from 'astro:assets';
-const {idealforText, payroll, taxforms, statements, utilitybills, directmail, securefoldImage, securefoldAltText,  securefoldBtn, securefoldTitle} = Astro.props;
+import { Image } from "astro:assets";
+const {
+    idealforText,
+    payroll,
+    taxforms,
+    statements,
+    utilitybills,
+    directmail,
+    securefoldImage,
+    securefoldAltText,
+    securefoldBtn,
+    securefoldTitle,
+} = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
-    <div class="yellow-header">
-         <h2>{securefoldTitle}</h2>
-    </div>
-    <div class="featured-products-infolist featured-products-flex">
-        <div>
-            <p>{idealforText}</p>
-            <ul>
-                <li>{payroll}</li>
-                <li>{taxforms}</li>
-                <li>{statements}</li>
-                <li>{utilitybills}</li>
-                <li>{directmail}</li>
-            </ul>
-            <a href="/request-quote" class="featured-products-btn">{securefoldBtn}</a>
+    <div class="product-container">
+        <div class="yellow-header">
+            <h2>{securefoldTitle}</h2>
         </div>
-        <div>
-        <Image 
-            src={securefoldImage} 
-            alt={securefoldAltText}
-            inferSize={true}/>
-            <img src={securefoldImage} alt={securefoldAltText}>
+        <div class="featured-products-infolist">
+            <div class="inner-container inner-grid">
+                <div class="list">
+                    <p>{idealforText}</p>
+                    <ul>
+                        <li>{payroll}</li>
+                        <li>{taxforms}</li>
+                        <li>{statements}</li>
+                        <li>{utilitybills}</li>
+                        <li>{directmail}</li>
+                    </ul>
+                    <a href="/request-quote" class="featured-products-btn"
+                        >{securefoldBtn}</a
+                    >
+                </div>
+
+                <Image
+                    src={securefoldImage}
+                    alt={securefoldAltText}
+                    inferSize={true}
+                />
+            </div>
         </div>
     </div>
 </div>

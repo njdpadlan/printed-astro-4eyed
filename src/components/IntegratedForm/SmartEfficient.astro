@@ -1,31 +1,48 @@
 ---
-import { Image } from 'astro:assets';
-const {smartefficientformTitle, commonapplicationsText, ecommerce, distribution, retail, healthcare, insurance, logistics, smartefficientImage, smartefficientAltText, smartefficientBtn} = Astro.props;
+import { Image } from "astro:assets";
+const {
+    smartefficientformTitle,
+    commonapplicationsText,
+    ecommerce,
+    distribution,
+    retail,
+    healthcare,
+    insurance,
+    logistics,
+    smartefficientImage,
+    smartefficientAltText,
+    smartefficientBtn,
+} = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
-    <div class="yellow-header">
-        <h2>{smartefficientformTitle}</h2>
-    </div>
-    <div class="featured-products-infolist featured-products-flex">
-        <div>
-            <p>{commonapplicationsText}</p>
-            <ul>
-                <li>{ecommerce}</li>
-                <li>{distribution}</li>
-                <li>{retail}</li>
-                <li>{healthcare}</li>
-                <li>{insurance}</li>
-                <li>{logistics}</li>
-            </ul>
-            <a href="/request-quote" class="featured-products-btn">{smartefficientBtn}</a>
+    <div class="product-container">
+        <div class="yellow-header">
+            <h2>{smartefficientformTitle}</h2>
         </div>
-        <div>
-            <Image 
-                src={smartefficientImage} 
-                alt={smartefficientAltText}
-                inferSize={true}/>
+        <div class="featured-products-infolist">
+            <div class="inner-container inner-grid">
+                <div class="list">
+                    <p>{commonapplicationsText}</p>
+                    <ul>
+                        <li>{ecommerce}</li>
+                        <li>{distribution}</li>
+                        <li>{retail}</li>
+                        <li>{healthcare}</li>
+                        <li>{insurance}</li>
+                        <li>{logistics}</li>
+                    </ul>
+                    <a href="/request-quote" class="featured-products-btn"
+                        >{smartefficientBtn}</a
+                    >
+                </div>
+                <Image
+                    src={smartefficientImage}
+                    alt={smartefficientAltText}
+                    inferSize={true}
+                />
+            </div>
         </div>
     </div>
 </div>
