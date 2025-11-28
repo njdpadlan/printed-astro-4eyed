@@ -12,7 +12,7 @@ const {
 <div class="form-card">
     <!-- Add https://formsubmit.co/email-here later in the action -->
      <div class="form-p">
-        <p>Input fields that are marked with * are required. </p>
+        <p>Input fields that are marked with <span class="form-symbol">*</span> are required. </p>
      </div>
     <form
         action= "#"
@@ -23,7 +23,7 @@ const {
     <input type="hidden" name="_template" value="table">
     <!-- <input type="hidden" name="_template" value="box"> -->
         <div>
-            <label for={FullName}>{FullName} *</label>
+            <label for={FullName}>{FullName} <span class="form-symbol">*</span></label>
             <input
                 id={FullName}
                 type="text"
@@ -33,7 +33,7 @@ const {
            <p id="name_errormsg"></p>
         </div>
         <div>
-            <label for="phone" class="label">{Phone} *</label>
+            <label for="phone" class="label">{Phone}<span class="form-symbol"> *</span></label>
             <input id="phone" type="number" name="phone" placeholder="Enter your phone number here."/>
             <p id="phone_errormsg"></p>
         </div>
@@ -47,7 +47,7 @@ const {
             <p id="email_errormsg"></p>
         </div>
         <div>
-            <label for={Message}>{Message} *</label>
+            <label for={Message}>{Message} <span class="form-symbol">*</span></label>
             <textarea
                 id={Message}
                 name="message"

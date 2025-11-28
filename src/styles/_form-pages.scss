@@ -48,6 +48,10 @@
     padding-bottom: 2rem;
     
 }
+.form-symbol{
+    color: #fbc8c8;
+    font-weight: bold;
+}
 .form-p{
     margin: 1rem 0 1rem 0;
 }
@@ -66,12 +70,15 @@
     margin-bottom: 96px;
 
   
+    div{
+        margin-bottom: 1rem;
+    }
     input,
     select{
         width: 100%;
         height: 55px;
-        margin-bottom: 1rem;
         border-radius: 4px;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -79,16 +86,28 @@ label{
     
     font-weight: bold;
     text-transform: uppercase;
+  
 }
 
 input::placeholder,
 textarea::placeholder,
+select::placeholder,
 option{
     font-family: 'assistant', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: $grey;
     padding: 0.5rem;
+}
+
+::file-selector-button{
+    border: none;
+    border-right: 2px solid $tertiary-dark-blue;
+    background-color: $white;
+    color: $tertiary-dark-blue;
+    font-size: 20px;
+    height: 55px;
+    
 }
 .message-box{
     height: 256px;
@@ -106,13 +125,12 @@ option{
   width: 100%;
   background: $white;
   color: $tertiary-dark-blue;
-  padding: 1rem;
   border-radius: 8px;
   font-size: 18px;
   border: 1px solid #ccc;
 }
 .upload-p{
-    margin: -1rem 0 0.5rem 0;
+    margin: 1px  0 1px 0;
 }
 .submit-btn {
   @include btn ($white, $tertiary-dark-blue, #FFEDAD);
@@ -174,7 +192,7 @@ option{
     }
     .form-card{
         grid-column: 7/ span 6;
-        margin-top: 72px;
+        margin-top: 2rem;
         box-shadow: none;
         max-width: unset;
     }
@@ -217,7 +235,8 @@ option{
         grid-column: 1 / span 5;
     
     }
+
     .form-card{
-        grid-column: 7/ span 4;
+        grid-column: 6/ span 6;
     }
 }
