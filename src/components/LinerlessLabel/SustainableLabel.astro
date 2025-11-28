@@ -5,25 +5,28 @@ import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
-    <div class="yellow-header">
-         <h2>{sustainableTitle}</h2>
-    </div>
-    <div class="featured-products-infolist">
-        <p>{keyadvantagesTitle}</p>
-        <ul>
-            <li>{nolinerText}</li>
-            <li>{continuousrollText}</li>
-            <li>{custombrandingText}</li>
-            <li>{excellentforText}</li>
-        </ul>
-        <a href="/request-quote" class="featured-products-btn linerless-btn">{sustainableBtn}</a>
-        <div>
-            <Image
-                src={sustainableImage} 
-                alt={sustainableAltText}
-                inferSize={true}
-                class:list="linerless-img"/>
-            <!-- <img class="linerless-img" src={sustainableImage} alt={sustainableAltText}> -->
+    <div class="product-container">
+        <div class="yellow-header">
+             <h2>{sustainableTitle}</h2>
+        </div>
+        <div class="featured-products-infolist">
+            <div class="liner-container">
+                <p>{keyadvantagesTitle}</p>
+                <ul>
+                    <li>{nolinerText}</li>
+                    <li>{continuousrollText}</li>
+                    <li>{custombrandingText}</li>
+                    <li>{excellentforText}</li>
+                </ul>
+                <a href="/request-quote" class="featured-products-btn linerless-btn">{sustainableBtn}</a>
+                <div>
+                    <Image
+                        src={sustainableImage}
+                        alt={sustainableAltText}
+                        inferSize={true}
+                        class:list="linerless-img"/>
+                </div>
+            </div>
         </div>
     </div>
 </div>

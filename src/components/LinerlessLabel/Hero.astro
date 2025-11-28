@@ -3,16 +3,18 @@ const {linerlesslabelHeader, linerlesslabelText, linerlessImageMobile , linerles
 import "../../styles/styles.scss";
 ---
 
-<div class="featured-products-hero">
-    <div class="product-hero-container">
-        <h1>{linerlesslabelHeader}</h1>
-        <p>{linerlesslabelText}</p>
-    </div>
-    <div class="product-hero-img">
-        <!-- <img src={linerlessImage} alt={linerlessAltText}> -->
-        <picture>
-            <source  media="(min-width: 1400px)" srcset={linerlessImageDesktop}>
-            <img class="linerless-hero-img" src={linerlessImageMobile} alt={linerlessAltTextMobile}>
-        </picture>
+<div class="hero-grid">
+    <div class="featured-products-hero">
+        <div class="product-hero-container">
+            <h1>{linerlesslabelHeader}</h1>
+            <p>{linerlesslabelText}</p>
+        </div>
+        <div class="product-hero-img">
+            <!-- <img src={linerlessImage} alt={linerlessAltText}> -->
+            <picture>
+                <source  media="(min-width: 1400px)" srcset={linerlessImageDesktop}>
+                <img class="linerless-hero-img" src={linerlessImageMobile} alt={linerlessAltTextMobile}>
+            </picture>
+        </div>
     </div>
 </div>
