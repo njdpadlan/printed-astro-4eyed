@@ -83,7 +83,7 @@
         padding: 1rem 0 1rem 0;
         color: $white;
         max-width: 700px;
-         margin: 0 auto;
+        margin: 0 auto;
     }
    
 }
@@ -118,6 +118,7 @@
 
 }
 
+}
 .accordion .title {
     font-size: 1.5rem;
     color: $tertiary-dark-blue;
@@ -152,13 +153,11 @@
         border-radius: 15px;
         margin: 0 auto;
     }
-
     .promo-btn{
         @include btn ($white, $tertiary-dark-blue, #A0D3FF);
         display: block;  
         margin: 1rem auto 1rem 0;
     }
-
 }
 
 @media(min-width:1200px){
@@ -171,7 +170,6 @@
         max-width: 1920px;
         margin: 0 auto;
     }
-
     .products-hero {
         padding: 0 2rem 2rem 2rem;
         max-width: unset;

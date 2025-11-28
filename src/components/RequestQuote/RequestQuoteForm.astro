@@ -16,7 +16,7 @@ const {
     <!-- Add https://formsubmit.co/email-here later in the action -->
 
     <div class="form-p">
-        <p>Input fields that are marked with * are required. </p>
+        <p>Input fields that are marked with <span class="form-symbol">*</span> are required. </p>
      </div>
     <form
         action="#"
@@ -27,7 +27,7 @@ const {
     <!-- Template type -->
     <input type="hidden" name="_template" value="table">
         <div>
-            <label for={FullName}>{FullName} *</label>
+            <label for={FullName}>{FullName} <span class="form-symbol">*</span></label>
             <input
                 id={FullName}
                 type="text"
@@ -37,7 +37,7 @@ const {
             <p id="name_errormsg"></p>
         </div>
         <div>
-            <label for="phone">{Phone} *</label>
+            <label for="phone">{Phone} <span class="form-symbol">*</span></label>
             <input
                 id="phone"
                 type="number"
@@ -67,7 +67,7 @@ const {
         <div class="product-type-quantity">
             
             <div>
-                <label for="product-type">{ProductType} *</label>
+                <label for="product-type">{ProductType} <span class="form-symbol">*</span></label>
                 <select name="product_type" id="product-type">
                     <option value="">Choose a product</option>
                     <option value="Linerless Label">Linerless Label</option>
@@ -82,7 +82,7 @@ const {
                 <p id="subject_errormsg"></p>
             </div>
             <div>
-                <label for="quantity">{Quantity} *</label>
+                <label for="quantity">{Quantity} <span class="form-symbol">*</span></label>
                 <!-- <select name="quantity" id="quantity"> 
                     <option value="">Select Quantity</option>
                     <option value="10">10</option>
@@ -112,7 +112,7 @@ const {
             <p class="upload-p">Upload a file up to 5MB.</p>
         </div>
         <div>
-            <label for={AdditionalDetails}>{AdditionalDetails} *</label>
+            <label for={AdditionalDetails}>{AdditionalDetails} <span class="form-symbol">*</span></label>
             <textarea
                 id={AdditionalDetails}
                 name="message"
