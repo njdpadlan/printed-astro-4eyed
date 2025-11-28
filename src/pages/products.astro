@@ -5,7 +5,7 @@ import MoreProducts from "../components/Products/MoreProducts.astro";
 import PromoProducts from "../components/Products/PromoProducts.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
-
+import AddMoreProductsPagination from "../components/Products/AddMoreProductsPagination";
 
 const pages = await fetchApi({
   endpoint: 'products', 
@@ -90,6 +90,7 @@ const moreProductsTestLoop = pageData.filter(
 );
 
 
+
 ---
 
 <Layout>
@@ -103,14 +104,15 @@ const moreProductsTestLoop = pageData.filter(
     {pressureSealAltText} {linerlessLabelAltText} {integratedFormAltText}
     {pressuresealDesc} {linerlessDesc} {integratedformDesc}/>
 
-    <div class="more-products">
-      <div class="more-products-h2">
-        <h2>More Products</h2>
-      </div>
-      {moreProductsTestLoop.map(product => (
-      <MoreProducts  {...product} />
-      ))}
-    </div>
+<div class="more-products">
+  <div class="more-products-h2">
+    <h2>More Products</h2>
+  </div>
+
+  {moreProductsTestLoop.map(product => (
+    <MoreProducts {...product} />
+  ))}
+</div>
 
     <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}
     />

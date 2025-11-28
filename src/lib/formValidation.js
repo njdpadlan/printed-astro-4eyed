@@ -50,7 +50,7 @@ export function contactFormValidate() {
 
     if (!message.value) {
       messageErrorMsg.style.display = 'inline'; // show the error
-      messageErrorMsg.innerHTML = "Please enter a message.";
+      messageErrorMsg.innerHTML = "Please enter your additional message.";
       isValid = false;
     } else {
       messageErrorMsg.style.display = 'none';
@@ -80,21 +80,21 @@ export function requestQuoteFormValidation() {
         const form = document.querySelector('form[name="requestquote"]');
 
     form.addEventListener("submit", (e) => {
+        e.preventDefault();
         const name = form.querySelector('input[name="name"]');
         const phone = form.querySelector('input[name="phone"]');
         const email = form.querySelector('input[name="email"]');
         const company = form.querySelector('input[name="company"]');
-        const subjectSelect = form.querySelector('select[name="_subject"]');
-        const quantity = form.querySelector('select[name="quantity"]');
+        const quantity = form.querySelector('input[name="quantity"]');
+        const productType = form.querySelector('select[name="product_type"]');
         const message = form.querySelector('textarea[name="message"]');
 
         const nameErrorMsg = form.querySelector('#name_errormsg');
         const emailErrorMsg = form.querySelector('#email_errormsg');
         const phoneErrorMsg = form.querySelector('#phone_errormsg');
-        const subjErrorMsg = form.querySelector('#subject_errormsg');
         const quantityErrorMsg = form.querySelector('#quantity_errormsg');
         const messageErrorMsg = form.querySelector('#message_errormsg');
-
+        const productTypeErrorMsg = form.querySelector('#subject_errormsg');
         let isValid = true;
 
     //Trim and sanitize inputs
@@ -122,17 +122,16 @@ export function requestQuoteFormValidation() {
       emailErrorMsg.style.display = 'none';
     }
 
-    if (!subjectSelect.value) {
-      subjErrorMsg.style.display = 'inline'; // show the error
-      subjErrorMsg.innerHTML = "Please select a subject.";
-      isValid = false;
+    if (!productType.value) {
+      productTypeErrorMsg.style.display = 'inline'; // show the error
+      productTypeErrorMsg.innerHTML = "Please select a product type.";; // show the error
     } else {
-      subjErrorMsg.style.display = 'none';
+      productTypeErrorMsg.style.display = 'none';
     }
 
     if (!quantity.value) {
       quantityErrorMsg.style.display = 'inline'; // show the error
-      quantityErrorMsg.innerHTML = "Please select quantity.";
+      quantityErrorMsg.innerHTML = "Please select a quantity.";
       isValid = false;
     } else {
       quantityErrorMsg.style.display = 'none';
@@ -148,7 +147,7 @@ export function requestQuoteFormValidation() {
 
     if (!message.value) {
       messageErrorMsg.style.display = 'inline'; // show the error
-      messageErrorMsg.innerHTML = "Please enter a message.";
+      messageErrorMsg.innerHTML = "Please enter your additional message.";
       isValid = false;
     } else {
       messageErrorMsg.style.display = 'none';
