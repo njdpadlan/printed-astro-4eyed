@@ -5,13 +5,14 @@ import MoreProducts from "../components/Products/MoreProducts.astro";
 import PromoProducts from "../components/Products/PromoProducts.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
-import AddMoreProductsPagination from "../components/Products/AddMoreProductsPagination";
+
 
 const pages = await fetchApi({
   endpoint: 'products', 
   page: 'ProductPage',
   wrappedByKey: 'data',
 });
+
 
 // http://localhost:1337/api/products?populate[ProductPage][populate]=*
 
@@ -85,11 +86,16 @@ const { featuredpromoImage: {
 }} = promoProductsData;
 
 //fetch Add More Products components
-const moreProductsTestLoop = pageData.filter(
-  (pd) => pd.__component === "addmoreproducts.add-more-products"
-);
+// const moreProductsTestLoop = pageData.filter(
+//   (pd) => pd.__component === "addmoreproducts.add-more-products"
+// );
 
+const pageMoreProducts = await fetchApi({
+  endpoint: 'add-more-products', 
+  wrappedByKey: 'data',
+});
 
+const initialCount = 4;
 
 ---
 
@@ -105,16 +111,34 @@ const moreProductsTestLoop = pageData.filter(
     {pressuresealDesc} {linerlessDesc} {integratedformDesc}/>
 
 <div class="more-products">
+
   <div class="more-products-h2">
     <h2>More Products</h2>
   </div>
 
-  {moreProductsTestLoop.map(product => (
-    <MoreProducts {...product} />
-  ))}
-</div>
+  <div id="products-container">
+    {pageMoreProducts
+      //a - b (old - new)
+      //b - a (new - old)
+      .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
+      .map((product, index) => (
+        <div class="more-product-item" style={index < initialCount ? '' : 'display:none'}>
+          <MoreProducts moreproducts={product} />
+        </div>
+      ))
+    }
+  </div>
+  <!-- Load more button -->
+  {pageMoreProducts.length > initialCount && (
+    <button id="load-more-btn">Load More</button>
+  )}
 
-    <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}
-    />
+</div>
+    <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}/>
 
 </Layout>
+
+  <script>
+    import { loadMoreProducts } from "../lib/loadMore";
+    loadMoreProducts();
+  </script>
