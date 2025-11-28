@@ -194,7 +194,8 @@ option{
         grid-column: 7/ span 6;
         margin-top: 2rem;
         box-shadow: none;
-        max-width: unset;
+        width: 500px;
+        
     }
 
     .product-type-quantity{
@@ -238,5 +239,6 @@ option{
 
     .form-card{
         grid-column: 6/ span 6;
+
     }
 }
