@@ -1,39 +1,23 @@
 ---
 import { Accordion, AccordionItem } from 'accessible-astro-components';
 import { Image } from 'astro:assets';
+
 const {
-    productsHeader,
-    productsImage,
-    productsDesc,
-    AboutDesc,
-    ChooseFromList1,
-    ChooseFromList2,
-    ChooseFromList3,
-    ChooseFromList4,
-    ChooseFromList5,
-    IdealForList1,
-    IdealForList2,
-    IdealForList3,
-    IdealForList4,
-    IdealForList5
+    moreproducts
 } = Astro.props;
 ---
 <div class="more-products-bg">
-    
     <div class="more-products-container">
-    
-        
         <div class="more-products-section">
         <div class="product-header-group">
-            <h3>{productsHeader}</h3>
+            <h3>{moreproducts.productTitle}</h3>
                 <Image
-                    src={productsImage?.url}
-                    alt={productsImage?.alternativeText}
+                    src={moreproducts.productImage.url}
+                    alt={moreproducts.productImage.alternativeText}
                     inferSize={true}/>
         </div>
-
         <div class="accordion-group">
-            <h4>{productsDesc}</h4>
+            <h4>{moreproducts.ProductDesc}</h4>
             <!-- accordion -->
              <Accordion>
                 <AccordionItem
@@ -42,7 +26,7 @@ const {
                     open >
                     <div>
                         <!-- About -->
-                        <p>{AboutDesc}</p>
+                        <p>{moreproducts.aboutDesc}</p>
                     </div>
                 </AccordionItem>
              </Accordion>
@@ -53,11 +37,11 @@ const {
                         title="Choose From"
                         variant="chevron">
                         <ul>
-                            <li>{ChooseFromList1}</li>
-                            <li>{ChooseFromList2}</li>
-                            <li>{ChooseFromList3}</li>
-                            <li>{ChooseFromList4}</li>
-                            <li>{ChooseFromList5}</li>
+                            <li>{moreproducts.ChooseFromList1}</li>
+                            <li>{moreproducts.ChooseFromList2}</li>
+                            <li>{moreproducts.ChooseFromList3}</li>
+                            <li>{moreproducts.ChooseFromList4}</li>
+                            <li>{moreproducts.ChooseFromList5}</li>
                         </ul>
                     </AccordionItem>
                 </Accordion>
@@ -69,15 +53,14 @@ const {
                         variant="chevron">
                         <!-- Ideal For / Available Options -->
                         <ul>
-                            <li>{IdealForList1}</li>
-                            <li>{IdealForList2}</li>
-                            <li>{IdealForList3}</li>
-                            <li>{IdealForList4}</li>
-                            <li>{IdealForList5}</li>
+                            <li>{moreproducts.IdealForList1}</li>
+                            <li>{moreproducts.IdealForList2}</li>
+                            <li>{moreproducts.IdealForList3}</li>
+                            <li>{moreproducts.IdealForList4}</li>
+                            <li>{moreproducts.IdealForList5}</li>
                         </ul>
                     </AccordionItem>
                 </Accordion>
         </div>
     </div>
-    
 </div>
