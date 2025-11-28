@@ -78,6 +78,7 @@
     @include products-hero-card($primary-blue);
     border-radius: 0;
     margin: 96px 0 96px 0;
+ 
     .more-products-h2{
         padding: 1rem 0 1rem 0;
         color: $white;
@@ -114,6 +115,8 @@
             margin: 0 auto;
         }
     }
+
+}
 
 }
 .accordion .title {
