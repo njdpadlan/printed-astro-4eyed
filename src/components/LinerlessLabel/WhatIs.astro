@@ -1,16 +1,16 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 const {
-    linerlesslabelWhatIsTitle, 
-    linerlesslabelWhatIsDesc, 
-    perfectforwindowText, 
+    linerlesslabelWhatIsTitle,
+    linerlesslabelWhatIsDesc,
+    perfectforwindowText,
     printedmanufactureText,
     linerlesslabelImage1,
     linerlesslabelAltText1,
     linerlesslabelImage2,
     linerlesslabelAltText2,
     linerlesslabelImage3,
-    linerlesslabelAltText3
+    linerlesslabelAltText3,
 } = Astro.props;
 import "../../styles/styles.scss";
 ---
@@ -23,17 +23,20 @@ import "../../styles/styles.scss";
         <p>{printedmanufactureText}</p>
     </div>
     <div class="linerless-img">
-        <Image 
-            src={linerlesslabelImage1} 
+        <Image
+            src={linerlesslabelImage1}
             alt={linerlesslabelAltText1}
-            inferSize={true}/>
-        <Image 
-            src={linerlesslabelImage2} 
+            inferSize={true}
+        />
+        <Image
+            src={linerlesslabelImage2}
             alt={linerlesslabelAltText2}
-            inferSize={true}/>
-        <Image 
-            src={linerlesslabelImage3} 
+            inferSize={true}
+        />
+        <Image
+            src={linerlesslabelImage3}
             alt={linerlesslabelAltText3}
-            inferSize={true}/>
+            inferSize={true}
+        />
     </div>
 </div>
