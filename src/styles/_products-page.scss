@@ -31,10 +31,6 @@
     margin-top: calc(6rem - 25px);
 }
 
-// .featured-products-bg{
-//  @include products-hero-card($tertiary-dark-blue)  
-// }
-
 
 .products-container {
     @include products-hero-card($tertiary-dark-blue);
