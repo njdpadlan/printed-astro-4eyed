@@ -140,15 +140,13 @@
 
 // Featured Products Section
 .featured-products {
-    margin-top: 6rem;
+    margin-top: calc(6rem - 25px);
     color: $white;
     margin-left: auto;
     margin-right: auto;
 
     .featured-header-grid {
         @include yellow-header-products;
-        padding-top: 27px;
-        padding-bottom: 27px;
     }
 
     .products-section {
@@ -245,7 +243,7 @@
 
 // About Us Section
 .about-section {
-    margin: 6rem 0 6rem 0;
+    margin: calc(6rem - 25px) 0 6rem 0;
 
     .about-header-grid {
         @include yellow-header-products;
@@ -284,7 +282,6 @@
                 border: 2px solid $white;
             }
         }
-
     }
 }
 
@@ -371,7 +368,7 @@
 
     // Featured Products Section
     .featured-products {
-        margin-top: 9rem;
+        margin-top: calc(9rem - 25px);
         max-width: 1920px;
 
         .featured-header-grid {
@@ -465,7 +462,7 @@
 
     // About Us Section
     .about-section {
-        margin: 9rem 0;
+        margin: calc(9rem - 25px) 0 9rem 0;
         max-width: 1920px;
 
         .about-header-grid {
