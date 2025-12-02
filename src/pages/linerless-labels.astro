@@ -2,7 +2,7 @@
 import Hero from "../components/LinerlessLabel/Hero.astro";
 import SustainableLabel from "../components/LinerlessLabel/SustainableLabel.astro";
 import WhatIs from "../components/LinerlessLabel/WhatIs.astro";
-
+import Head from "../layouts/Head.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
 
@@ -83,8 +83,9 @@ const { sustainableImage: {
 	alternativeText: sustainableAltText
 }} = sustainablelabelData;
 
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-
+<Head seoData={seoPageData} />
 <Layout>
     <Hero {linerlesslabelHeader} {linerlesslabelText} {linerlessImageMobile} {linerlessAltTextMobile} {linerlessImageDesktop} />
     <WhatIs {linerlesslabelWhatIsTitle} {linerlesslabelWhatIsDesc} {perfectforwindowText} {printedmanufactureText} 

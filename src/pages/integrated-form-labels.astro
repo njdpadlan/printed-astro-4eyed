@@ -4,7 +4,7 @@ import WhatIs from "../components/IntegratedForm/WhatIs.astro";
 import SmartEfficient from "../components/IntegratedForm/SmartEfficient.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
-
+import Head from "../layouts/Head.astro";
 
 
 const pages = await fetchApi({
@@ -91,8 +91,9 @@ const { smartefficientImage: {
 	alternativeText: smartefficientAltText
 }} = smartformData;
 
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-
+<Head seoData={seoPageData} />
 <Layout>
     <Hero {integratedformlabelHeader} {integratedformlabelDesc} {integratedformlabelImageMobile} {integratedformlabelAltTextMobile} {integratedformlabelImageDesktop} />
     <WhatIs {integratedformlabelWhatIsTitle} {integratedformlabelWhatIsDesc} {integratedsolutionText} {integratedformImage1} {integratedformImage2} {integratedformImage3}

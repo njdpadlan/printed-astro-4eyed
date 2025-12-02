@@ -1,21 +1,22 @@
 ---
 import { Image } from 'astro:assets';
-const {aboutUsHeroHeader, aboutUsHeroDesc, aboutUsHeroImg, aboutUsAltText, smartPrintingText ,trustedExpertiseText, canadianBasedText} = Astro.props;
+// const {aboutUsHeroHeader, aboutUsHeroDesc, aboutUsHeroImg, aboutUsAltText, smartPrintingText ,trustedExpertiseText, canadianBasedText} = Astro.props;
+const {aboutUsHero} = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <div class="about-banner">
     <div class="about-hero">
-        <h1>{aboutUsHeroHeader}</h1>
+        <h1>{aboutUsHero.aboutUsHeroHeader}</h1>
         <Image 
-            src={aboutUsHeroImg} 
-            alt={aboutUsAltText}
+            src={aboutUsHero.aboutUsHeroImg.url} 
+            alt={aboutUsHero.aboutUsHeroImg.alternativeText}
             inferSize={true}/>
         <div class="hero-tag">
-            <p>{smartPrintingText}</p>
-            <p>{trustedExpertiseText}</p>
-            <p>{canadianBasedText}</p>
+            <p>{aboutUsHero.smartPrintingText}</p>
+            <p>{aboutUsHero.trustedExpertiseText}</p>
+            <p>{aboutUsHero.canadianBasedText}</p>
         </div>
-        <p>{aboutUsHeroDesc}</p>
+        <p>{aboutUsHero.aboutUsHeroDesc}</p>
     </div>
 </div>
