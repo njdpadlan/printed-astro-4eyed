@@ -1,5 +1,6 @@
 ---
 import "../styles/styles.scss";
+const { logo } = Astro.props;
 ---
 
 <header>
@@ -13,7 +14,7 @@ import "../styles/styles.scss";
   <div class="container">
     <div class="nav-container">
       <a href="/"
-        ><img src="https://stylish-dinosaurs-39d17e40aa.media.strapiapp.com/printed_logo_daa3b7d310.png" alt="The dark logo for Print|ED." /></a
+        ><img src={logo.NavLogo.url} alt={logo.NavLogo.alternativeText} /></a
       >
       <button class="toggle-nav">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
