@@ -77,10 +77,9 @@ export function contactFormValidate() {
 
 
 export function requestQuoteFormValidation() {
-        const form = document.querySelector('form[name="requestquote"]');
+    const form = document.querySelector('form[name="requestquote"]');
 
     form.addEventListener("submit", (e) => {
-        e.preventDefault();
         const name = form.querySelector('input[name="name"]');
         const phone = form.querySelector('input[name="phone"]');
         const email = form.querySelector('input[name="email"]');
@@ -125,6 +124,7 @@ export function requestQuoteFormValidation() {
     if (!productType.value) {
       productTypeErrorMsg.style.display = 'inline'; // show the error
       productTypeErrorMsg.innerHTML = "Please select a product type.";; // show the error
+      isValid = false;
     } else {
       productTypeErrorMsg.style.display = 'none';
     }

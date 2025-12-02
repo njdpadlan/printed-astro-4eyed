@@ -2,15 +2,21 @@
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
 import "../styles/styles.scss";
+import fetchApi from "../lib/strapi";
+
+const logoPageData = await fetchApi({
+  endpoint: 'logos', 
+  wrappedByKey: 'data',
+});
 ---
 <html>
     <body>
-        <Nav />
+        <Nav logo={logoPageData[0]} />
         <main>
             <div>
                 <slot />
             </div>
         </main>
-        <Footer/>
+        <Footer logo={logoPageData[0]} />
     </body>
 </html>
