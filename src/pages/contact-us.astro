@@ -15,16 +15,12 @@ const pages = await fetchApi({
 
 // http://localhost:1337/api/contact-uses?populate[ContactUsPage][populate]=*
 
-//fetch page data for about us page
 const contactusPage = pages[0];
 const pageData = contactusPage?.ContactUsPage || [];
 
-// fetch about us hero components
 const heroData = pageData.find(pd => pd.__component === "contactushero.contactus-hero") || {};
-const {contactusHeader, contactusText, callusTitle, callusText, emailTitle, emailText} = heroData;
 
 const contactusFormData = pageData.find(pd => pd.__component === "contactusform.contactus-form") || {};
-const {FullName, Email, Phone, Message, sendmessageBtn} = contactusFormData;
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
@@ -32,9 +28,8 @@ const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 <Layout>
    <div class="background-form">
     <div class="forms-page-wrapper">
-     
-        <Hero {contactusHeader} {contactusText} {callusTitle} {callusText} {emailTitle} {emailText} />
-        <ContactUsForm {FullName} {Email} {Phone} {Message} {sendmessageBtn} />
+        <Hero contactUsHero={heroData} />
+        <ContactUsForm formDetails={contactusFormData} />
       </div>
     </div>
 </Layout>

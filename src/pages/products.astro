@@ -16,79 +16,15 @@ const pages = await fetchApi({
 
 // http://localhost:1337/api/products?populate[ProductPage][populate]=*
 
-//fetch page data for products page
 const productPage = pages[0];
 const pageData = productPage?.ProductPage || [];
 
 // fetch productshero components
 const heroData = pageData.find(pd => pd.__component === "producthero.product-hero") || {};
-const {productHeroHeader, productHeroText} = heroData;
 
-const { productHeroImage: {
-	url: productHeroImage
-}} = heroData;
-
-const { productHeroImage: {
-	alternativeText: productsAltText
-}} = heroData;
-
-//fetch featured products components
 const featuredproductData = pageData.find(pd => pd.__component === "productsfeaturedproducts.products-featured-products") || {};
-const {
-    featureProductsHeader, 
-    pressuresealTitle,  
-    pressuresealBtn,
-    linerlessTitle,
-    linerlessBtn,
-    integratedformTitle,
-    integratedformBtn,
-    pressuresealDesc,
-    linerlessDesc,
-    integratedformDesc
-    } = featuredproductData;
 
-const { pressuresealImage: {
-	url: pressuresealImage
-}} = featuredproductData;
-
-const { linerlessImage: {
-	url: linerlessImage
-}} = featuredproductData;
-
-const { integratedformImage: {
-	url: integratedformImage
-}} = featuredproductData;
-
-const { pressuresealImage: {
-	alternativeText: pressureSealAltText
-
-}} = featuredproductData;
-
-const { linerlessImage: {
-	alternativeText: linerlessLabelAltText
-}} = featuredproductData;
-
-const { integratedformImage: {
-	alternativeText: integratedFormAltText
-}} = featuredproductData;
-
-
-//fetch promo products components
 const promoProductsData = pageData.find(pd => pd.__component === "featuredpromoproducts.featured-promo-products");
-const {featuredpromoTitle, featuredpromoText, featuredpromoBtn} = promoProductsData;
-
-const { featuredpromoImage: {
-	url: featuredpromoImage
-}} = promoProductsData;
-
-const { featuredpromoImage: {
-	alternativeText: featuredpromoAltText
-}} = promoProductsData;
-
-//fetch Add More Products components
-// const moreProductsTestLoop = pageData.filter(
-//   (pd) => pd.__component === "addmoreproducts.add-more-products"
-// );
 
 const pageMoreProducts = await fetchApi({
   endpoint: 'add-more-products', 
@@ -96,19 +32,15 @@ const pageMoreProducts = await fetchApi({
 });
 
 const initialCount = 4;
+
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
 <Head seoData={seoPageData} />
 <Layout>
 
-    <ProductsHero {productHeroHeader} {productHeroImage} {productHeroText} {productsAltText} />
+    <ProductsHero productsHero={heroData} />
 
-    <FeaturedProducts 
-    {featureProductsHeader} {pressuresealTitle} {pressuresealImage} {pressuresealBtn} 
-    {linerlessTitle} {linerlessImage} {linerlessBtn} 
-    {integratedformTitle} {integratedformImage} {integratedformBtn}
-    {pressureSealAltText} {linerlessLabelAltText} {integratedFormAltText}
-    {pressuresealDesc} {linerlessDesc} {integratedformDesc}/>
+    <FeaturedProducts featureProducts={featuredproductData} />
 
 <div class="more-products">
 
@@ -136,7 +68,7 @@ const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
   </div>
 
 </div>
-    <PromoProducts {featuredpromoTitle} {featuredpromoText} {featuredpromoBtn} {featuredpromoImage} {featuredpromoAltText}/>
+    <PromoProducts promoProducts={promoProductsData} />
 
 </Layout>
 

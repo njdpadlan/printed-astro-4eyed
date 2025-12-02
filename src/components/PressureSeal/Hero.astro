@@ -1,11 +1,5 @@
 ---
-const {
-    pressuresealHeader,
-    pressuresealDesc,
-    pressuresealImageMobile,
-    pressuresealAltTextMobile,
-    pressuresealImageDesktop,
-} = Astro.props;
+const { pressureSealHero } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
@@ -15,19 +9,19 @@ import "../../styles/styles.scss";
     >
     <div class="featured-products-hero">
         <div class="product-hero-container">
-            <h1>{pressuresealHeader}</h1>
-            <p>{pressuresealDesc}</p>
+            <h1>{pressureSealHero.pressuresealHeader}</h1>
+            <p>{pressureSealHero.pressuresealDesc}</p>
         </div>
         <div class="product-hero-img">
             <picture>
                 <source
                     media="(min-width: 1400px)"
-                    srcset={pressuresealImageDesktop}
+                    srcset={pressureSealHero.pressuresealImageDesktop.url}
                 />
                 <img
                     class="pressureseal-hero-img"
-                    src={pressuresealImageMobile}
-                    alt={pressuresealAltTextMobile}
+                    src={pressureSealHero.pressuresealImageMobile.url}
+                    alt={pressureSealHero.pressuresealImageMobile.alternativeText}
                 />
             </picture>
         </div>

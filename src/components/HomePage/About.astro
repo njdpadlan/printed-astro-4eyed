@@ -1,27 +1,20 @@
 ---
 import { Image } from "astro:assets";
-const {
-    aboutHeader,
-    aboutImage,
-    aboutText,
-    requestQuoteBtn,
-    aboutAltText,
-    contactUsBtn,
-} = Astro.props;
+const { homeAbout } = Astro.props;
 ---
 
 <section class="about-section">
     <div class="about-header-grid">
-        <h2>{aboutHeader}</h2>
+        <h2>{homeAbout.aboutHeader}</h2>
     </div>
     <div class="about-grid">
         <div class="about-info container">
             <div class="about-flex">
-                <p>{aboutText}</p>
-                <a href="/request-quote" class="about-request">{requestQuoteBtn}</a>
-                <a href="/contact-us" class="about-contact">{contactUsBtn}</a>
+                <p>{homeAbout.aboutText}</p>
+                <a href="/request-quote" class="about-request">{homeAbout.requestQuoteBtn}</a>
+                <a href="/contact-us" class="about-contact">{homeAbout.contactUsBtn}</a>
             </div>
-            <Image src={aboutImage} alt={aboutAltText} inferSize={true} />
+            <Image src={homeAbout.aboutImage.url} alt={homeAbout.aboutImage.alternativeText} inferSize={true} />
         </div>
     </div>
 </section>

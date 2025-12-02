@@ -1,17 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-const {
-    whyChooseHeader,
-    whyChooseDesc,
-    whatSetsApartHeader,
-    atPrintedDesc,
-    withDecadesDesc,
-    printSmarterText,
-    printedText,
-    aboutUsBtn,
-    aboutusWhyImage,
-    aboutUsWhyAltText,
-} = Astro.props;
+const { aboutUs } = Astro.props;
 import "../../styles/styles.scss";
 
 ---
@@ -20,25 +9,25 @@ import "../../styles/styles.scss";
     <div class="about-wide-flex">
         <div class="about-flex">
             <div>
-                <h2>{whyChooseHeader}</h2>
-                <p>{whyChooseDesc}</p>
+                <h2>{aboutUs.whyChooseHeader}</h2>
+                <p>{aboutUs.whyChooseDesc}</p>
             </div>
             <div class="set-apart-flex">
                 <div>
-                    <h2>{whatSetsApartHeader}</h2>
-                    <p>{atPrintedDesc}</p>
+                    <h2>{aboutUs.whatSetsApartHeader}</h2>
+                    <p>{aboutUs.atPrintedDesc}</p>
                 </div>
-                <p>{withDecadesDesc}</p>
+                <p>{aboutUs.withDecadesDesc}</p>
                 <div class="set-apart-tag">
-                    <p>{printSmarterText}</p>
-                    <p>{printedText}</p>
+                    <p>{aboutUs.printSmarterText}</p>
+                    <p>{aboutUs.printedText}</p>
                 </div>
-                <a href="/contact-us" class="about-btn">{aboutUsBtn}</a>
+                <a href="/contact-us" class="about-btn">{aboutUs.aboutUsBtn}</a>
             </div>
         </div>
         <Image 
-            src={aboutusWhyImage} 
-            alt={aboutUsWhyAltText}
+            src={aboutUs.aboutusWhyImage.url} 
+            alt={aboutUs.aboutusWhyImage.alternativeText}
             inferSize={true}/>
     </div>
 </div>

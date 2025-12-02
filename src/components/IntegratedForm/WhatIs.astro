@@ -1,37 +1,27 @@
 ---
 import { Image } from 'astro:assets';
-const {
-    integratedformlabelWhatIsTitle, 
-    integratedformlabelWhatIsDesc, 
-    integratedsolutionText, 
-    integratedformImage1,
-    integratedformAltText1,
-    integratedformImage2,
-    integratedformAltText2, 
-    integratedformImage3,
-    integratedformAltText3
-} = Astro.props;
+const { productWhatIs } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-container">
     <div class="featured-products-info">
-        <h2>{integratedformlabelWhatIsTitle}</h2>
-        <p>{integratedformlabelWhatIsDesc}</p>
-        <p>{integratedsolutionText}</p>
+        <h2>{productWhatIs.integratedformlabelWhatIsTitle}</h2>
+        <p>{productWhatIs.integratedformlabelWhatIsDesc}</p>
+        <p>{productWhatIs.integratedsolutionText}</p>
     </div>
     <div class="integrated-form-img">
         <Image 
-            src={integratedformImage1} 
-            alt={integratedformAltText1}
+            src={productWhatIs.integratedformImage1.url} 
+            alt={productWhatIs.integratedformImage1.alternativeText}
             inferSize={true}/>
         <Image 
-            src={integratedformImage2} 
-            alt={integratedformAltText2}
+            src={productWhatIs.integratedformImage2.url} 
+            alt={productWhatIs.integratedformImage2.alternativeText}
             inferSize={true}/>
         <Image 
-            src={integratedformImage3} 
-            alt={integratedformAltText3}
+            src={productWhatIs.integratedformImage3.url} 
+            alt={productWhatIs.integratedformImage3.alternativeText}
             inferSize={true}/>
     </div>
 </div>

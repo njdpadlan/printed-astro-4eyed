@@ -1,11 +1,5 @@
 ---
-const {
-    integratedformlabelHeader,
-    integratedformlabelDesc,
-    integratedformlabelImageMobile,
-    integratedformlabelAltTextMobile,
-    integratedformlabelImageDesktop,
-} = Astro.props;
+const { integratedFormHero } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
@@ -15,19 +9,19 @@ import "../../styles/styles.scss";
     >
     <div class="featured-products-hero">
         <div class="product-hero-container">
-            <h1>{integratedformlabelHeader}</h1>
-            <p>{integratedformlabelDesc}</p>
+            <h1>{integratedFormHero.integratedformlabelHeader}</h1>
+            <p>{integratedFormHero.integratedformlabelDesc}</p>
         </div>
         <div class="product-hero-img">
             <picture>
                 <source
                     media="(min-width: 1400px)"
-                    srcset={integratedformlabelImageDesktop}
+                    srcset={integratedFormHero.integratedformlabelImageDesktop.url}
                 />
                 <img
                     class="integratedform-hero-img"
-                    src={integratedformlabelImageMobile}
-                    alt={integratedformlabelAltTextMobile}
+                    src={integratedFormHero.integratedformlabelImageMobile.url}
+                    alt={integratedFormHero.integratedformlabelImageMobile.alternativeText}
                 />
             </picture>
         </div>

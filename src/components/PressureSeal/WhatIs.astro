@@ -1,37 +1,27 @@
 ---
 import { Image } from 'astro:assets';
-const {
-    pressuresealWhatIsTitle, 
-    pressuresealWhatIsDesc, 
-    sealedbypressureText,
-    pressuresealImage1,
-    pressuresealAltText1,
-    pressuresealImage2,
-    pressuresealAltText2,
-    pressuresealImage3,
-    pressuresealAltText3
-} = Astro.props;
+const { productWhatIs } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-container">
     <div class="featured-products-info">
-        <h2>{pressuresealWhatIsTitle}</h2>
-        <p>{pressuresealWhatIsDesc}</p>
-        <p>{sealedbypressureText}</p>
+        <h2>{productWhatIs.pressuresealWhatIsTitle}</h2>
+        <p>{productWhatIs.pressuresealWhatIsDesc}</p>
+        <p>{productWhatIs.sealedbypressureText}</p>
     </div>
     <div class="pressure-seal-img">
         <Image 
-            src={pressuresealImage1} 
-            alt={pressuresealAltText1}
+            src={productWhatIs.pressuresealImage1.url} 
+            alt={productWhatIs.pressuresealImage1.alternativeText}
             inferSize={true}/>
         <Image 
-            src={pressuresealImage2} 
-            alt={pressuresealAltText2}
+            src={productWhatIs.pressuresealImage2.url} 
+            alt={productWhatIs.pressuresealImage2.alternativeText}
             inferSize={true}/>
         <Image 
-            src={pressuresealImage3} 
-            alt={pressuresealAltText3}
+            src={productWhatIs.pressuresealImage3.url} 
+            alt={productWhatIs.pressuresealImage3.alternativeText}
             inferSize={true}/>
     </div>
 </div>

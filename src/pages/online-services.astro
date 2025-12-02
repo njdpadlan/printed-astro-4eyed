@@ -6,7 +6,6 @@ import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
 
 
-
 const pages = await fetchApi({
   endpoint: 'services', 
   page: 'ServicePage',
@@ -15,76 +14,17 @@ const pages = await fetchApi({
 
 // http://localhost:1337/api/services?populate[ServicePage][populate]=*
 
-//fetch page data for services page
 const aboutusPage = pages[0];
 const pageData = aboutusPage?.ServicePage || [];
 
-// fetch services hero components
 const heroData = pageData.find(pd => pd.__component === "servicehero.service-hero") || {};
-const {serviceHeroHeader, serviceHeroDesc, serviceHeroBtn} = heroData;
-
-
-const { serviceHeroImage: {
-	url: serviceHeroImage
-}} = heroData;
-
-const { serviceHeroImage: {
-	alternativeText: servicesAltText
-}} = heroData;
-
-
-//fetch servicesTypes components
 
 const servicesTypesData = pageData.find(pd => pd.__component === "servicestype.services-type") || {};
-
-const {
-    servicePortalTitle, 
-    servicePortalDesc, 
-    servicePoofingTitle, 
-    servicePoofingDesc, 
-    serviceWarehouseTitle, 
-    serviceWarehouseDesc, 
-} = servicesTypesData;
-
-const { servicePortalImage: {
-	url: servicePortalImage
-}} = servicesTypesData;
-
-// const { servicePortalImage: {
-// 	formats: {
-//     small: {
-//       url: servicePortalImage
-//     }
-//   }
-// }} = servicesTypesData;
-
-const { servicePoofingImage: {
-	url: servicePoofingImage
-}} = servicesTypesData;
-
-const { serviceWarehouseImage: {
-	url: serviceWarehouseImage
-}} = servicesTypesData;
-
-const { servicePortalImage: {
-	alternativeText: servicePortalAltText
-}} = servicesTypesData;
-
-const { servicePoofingImage: {
-	alternativeText: servicePoofingAltText
-}} = servicesTypesData;
-
-const { serviceWarehouseImage: {
-	alternativeText: serviceWarehouseAltText
-}} = servicesTypesData;
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
 <Head seoData={seoPageData} />
 <Layout>
-    <Hero {serviceHeroHeader} {serviceHeroDesc} {serviceHeroBtn} {serviceHeroImage} {servicesAltText}/>
-    <ServicesTypes {servicePortalTitle} {servicePortalDesc} {servicePortalImage}
-    {servicePoofingTitle} {servicePoofingDesc} {servicePoofingImage}
-    {serviceWarehouseTitle} {serviceWarehouseDesc} {serviceWarehouseImage}
-    {servicePortalAltText} {servicePoofingAltText} {serviceWarehouseAltText}/>
+    <Hero servicesHero={heroData} />
+    <ServicesTypes servicesType={servicesTypesData} />
 </Layout>

@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets';
-const {highQualityHeader, highQualityImage, highQualityText, highQualityAltText, highQualityBtn } = Astro.props;
+const { homeHighQuality } = Astro.props;
 ---
 
 <section class="high-quality-section container">
     <div class="quality-container">
-        <Image src={highQualityImage} alt={highQualityAltText} inferSize={true}/>
+        <Image src={homeHighQuality.highQualityImage.url} alt={homeHighQuality.highQualityImage.alternativeText} inferSize={true}/>
         <div class="high-quality-card">
-            <h2>{highQualityHeader}</h2>
-            <p>{highQualityText}</p>
-            <a href="/about-us">{highQualityBtn}</a>
+            <h2>{homeHighQuality.highQualityHeader}</h2>
+            <p>{homeHighQuality.highQualityText}</p>
+            <a href="/about-us">{homeHighQuality.highQualityBtn}</a>
         </div>
     </div>
 </section>

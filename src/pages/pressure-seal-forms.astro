@@ -16,89 +16,20 @@ const pages = await fetchApi({
 
 // http://localhost:1337/api/pressure-seal-envelopes?populate[PressureSealEnvelopePage][populate]=*
 
-//fetch page data for pressure seal envelope page
 const pressureSealPage = pages[0];
 const pageData = pressureSealPage?.PressureSealEnvelopePage || [];
 
-// fetch pressureseal hero components
 const heroData = pageData.find(pd => pd.__component === "pressuresealhero.pressureseal-hero") || {};
-const {pressuresealHeader, pressuresealDesc} = heroData;
-
-
-const { pressuresealImageMobile: {
-	url: pressuresealImageMobile
-}} = heroData;
-
-const { pressuresealImageDesktop: {
-	url: pressuresealImageDesktop
-}} = heroData;
-
-const { pressuresealImageMobile: {
-	alternativeText: pressuresealAltTextMobile
-}} = heroData;
-
-//fetch pressuresealWhatIs components
 
 const pressuresealWhatIsData = pageData.find(pd => pd.__component === "pressuresealwhatis.pressureseal-what-is") || {};
-const {
-    pressuresealWhatIsTitle, 
-    pressuresealWhatIsDesc, 
-    sealedbypressureText,
-} = pressuresealWhatIsData;
 
-const { pressuresealImage1: {
-	url: pressuresealImage1
-}} = pressuresealWhatIsData;
-
-const { pressuresealImage2: {
-	url: pressuresealImage2
-}} = pressuresealWhatIsData;
-
-const { pressuresealImage3: {
-	url: pressuresealImage3
-}} = pressuresealWhatIsData;
-
-const { pressuresealImage1: {
-	alternativeText: pressuresealAltText1
-}} = pressuresealWhatIsData;
-
-const { pressuresealImage2: {
-	alternativeText: pressuresealAltText2
-}} = pressuresealWhatIsData;
-
-const { pressuresealImage3: {
-	alternativeText: pressuresealAltText3
-}} = pressuresealWhatIsData;
-
-
-
-//fetch Secure Fold components
 const securefoldData = pageData.find(pd => pd.__component === "securefold.secure-fold") || {};
-const {
-  idealforText, 
-  payroll, 
-  taxforms, 
-  statements, 
-  utilitybills, 
-  directmail, 
-  securefoldBtn, 
-  securefoldTitle
-} = securefoldData;
-
-const { securefoldImage: {
-	url: securefoldImage
-}} = securefoldData;
-
-const { securefoldImage: {
-	alternativeText: securefoldAltText
-}} = securefoldData;
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
 <Head seoData={seoPageData} />
 <Layout>
-    <Hero {pressuresealHeader} {pressuresealDesc} {pressuresealImageMobile} {pressuresealAltTextMobile} {pressuresealImageDesktop} />
-    <WhatIs {pressuresealWhatIsTitle} {pressuresealWhatIsDesc} {sealedbypressureText} {pressuresealImage1} {pressuresealImage2} {pressuresealImage3}
-    {pressuresealAltText1} {pressuresealAltText2} {pressuresealAltText3}/>
-    <SecureFold {idealforText} {payroll} {taxforms} {statements} {utilitybills} {directmail} {securefoldBtn} {securefoldTitle} {securefoldImage} {securefoldAltText}/>
+    <Hero pressureSealHero={heroData} />
+    <WhatIs productWhatIs={pressuresealWhatIsData}/>
+    <SecureFold productSecureFold={securefoldData} />
 </Layout>

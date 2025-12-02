@@ -16,80 +16,20 @@ const pages = await fetchApi({
 
 // http://localhost:1337/api/linerless-labels?populate[LinerlessLabelPage][populate]=*
 
-//fetch page data for products page
 const linerlessPage = pages[0];
 const pageData = linerlessPage?.LinerlessLabelPage || [];
 
-// fetch linerless hero components
 const heroData = pageData.find(pd => pd.__component === "linerlesslabelhero.linerlesslabel-hero") || {};
-const {linerlesslabelHeader, linerlesslabelText} = heroData;
-
-
-const { linerlessImageMobile: {
-	url: linerlessImageMobile
-}} = heroData;
-
-const { linerlessImageDesktop: {
-	url: linerlessImageDesktop
-}} = heroData;
-
-const { linerlessImageMobile: {
-	alternativeText: linerlessAltTextMobile
-}} = heroData;
-
-//fetch linerlessWhatIs components
 
 const linerlessWhatIsData = pageData.find(pd => pd.__component === "linerlesslabelwhatis.linerlesslabel-what-is") || {};
-const {   
-    linerlesslabelWhatIsTitle, 
-    linerlesslabelWhatIsDesc, 
-    perfectforwindowText, 
-    printedmanufactureText,
-  } = linerlessWhatIsData;
 
-const { linerlesslabelImage1: {
-	url: linerlesslabelImage1
-}} = linerlessWhatIsData;
-
-const { linerlesslabelImage2: {
-	url: linerlesslabelImage2
-}} = linerlessWhatIsData;
-
-const { linerlesslabelImage3: {
-	url: linerlesslabelImage3
-}} = linerlessWhatIsData;
-
-const { linerlesslabelImage1: {
-	alternativeText: linerlesslabelAltText1
-}} = linerlessWhatIsData;
-
-const { linerlesslabelImage2: {
-	alternativeText: linerlesslabelAltText2
-}} = linerlessWhatIsData;
-
-const { linerlesslabelImage3: {
-	alternativeText: linerlesslabelAltText3
-}} = linerlessWhatIsData;
-
-//fetch Sustainable Label components
 const sustainablelabelData = pageData.find(pd => pd.__component === "sustainablelabel.sustainable-label") || {};
-const {keyadvantagesTitle, nolinerText, continuousrollText, custombrandingText, excellentforText, sustainableBtn, sustainableTitle} = sustainablelabelData;
-
-const { sustainableImage: {
-	url: sustainableImage
-}} = sustainablelabelData;
-
-const { sustainableImage: {
-	alternativeText: sustainableAltText
-}} = sustainablelabelData;
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
 <Head seoData={seoPageData} />
 <Layout>
-    <Hero {linerlesslabelHeader} {linerlesslabelText} {linerlessImageMobile} {linerlessAltTextMobile} {linerlessImageDesktop} />
-    <WhatIs {linerlesslabelWhatIsTitle} {linerlesslabelWhatIsDesc} {perfectforwindowText} {printedmanufactureText} 
-    {linerlesslabelImage1} {linerlesslabelImage2} {linerlesslabelImage3}
-    {linerlesslabelAltText1} {linerlesslabelAltText2} {linerlesslabelAltText3}/>
-    <SustainableLabel {keyadvantagesTitle} {nolinerText} {continuousrollText} {custombrandingText} {excellentforText} {sustainableTitle} {sustainableBtn} {sustainableImage} {sustainableAltText} />
+    <Hero linerlessHero={heroData} />
+    <WhatIs productWhatIs={linerlessWhatIsData} />
+    <SustainableLabel productSustainable={sustainablelabelData} />
 </Layout>

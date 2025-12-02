@@ -1,41 +1,31 @@
 ---
 import { Image } from "astro:assets";
-const {
-    keyadvantagesTitle,
-    nolinerText,
-    continuousrollText,
-    custombrandingText,
-    excellentforText,
-    sustainableImage,
-    sustainableAltText,
-    sustainableBtn,
-    sustainableTitle,
-} = Astro.props;
+const { productSustainable } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
     <div class="product-container">
         <div class="yellow-header">
-            <h2>{sustainableTitle}</h2>
+            <h2>{productSustainable.sustainableTitle}</h2>
         </div>
         <div class="featured-products-infolist">
             <div class="inner-container">
-                <p>{keyadvantagesTitle}</p>
+                <p>{productSustainable.keyadvantagesTitle}</p>
                 <ul>
-                    <li>{nolinerText}</li>
-                    <li>{continuousrollText}</li>
-                    <li>{custombrandingText}</li>
-                    <li>{excellentforText}</li>
+                    <li>{productSustainable.nolinerText}</li>
+                    <li>{productSustainable.continuousrollText}</li>
+                    <li>{productSustainable.custombrandingText}</li>
+                    <li>{productSustainable.excellentforText}</li>
                 </ul>
                 <a
                     href="/request-quote"
                     class="featured-products-btn linerless-btn"
-                    >{sustainableBtn}</a
+                    >{productSustainable.sustainableBtn}</a
                 >
                 <Image
-                    src={sustainableImage}
-                    alt={sustainableAltText}
+                    src={productSustainable.sustainableImage.url}
+                    alt={productSustainable.sustainableImage.alternativeText}
                     inferSize={true}
                 />
             </div>
