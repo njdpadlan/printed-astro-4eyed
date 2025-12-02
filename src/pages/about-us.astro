@@ -14,60 +14,18 @@ const pages = await fetchApi({
 
 // http://localhost:1337/api/about-uses?populate[AboutUsPage][populate]=*
 
-//fetch page data for about us page
 const aboutusPage = pages[0];
 const pageData = aboutusPage?.AboutUsPage || [];
 
-// fetch about us hero components
 const heroData = pageData.find(pd => pd.__component === "aboutushero.about-us-hero") || {};
-// const {aboutUsHeroHeader, aboutUsHeroDesc, smartPrintingText ,trustedExpertiseText, canadianBasedText} = heroData;
-
-
-// const { aboutUsHeroImg: {
-// 	url: aboutUsHeroImg
-// }} = heroData;
-
-// const { aboutUsHeroImg: {
-// 	alternativeText: aboutUsAltText
-// }} = heroData;
-
-//fetch aboutusWhy components
 
 const aboutusWhyData = pageData.find(pd => pd.__component === "aboutuswhy.about-us-why") || {};
-const {    
-    whyChooseHeader,
-    whyChooseDesc,
-    whatSetsApartHeader,
-    atPrintedDesc,
-    withDecadesDesc,
-    printSmarterText,
-    printedText,
-    aboutUsBtn
-  } = aboutusWhyData;
-
-const { aboutusWhyImage: {
-	url: aboutusWhyImage
-}} = aboutusWhyData;
-
-const { aboutusWhyImage: {
-	alternativeText: aboutUsWhyAltText
-}} = aboutusWhyData;
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
 <Head seoData={seoPageData} />
 
 <Layout>
-  
-    <Hero aboutUsHero={heroData}/>
-    <AboutUsWhy 
-      {whyChooseHeader}
-      {whyChooseDesc}
-      {whatSetsApartHeader}
-      {atPrintedDesc}
-      {withDecadesDesc}
-      {printSmarterText}
-      {printedText}
-      {aboutUsBtn}
-    {aboutusWhyImage} {aboutUsWhyAltText} />
+    <Hero aboutUsHero={heroData} />
+    <AboutUsWhy aboutUs={aboutusWhyData} />
 </Layout>

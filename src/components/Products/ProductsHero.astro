@@ -1,15 +1,15 @@
 ---
 import { Image } from 'astro:assets';
-const {productHeroHeader, productHeroText, productHeroImage, productsAltText} = Astro.props;
+const { productsHero } = Astro.props;
 ---
 
 <div class="products-banner">
     <div class="products-hero">
-        <h1>{productHeroHeader}</h1>
+        <h1>{productsHero.productHeroHeader}</h1>
         <Image 
-            src={productHeroImage} 
-            alt={productsAltText}
+            src={productsHero.productHeroImage.url} 
+            alt={productsHero.productHeroImage.alternativeText}
             inferSize={true}/>
-        <p>{productHeroText}</p>
+        <p>{productsHero.productHeroText}</p>
     </div>
 </div>

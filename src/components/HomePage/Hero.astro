@@ -1,48 +1,33 @@
 ---
-const {
-    heroHeader,
-    heroBanner,
-    heroText,
-    heroAltText,
-    ourProductsHeader,
-    ourProductsText,
-    ourProductsBtn,
-    onlineServicesHeader,
-    onlineServicesText,
-    onlineServicesBtn,
-    promoProductsHeader,
-    promoProductsText,
-    promoProductsBtn,
-} = Astro.props;
-
+const { homeHero } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <section class="hero-section">
     <div class="video-container">
         <video playsinline muted loop autoplay>
-            <source src={heroBanner} type="video/mp4" title={heroAltText} />
+            <source src={homeHero.heroBanner.url} type="video/mp4" title={homeHero.heroBanner.alternativeText} />
         </video>
     </div>
     <div class="hero-card">
-        <h1>{heroHeader}</h1>
-        <p>{heroText}</p>
+        <h1>{homeHero.heroHeader}</h1>
+        <p>{homeHero.heroText}</p>
         <!-- cards -->
         <div class="card-flex">
             <div class="products-card">
-                <h2><img src="/assets/products-icon.svg" alt="Paper with lines and folded corner icon.">{ourProductsHeader}</h2>
-                <p>{ourProductsText}</p>
-                <a href="/products">{ourProductsBtn}</a>
+                <h2><img src="/assets/products-icon.svg" alt="Paper with lines and folded corner icon.">{homeHero.ourProductsHeader}</h2>
+                <p>{homeHero.ourProductsText}</p>
+                <a href="/products">{homeHero.ourProductsBtn}</a>
             </div>
             <div class="services-card">
-                <h2><img src="/assets/service-icon.svg" alt="A browser window for services icon.">{onlineServicesHeader}</h2>
-                <p>{onlineServicesText}</p>
-                <a href="/online-services">{onlineServicesBtn}</a>
+                <h2><img src="/assets/service-icon.svg" alt="A browser window for services icon.">{homeHero.onlineServicesHeader}</h2>
+                <p>{homeHero.onlineServicesText}</p>
+                <a href="/online-services">{homeHero.onlineServicesBtn}</a>
             </div>
             <div class="promo-card">
-                <h2><img src="/assets/promo-icon.svg" alt="Pen icon for promotional products">{promoProductsHeader}</h2>
-                <p>{promoProductsText}</p>
-                <a href="https://printedonline.espwebsite.com/" target="_blank">{promoProductsBtn}</a>
+                <h2><img src="/assets/promo-icon.svg" alt="Pen icon for promotional products">{homeHero.promoProductsHeader}</h2>
+                <p>{homeHero.promoProductsText}</p>
+                <a href="https://printedonline.espwebsite.com/" target="_blank">{homeHero.promoProductsBtn}</a>
             </div>
         </div>
     </div>

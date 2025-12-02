@@ -1,45 +1,33 @@
 ---
 import { Image } from "astro:assets";
-const {
-    smartefficientformTitle,
-    commonapplicationsText,
-    ecommerce,
-    distribution,
-    retail,
-    healthcare,
-    insurance,
-    logistics,
-    smartefficientImage,
-    smartefficientAltText,
-    smartefficientBtn,
-} = Astro.props;
+const { productSmartEfficient } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
     <div class="product-container">
         <div class="yellow-header">
-            <h2>{smartefficientformTitle}</h2>
+            <h2>{productSmartEfficient.smartefficientformTitle}</h2>
         </div>
         <div class="featured-products-infolist">
             <div class="inner-container inner-grid">
                 <div class="list">
-                    <p>{commonapplicationsText}</p>
+                    <p>{productSmartEfficient.commonapplicationsText}</p>
                     <ul>
-                        <li>{ecommerce}</li>
-                        <li>{distribution}</li>
-                        <li>{retail}</li>
-                        <li>{healthcare}</li>
-                        <li>{insurance}</li>
-                        <li>{logistics}</li>
+                        <li>{productSmartEfficient.ecommerce}</li>
+                        <li>{productSmartEfficient.distribution}</li>
+                        <li>{productSmartEfficient.retail}</li>
+                        <li>{productSmartEfficient.healthcare}</li>
+                        <li>{productSmartEfficient.insurance}</li>
+                        <li>{productSmartEfficient.logistics}</li>
                     </ul>
                     <a href="/request-quote" class="featured-products-btn"
-                        >{smartefficientBtn}</a
+                        >{productSmartEfficient.smartefficientBtn}</a
                     >
                 </div>
                 <Image
-                    src={smartefficientImage}
-                    alt={smartefficientAltText}
+                    src={productSmartEfficient.smartefficientImage.url}
+                    alt={productSmartEfficient.smartefficientImage.alternativeText}
                     inferSize={true}
                 />
             </div>

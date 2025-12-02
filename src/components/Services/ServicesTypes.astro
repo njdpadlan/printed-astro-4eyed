@@ -1,19 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-const {
-    servicePortalTitle, 
-    servicePortalDesc, 
-    servicePortalImage,
-    servicePortalAltText,
-    servicePoofingTitle, 
-    servicePoofingDesc, 
-    servicePoofingImage,
-    servicePoofingAltText, 
-    serviceWarehouseTitle, 
-    serviceWarehouseDesc, 
-    serviceWarehouseImage,
-    serviceWarehouseAltText
-} = Astro.props;
+const { servicesType } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
@@ -21,32 +8,32 @@ import "../../styles/styles.scss";
     <div class="service-grid">
         <section class="portal">
             <div>
-                <h2>{servicePortalTitle}</h2>
-                <p>{servicePortalDesc}</p>
+                <h2>{servicesType.servicePortalTitle}</h2>
+                <p>{servicesType.servicePortalDesc}</p>
             </div>
             <Image
-                src={servicePortalImage}
-                alt={servicePortalAltText}
+                src={servicesType.servicePortalImage.url}
+                alt={servicesType.servicePortalImage.alternativeText}
                 inferSize={true}/>
         </section>
         <section>
             <div>
-                <h2>{servicePoofingTitle}</h2>
-                <p>{servicePoofingDesc}</p>
+                <h2>{servicesType.servicePoofingTitle}</h2>
+                <p>{servicesType.servicePoofingDesc}</p>
             </div>
             <Image
-                src={servicePoofingImage}
-                alt={servicePoofingAltText}
+                src={servicesType.servicePoofingImage.url}
+                alt={servicesType.servicePoofingImage.alternativeText}
                 inferSize={true}/>
         </section>
         <section class="warehouse">
             <div>
-                <h2>{serviceWarehouseTitle}</h2>
-                <p>{serviceWarehouseDesc}</p>
+                <h2>{servicesType.serviceWarehouseTitle}</h2>
+                <p>{servicesType.serviceWarehouseDesc}</p>
             </div>
             <Image
-                src={serviceWarehouseImage}
-                alt={serviceWarehouseAltText}
+                src={servicesType.serviceWarehouseImage.url}
+                alt={servicesType.serviceWarehouseImage.alternativeText}
                 inferSize={true}/>
         </section>
     </div>

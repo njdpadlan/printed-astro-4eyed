@@ -1,5 +1,5 @@
 ---
-const {linerlesslabelHeader, linerlesslabelText, linerlessImageMobile , linerlessAltTextMobile, linerlessImageDesktop } = Astro.props;
+const { linerlessHero } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
@@ -7,13 +7,13 @@ import "../../styles/styles.scss";
     <a href="/products"><img src="/assets/arrow-left.svg" alt="">Back to Products</a>
     <div class="featured-products-hero">
         <div class="product-hero-container">
-            <h1>{linerlesslabelHeader}</h1>
-            <p>{linerlesslabelText}</p>
+            <h1>{linerlessHero.linerlesslabelHeader}</h1>
+            <p>{linerlessHero.linerlesslabelText}</p>
         </div>
         <div class="product-hero-img">
             <picture>
-                <source  media="(min-width: 1400px)" srcset={linerlessImageDesktop}>
-                <img class="linerless-hero-img" src={linerlessImageMobile} alt={linerlessAltTextMobile}>
+                <source  media="(min-width: 1400px)" srcset={linerlessHero.linerlessImageDesktop.url}>
+                <img class="linerless-hero-img" src={linerlessHero.linerlessImageMobile.url} alt={linerlessHero.linerlessImageMobile.alternativeText}>
             </picture>
         </div>
     </div>

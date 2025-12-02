@@ -15,89 +15,20 @@ const pages = await fetchApi({
 
 // http://localhost:1337/api/integrated-form-labels?populate[IntegratedFormLabelPage][populate]=*
 
-//fetch page data for integrated form label page
 const integratedformsPage = pages[0];
 const pageData = integratedformsPage?.IntegratedFormLabelPage || [];
 
-// fetch integratedform hero components
 const heroData = pageData.find(pd => pd.__component === "integratedformlabelhero.integratedformlabel-hero") || {};
-const {integratedformlabelHeader, integratedformlabelDesc} = heroData;
-
-
-const { integratedformlabelImageMobile: {
-	url: integratedformlabelImageMobile
-}} = heroData;
-
-const { integratedformlabelImageDesktop: {
-	url: integratedformlabelImageDesktop
-}} = heroData;
-
-const { integratedformlabelImageMobile: {
-	alternativeText: integratedformlabelAltTextMobile
-}} = heroData;
-
-//fetch integratedformWhatIs components
 
 const integratedformWhatIsData = pageData.find(pd => pd.__component === "integratedformlabelwhatis.integratedformlabel-what-is") || {};
-const {
-    integratedformlabelWhatIsTitle, 
-    integratedformlabelWhatIsDesc, 
-    integratedsolutionText, 
-} = integratedformWhatIsData;
 
-const { integratedformImage1: {
-	url: integratedformImage1
-}} = integratedformWhatIsData;
-
-const { integratedformImage2: {
-	url: integratedformImage2
-}} = integratedformWhatIsData;
-
-const { integratedformImage3: {
-	url: integratedformImage3
-}} = integratedformWhatIsData;
-
-const { integratedformImage1: {
-	alternativeText: integratedformAltText1
-}} = integratedformWhatIsData;
-
-const { integratedformImage2: {
-	alternativeText: integratedformAltText2
-}} = integratedformWhatIsData;
-
-const { integratedformImage3: {
-	alternativeText: integratedformAltText3
-}} = integratedformWhatIsData;
-
-//fetch Smart Efficient components
 const smartformData = pageData.find(pd => pd.__component === "smartefficientform.smart-efficient-form") || {};
-const {
-  smartefficientformTitle, 
-  commonapplicationsText, 
-  ecommerce, 
-  distribution, 
-  retail, 
-  healthcare, 
-  insurance, 
-  logistics, 
-  smartefficientBtn
-} = smartformData;
- 
-const { smartefficientImage: {
-	url: smartefficientImage
-}} = smartformData;
-
-const { smartefficientImage: {
-	alternativeText: smartefficientAltText
-}} = smartformData;
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
 <Head seoData={seoPageData} />
 <Layout>
-    <Hero {integratedformlabelHeader} {integratedformlabelDesc} {integratedformlabelImageMobile} {integratedformlabelAltTextMobile} {integratedformlabelImageDesktop} />
-    <WhatIs {integratedformlabelWhatIsTitle} {integratedformlabelWhatIsDesc} {integratedsolutionText} {integratedformImage1} {integratedformImage2} {integratedformImage3}
-    {integratedformAltText1} {integratedformAltText2} {integratedformAltText3} />
-    <SmartEfficient {smartefficientformTitle} {commonapplicationsText} {ecommerce} {distribution} {retail}
-    {healthcare} {insurance} {logistics} {smartefficientBtn} {smartefficientImage} {smartefficientAltText}/>
+    <Hero integratedFormHero={heroData}  />
+    <WhatIs productWhatIs={integratedformWhatIsData}  />
+    <SmartEfficient productSmartEfficient={smartformData} />
 </Layout>

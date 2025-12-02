@@ -8,9 +8,6 @@ import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
 import Head from "../layouts/Head.astro";
 
-
-// content type: endpoint, dynamic zone: page
-//content type: "homes", dynamic zone: HomePage
 const pages = await fetchApi({
   endpoint: 'homes', 
   page: 'HomePage',
@@ -19,126 +16,32 @@ const pages = await fetchApi({
 
 // http://localhost:1337/api/homes?populate[HomePage][populate]=*
 
-//fetch page data for homepage
 const homePage = pages[0];
 const pageData = homePage?.HomePage || [];
 
-// fetch homehero components
 const heroData = pageData.find(pd => pd.__component === "homehero.home-hero") || {};
-const {heroHeader, heroText, 
-	ourProductsHeader, ourProductsText, ourProductsBtn,
-	onlineServicesHeader, onlineServicesText, onlineServicesBtn,
-	promoProductsHeader, promoProductsText, promoProductsBtn
-	} = heroData;
 
-const { heroBanner: {
-	url: heroBanner
-}} = heroData;
-
-const { heroBanner: {
-	alternativeText: heroAltText
-}} = heroData;
-
-
-// fetch highquality components
 const highQualityData = pageData.find(pd => pd.__component === "highquality.high-quality") || {};
-const {highQualityHeader, highQualityText, highQualityBtn} = highQualityData;
 
-const { highQualityImage: {
-	url: highQualityImage
-}} = highQualityData;
-
-const { highQualityImage: {
-	alternativeText: highQualityAltText
-}} = highQualityData;
-
-
-// fetch featuredproducts components
 const featuredProductsData = pageData.find(pd => pd.__component === "featuredproducts.featured-products") || {};
-const {  
-	featuredProductsHeader, 
-    pressureSealTitle, 
-    pressureSealBtn,
-    linerlessLabelTitle,
-    linerlessLabelBtn,
-    integratedFormText,
-    integratedFormBtn 
-} = featuredProductsData;
 
-const { pressureSealImage: {
-	url: pressureSealImage
-}} = featuredProductsData;
-
-const { linerlessLabelImage: {
-	url: linerlessLabelImage
-}} = featuredProductsData;
-
-const { integratedFormImage: {
-	url: integratedFormImage
-}} = featuredProductsData;
-
-const { pressureSealImage: {
-	alternativeText: pressureSealAltText
-}} = featuredProductsData;
-
-const { linerlessLabelImage: {
-	alternativeText: linerlessLabelAltText
-}} = featuredProductsData;
-
-const { integratedFormImage: {
-	alternativeText: integratedFormAltText
-}} = featuredProductsData;
-
-
-
-
-//fetch onlinebased components
 const onlineBasedData = pageData.find(pd => pd.__component === "onlinebased.online-based") || {};
-const {onlineBasedHeader, onlineBasedText, onlineBasedBtn} = onlineBasedData;
 
-const { onlineBasedImage: {
-	url: onlineBasedImage
-}} = onlineBasedData;
-
-const { onlineBasedImage: {
-	alternativeText: onlineBasedAltText
-}} = onlineBasedData;
-
-
-//fetch about components
 const aboutData = pageData.find(pd => pd.__component === "about.about") || {};
-const {aboutHeader, aboutText, requestQuoteBtn, contactUsBtn} = aboutData;
-
-const { aboutImage: {
-	url: aboutImage
-}} = aboutData;
-
-const { aboutImage: {
-	alternativeText: aboutAltText
-}} = aboutData;
-
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
 <Head seoData={seoPageData} />
 <Layout>
 
-	<Hero {heroHeader} {heroText} {heroBanner} {heroAltText}
-	{ourProductsHeader} {ourProductsText} {ourProductsBtn}
-	{onlineServicesHeader} {onlineServicesText} {onlineServicesBtn}
-	{promoProductsHeader} {promoProductsText} {promoProductsBtn} />
+	<Hero homeHero={heroData}  />
 
-	<HighQuality {highQualityHeader} {highQualityImage} {highQualityText} {highQualityAltText} {highQualityBtn} />
+	<HighQuality homeHighQuality={highQualityData}  />
 
-	<FeaturedProducts 
-	{featuredProductsHeader} 
-	{pressureSealTitle} {pressureSealImage} {pressureSealBtn} 
-	{linerlessLabelTitle} {linerlessLabelImage} {linerlessLabelBtn} 
-	{integratedFormText} {integratedFormImage} {integratedFormBtn}
-	{pressureSealAltText} {linerlessLabelAltText} {integratedFormAltText}/>
+	<FeaturedProducts homeFeaturedProducts={featuredProductsData} />
 
-	<OnlineBased {onlineBasedHeader} {onlineBasedImage} {onlineBasedText} {onlineBasedBtn} {onlineBasedAltText} />
+	<OnlineBased homeOnlineBased={onlineBasedData} />
 
-	<About {aboutHeader} {aboutImage} {aboutText} {requestQuoteBtn} {aboutAltText} {contactUsBtn} />
+	<About homeAbout={aboutData} />
 
 </Layout>

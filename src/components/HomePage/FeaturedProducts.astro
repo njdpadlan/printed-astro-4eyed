@@ -1,56 +1,41 @@
 ---
 import { Image } from "astro:assets";
-const {
-    featuredProductsHeader,
-    pressureSealTitle,
-    pressureSealImage,
-    pressureSealAltText,
-    pressureSealBtn,
-    linerlessLabelTitle,
-    linerlessLabelImage,
-    linerlessLabelAltText,
-    linerlessLabelBtn,
-    integratedFormText,
-    integratedFormImage,
-    integratedFormAltText,
-    integratedFormBtn,
-} = Astro.props;
-
+const { homeFeaturedProducts } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <section class="featured-products">
     <div class="featured-header-grid">
-        <h2>{featuredProductsHeader}</h2>
+        <h2>{homeFeaturedProducts.featuredProductsHeader}</h2>
     </div>
     <div class="product-grid">
         <div class="products-section container">
             <section class="linerless-label-section">
-                <h3>{linerlessLabelTitle}</h3>
+                <h3>{homeFeaturedProducts.linerlessLabelTitle}</h3>
                 <Image
-                    src={linerlessLabelImage}
-                    alt={linerlessLabelAltText}
+                    src={homeFeaturedProducts.linerlessLabelImage.url}
+                    alt={homeFeaturedProducts.linerlessLabelImage.alternativeText}
                     inferSize={true}
                 />
-                <a href="/linerless-labels">{linerlessLabelBtn}</a>
+                <a href="/linerless-labels">{homeFeaturedProducts.linerlessLabelBtn}</a>
             </section>
             <section class="pressure-seal-section">
-                <h3>{pressureSealTitle}</h3>
+                <h3>{homeFeaturedProducts.pressureSealTitle}</h3>
                 <Image
-                    src={pressureSealImage}
-                    alt={pressureSealAltText}
+                    src={homeFeaturedProducts.pressureSealImage.url}
+                    alt={homeFeaturedProducts.pressureSealImage.alternativeText}
                     inferSize={true}
                 />
-                <a href="/pressure-seal-forms">{pressureSealBtn}</a>
+                <a href="/pressure-seal-forms">{homeFeaturedProducts.pressureSealBtn}</a>
             </section>
             <section class="integrated-section">
-                <h3>{integratedFormText}</h3>
+                <h3>{homeFeaturedProducts.integratedFormText}</h3>
                 <Image
-                    src={integratedFormImage}
-                    alt={integratedFormAltText}
+                    src={homeFeaturedProducts.integratedFormImage.url}
+                    alt={homeFeaturedProducts.integratedFormImage.alternativeText}
                     inferSize={true}
                 />
-                <a href="/integrated-form-labels">{integratedFormBtn}</a>
+                <a href="/integrated-form-labels">{homeFeaturedProducts.integratedFormBtn}</a>
             </section>
         </div>
     </div>

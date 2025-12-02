@@ -1,44 +1,33 @@
 ---
 import { Image } from "astro:assets";
-const {
-    idealforText,
-    payroll,
-    taxforms,
-    statements,
-    utilitybills,
-    directmail,
-    securefoldImage,
-    securefoldAltText,
-    securefoldBtn,
-    securefoldTitle,
-} = Astro.props;
+const { productSecureFold } = Astro.props;
 import "../../styles/styles.scss";
 ---
 
 <div class="featured-products-additional-info">
     <div class="product-container">
         <div class="yellow-header">
-            <h2>{securefoldTitle}</h2>
+            <h2>{productSecureFold.securefoldTitle}</h2>
         </div>
         <div class="featured-products-infolist">
             <div class="inner-container inner-grid">
                 <div class="list">
-                    <p>{idealforText}</p>
+                    <p>{productSecureFold.idealforText}</p>
                     <ul>
-                        <li>{payroll}</li>
-                        <li>{taxforms}</li>
-                        <li>{statements}</li>
-                        <li>{utilitybills}</li>
-                        <li>{directmail}</li>
+                        <li>{productSecureFold.payroll}</li>
+                        <li>{productSecureFold.taxforms}</li>
+                        <li>{productSecureFold.statements}</li>
+                        <li>{productSecureFold.utilitybills}</li>
+                        <li>{productSecureFold.directmail}</li>
                     </ul>
                     <a href="/request-quote" class="featured-products-btn"
-                        >{securefoldBtn}</a
+                        >{productSecureFold.securefoldBtn}</a
                     >
                 </div>
 
                 <Image
-                    src={securefoldImage}
-                    alt={securefoldAltText}
+                    src={productSecureFold.securefoldImage.url}
+                    alt={productSecureFold.securefoldImage.alternativeText}
                     inferSize={true}
                 />
             </div>

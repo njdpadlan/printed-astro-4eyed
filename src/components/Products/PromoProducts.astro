@@ -1,18 +1,18 @@
 ---
 import { Image } from 'astro:assets';
-const {featuredpromoTitle, featuredpromoBtn, featuredpromoText, featuredpromoImage, featuredpromoAltText} = Astro.props;
+const { promoProducts } = Astro.props;
 ---
 
 <div class="promo-products-container">
     <div>
-        <h2>{featuredpromoTitle}</h2>
-        <p>{featuredpromoText}</p>
-        <a href="https://printedonline.espwebsite.com/" class="promo-btn" target="_blank">{featuredpromoBtn}</a>
+        <h2>{promoProducts.featuredpromoTitle}</h2>
+        <p>{promoProducts.featuredpromoText}</p>
+        <a href="https://printedonline.espwebsite.com/" class="promo-btn" target="_blank">{promoProducts.featuredpromoBtn}</a>
     </div>
         <div>
             <Image
-                src={featuredpromoImage}
-                alt={featuredpromoAltText}
+                src={promoProducts.featuredpromoImage.url}
+                alt={promoProducts.featuredpromoImage.alternativeText}
                 inferSize={true}/>
         </div>
 </div>
