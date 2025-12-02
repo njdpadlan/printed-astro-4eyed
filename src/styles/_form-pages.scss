@@ -175,13 +175,14 @@ option{
         z-index: unset;
     }
 
-    .forms-page-wrapper{
-          margin-bottom: 144px;
+    .forms-page-wrapper{    
           gap: 1rem;
           display:grid;
           grid-template-columns: repeat(12, 1fr);
-          align-items: start;
-          margin-top: 80px;   
+          align-items: start; 
+          max-width: 1920px;
+          margin: 0 auto;
+          margin-bottom: 4rem;
       }
     
     .forms-page-wrapper > :first-child{
@@ -219,10 +220,6 @@ option{
 //desktop layout
 @media (min-width: 1200px) {
 
-    .forms-page-wrapper{
-        margin: 4rem 0;
-    }
-
     .contact-info-card{
         padding-top: unset;
     }
@@ -246,5 +243,11 @@ option{
     .form-card{
         grid-column: 6/ span 6;
 
+    }
+}
+
+@media (min-width: 2000px) {
+    .form-h1 {
+        border-radius: 15px;
     }
 }
