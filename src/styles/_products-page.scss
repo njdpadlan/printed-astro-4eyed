@@ -350,3 +350,13 @@
         }
     }
 }
+
+@media (min-width: 2350px) {
+  .products-container {
+    section:nth-child(3) {
+      a {
+        padding: 1rem 0;
+      }
+    }
+  }
+}
