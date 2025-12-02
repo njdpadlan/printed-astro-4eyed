@@ -1,10 +1,9 @@
 ---
 import AboutUsWhy from "../components/AboutUs/AboutUsWhy.astro";
 import Hero from "../components/AboutUs/Hero.astro";
-
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
-
+import Head from "../layouts/Head.astro";
 
 
 const pages = await fetchApi({
@@ -21,16 +20,16 @@ const pageData = aboutusPage?.AboutUsPage || [];
 
 // fetch about us hero components
 const heroData = pageData.find(pd => pd.__component === "aboutushero.about-us-hero") || {};
-const {aboutUsHeroHeader, aboutUsHeroDesc, smartPrintingText ,trustedExpertiseText, canadianBasedText} = heroData;
+// const {aboutUsHeroHeader, aboutUsHeroDesc, smartPrintingText ,trustedExpertiseText, canadianBasedText} = heroData;
 
 
-const { aboutUsHeroImg: {
-	url: aboutUsHeroImg
-}} = heroData;
+// const { aboutUsHeroImg: {
+// 	url: aboutUsHeroImg
+// }} = heroData;
 
-const { aboutUsHeroImg: {
-	alternativeText: aboutUsAltText
-}} = heroData;
+// const { aboutUsHeroImg: {
+// 	alternativeText: aboutUsAltText
+// }} = heroData;
 
 //fetch aboutusWhy components
 
@@ -54,10 +53,13 @@ const { aboutusWhyImage: {
 	alternativeText: aboutUsWhyAltText
 }} = aboutusWhyData;
 
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
+<Head seoData={seoPageData} />
 
 <Layout>
-    <Hero {aboutUsHeroHeader} {aboutUsHeroDesc} {aboutUsHeroImg} {aboutUsAltText} {smartPrintingText} {trustedExpertiseText} {canadianBasedText}/>
+  
+    <Hero aboutUsHero={heroData}/>
     <AboutUsWhy 
       {whyChooseHeader}
       {whyChooseDesc}

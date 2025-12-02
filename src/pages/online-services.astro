@@ -1,7 +1,7 @@
 ---
 import Hero from "../components/Services/Hero.astro";
 import ServicesTypes from "../components/Services/ServicesTypes.astro";
-
+import Head from "../layouts/Head.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
 
@@ -78,8 +78,9 @@ const { serviceWarehouseImage: {
 	alternativeText: serviceWarehouseAltText
 }} = servicesTypesData;
 
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-
+<Head seoData={seoPageData} />
 <Layout>
     <Hero {serviceHeroHeader} {serviceHeroDesc} {serviceHeroBtn} {serviceHeroImage} {servicesAltText}/>
     <ServicesTypes {servicePortalTitle} {servicePortalDesc} {servicePortalImage}

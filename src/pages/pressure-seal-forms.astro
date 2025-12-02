@@ -1,9 +1,8 @@
 ---
 import Hero from "../components/PressureSeal/Hero.astro";
 import SecureFold from "../components/PressureSeal/SecureFold.astro";
-
 import WhatIs from "../components/PressureSeal/WhatIs.astro";
-
+import Head from "../layouts/Head.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
 
@@ -94,8 +93,9 @@ const { securefoldImage: {
 	alternativeText: securefoldAltText
 }} = securefoldData;
 
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-
+<Head seoData={seoPageData} />
 <Layout>
     <Hero {pressuresealHeader} {pressuresealDesc} {pressuresealImageMobile} {pressuresealAltTextMobile} {pressuresealImageDesktop} />
     <WhatIs {pressuresealWhatIsTitle} {pressuresealWhatIsDesc} {sealedbypressureText} {pressuresealImage1} {pressuresealImage2} {pressuresealImage3}

@@ -1,7 +1,7 @@
 ---
 import Hero from "../components/RequestQuote/Hero.astro";
 import RequestQuoteForm from "../components/RequestQuote/RequestQuoteForm.astro";
-
+import Head from "../layouts/Head.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
 
@@ -25,8 +25,10 @@ const {requestquoteHeader, requestquoteText, requestquotePhone, requestquoteEmai
 
 const requestquoteFormData = pageData.find(pd => pd.__component === "requestquoteform.requestquote-form") || {};
 const {Subject, FullName, Email, Phone, CompanyName, ProductType, Quantity, FileUpload, AdditionalDetails, requestquoteBtn} = requestquoteFormData;
----
 
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
+---
+<Head seoData={seoPageData} />
 <Layout>
   <div class="white-space">
 

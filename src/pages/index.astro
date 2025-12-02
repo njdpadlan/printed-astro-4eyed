@@ -2,15 +2,11 @@
 import Hero from "../components/HomePage/Hero.astro";
 import HighQuality from "../components/HomePage/HighQuality.astro";
 import FeaturedProducts from "../components/HomePage/FeaturedProducts.astro";
-import UniqueProducts from "../components/HomePage/UniqueProducts.astro";
-import PromoProducts from "../components/HomePage/PromoProducts.astro";
-import FeaturedServices	from "../components/HomePage/FeaturedServices.astro";
 import OnlineBased from "../components/HomePage/OnlineBased.astro";
 import About from "../components/HomePage/About.astro";
-import ProductGallery from "../components/HomePage/ProductGallery.astro";
 import Layout from "../layouts/Layout.astro";
 import fetchApi from "../lib/strapi";
-import fetchPageData from "../lib/pagedata";
+import Head from "../layouts/Head.astro";
 
 
 // content type: endpoint, dynamic zone: page
@@ -122,9 +118,9 @@ const { aboutImage: {
 }} = aboutData;
 
 
-
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-
+<Head seoData={seoPageData} />
 <Layout>
 
 	<Hero {heroHeader} {heroText} {heroBanner} {heroAltText}
