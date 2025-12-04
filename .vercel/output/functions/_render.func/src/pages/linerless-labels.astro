@@ -27,7 +27,8 @@ const sustainablelabelData = pageData.find(pd => pd.__component === "sustainable
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-<Layout seo={seoPageData}>
+<Head seoData={seoPageData} />
+<Layout>
     <Hero linerlessHero={heroData} />
     <WhatIs productWhatIs={linerlessWhatIsData} />
     <SustainableLabel productSustainable={sustainablelabelData} />

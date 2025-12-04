@@ -51,6 +51,60 @@ const { formDetails } = Astro.props;
 </div>
 
 <script>
-    import { contactFormValidate } from '../../lib/formValidation';
-    contactFormValidate();
+    import { actions } from 'astro:actions'
+
+    const form = document.querySelector('form');
+    
+    form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const nameErrorMsg = form.querySelector('#name_errormsg');
+    const phoneErrorMsg = form.querySelector('#phone_errormsg');
+    const messageErrorMsg = form.querySelector('#message_errormsg');
+    const emailErrorMsg = form.querySelector('#email_errormsg');
+    
+    const formData = new FormData(form);
+    const { error } = await actions.submitContactForm(formData);
+
+    let hasErrors = false;
+
+    if (error && error.fields) {
+    hasErrors = true;
+    // Name
+    nameErrorMsg.innerHTML = error.fields.name?.[0] || '';
+    nameErrorMsg.style.display = nameErrorMsg.innerHTML ? 'inline' : 'none';
+
+    // Phone
+    phoneErrorMsg.innerHTML = error.fields.phone?.[0] || '';
+    phoneErrorMsg.style.display = phoneErrorMsg.innerHTML ? 'inline' : 'none';
+
+    // Message
+    messageErrorMsg.innerHTML = error.fields.message?.[0] || '';
+    messageErrorMsg.style.display = messageErrorMsg.innerHTML ? 'inline' : 'none';
+
+
+    const emailValue = formData.get('email')?.toString() || '';
+    if (emailValue.trim() !== '') {
+        emailErrorMsg.innerHTML = error.fields.email?.[0] || '';
+        emailErrorMsg.style.display = emailErrorMsg.innerHTML ? 'inline' : 'none';
+    } else {
+        emailErrorMsg.innerHTML = '';
+        emailErrorMsg.style.display = 'none';
+    }
+
+    } else {
+    // Hide all if no errors
+    [nameErrorMsg, phoneErrorMsg, messageErrorMsg, emailErrorMsg].forEach(
+        (er) => {
+        er.innerHTML = '';
+        er.style.display = 'none';
+        }
+    );
+    }
+    if (!hasErrors) {
+        form.submit();
+    }
+});
+    // import { contactFormValidate } from '../../lib/formValidation';
+    // contactFormValidate();
 </script>
