@@ -46,7 +46,7 @@ export const server = {
       product_type: z.string({
         invalid_type_error: "Product type is required.",
       }),
-      quantity: z.number({
+      quantity: z.coerce.number({
         invalid_type_error: "Quantity is required.",
       }),
     }),
