@@ -23,7 +23,8 @@ const servicesTypesData = pageData.find(pd => pd.__component === "servicestype.s
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-<Layout seo={seoPageData}>
+<Head seoData={seoPageData} />
+<Layout>
     <Hero servicesHero={heroData} />
     <ServicesTypes servicesType={servicesTypesData} />
 </Layout>
