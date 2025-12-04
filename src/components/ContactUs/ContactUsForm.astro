@@ -13,9 +13,9 @@ const { formDetails } = Astro.props;
     >
     <input type="hidden" name="_template" value="table">
         <div>
-            <label for={formDetails.FullName}>{formDetails.FullName} <span class="form-symbol">*</span></label>
+            <label for="name">{formDetails.FullName} <span class="form-symbol">*</span></label>
             <input
-                id={formDetails.FullName}
+                id="name"
                 type="text"
                 name="name"
                 placeholder="Enter your full name here."
@@ -28,7 +28,7 @@ const { formDetails } = Astro.props;
             <p id="phone_errormsg"></p>
         </div>
         <div>
-            <label for={formDetails.Email}>{formDetails.Email}</label>
+            <label for="email">{formDetails.Email}</label>
             <input
                 id="email"
                 name="email"
