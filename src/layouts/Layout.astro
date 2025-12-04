@@ -9,32 +9,8 @@ const logoPageData = await fetchApi({
   wrappedByKey: 'data',
 });
 
-const { seo } = Astro.props;
-const metaDescription = seo?.metaDescription || "Print|ED provides tailored, professional, and high-quality printing services across Canada. Trusted by businesses in Edmonton and Canada.";
-const metaTitle = seo?.metaTitle || "Print|ED Home | Trusted Printing Services in Canada";
-const keywords = seo?.keywords || "Canada printing services, Edmonton printing services, Canada printing products, Edmonton printing services";
 ---
 <html lang="en">
-    
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={keywords}/>
-        <title>{metaTitle}</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Hepta+Slab:wght@1..900&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap" rel="stylesheet">
-    </head>
-
     <body>
         <Nav logo={logoPageData[0]} />
         <main>
