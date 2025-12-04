@@ -23,8 +23,7 @@ const aboutusWhyData = pageData.find(pd => pd.__component === "aboutuswhy.about-
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-<Head seo={seoPageData}/>
-<Layout>
+<Layout seo={seoPageData} >
     <Hero aboutUsHero={heroData} />
     <AboutUsWhy aboutUs={aboutusWhyData} />
 </Layout>
