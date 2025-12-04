@@ -27,8 +27,7 @@ const securefoldData = pageData.find(pd => pd.__component === "securefold.secure
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-<Head seo={seoPageData}/>
-<Layout>
+<Layout seo={seoPageData} >
     <Hero pressureSealHero={heroData} />
     <WhatIs productWhatIs={pressuresealWhatIsData}/>
     <SecureFold productSecureFold={securefoldData} />
