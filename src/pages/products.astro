@@ -8,11 +8,10 @@ import fetchApi from "../lib/strapi";
 import Head from "../layouts/Head.astro";
 
 const pages = await fetchApi({
-  endpoint: 'products', 
-  page: 'ProductPage',
-  wrappedByKey: 'data',
+  endpoint: "products",
+  page: "ProductPage",
+  wrappedByKey: "data",
 });
-
 
 // http://localhost:1337/api/products?populate[ProductPage][populate]=*
 
@@ -20,58 +19,69 @@ const productPage = pages[0];
 const pageData = productPage?.ProductPage || [];
 
 // fetch productshero components
-const heroData = pageData.find(pd => pd.__component === "producthero.product-hero") || {};
+const heroData =
+  pageData.find((pd) => pd.__component === "producthero.product-hero") || {};
 
-const featuredproductData = pageData.find(pd => pd.__component === "productsfeaturedproducts.products-featured-products") || {};
+const featuredproductData =
+  pageData.find(
+    (pd) =>
+      pd.__component === "productsfeaturedproducts.products-featured-products",
+  ) || {};
 
-const promoProductsData = pageData.find(pd => pd.__component === "featuredpromoproducts.featured-promo-products");
+const promoProductsData = pageData.find(
+  (pd) => pd.__component === "featuredpromoproducts.featured-promo-products",
+);
 
 const pageMoreProducts = await fetchApi({
-  endpoint: 'add-more-products', 
-  wrappedByKey: 'data',
+  endpoint: "add-more-products",
+  wrappedByKey: "data",
 });
 
 const initialCount = 4;
 
-const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
+const seoPageData =
+  pageData.find((pd) => pd.__component === "shared.seo") || {};
 ---
-<Layout seo={seoPageData} >
 
-    <ProductsHero productsHero={heroData} />
+<Layout seo={seoPageData}>
+  <ProductsHero productsHero={heroData} />
 
-    <FeaturedProducts featureProducts={featuredproductData} />
+  <FeaturedProducts featureProducts={featuredproductData} />
 
-<div class="more-products">
+  <div class="more-products">
+    <div class="more-products-h2">
+      <h2>More Products</h2>
+    </div>
 
-  <div class="more-products-h2">
-    <h2>More Products</h2>
+    <div id="products-container">
+      {
+        pageMoreProducts
+          //a - b (old - new)
+          //b - a (new - old)
+          .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
+          .map((product, index) => (
+            <div
+              class="more-product-item"
+              style={index < initialCount ? "" : "display:none"}
+            >
+              <MoreProducts moreproducts={product} />
+            </div>
+          ))
+      }
+    </div>
+    <!-- Load more button -->
+    <div class="load-more-grid">
+      {
+        pageMoreProducts.length > initialCount && (
+          <button id="load-more-btn">Load More Products</button>
+        )
+      }
+    </div>
   </div>
-
-  <div id="products-container">
-    {pageMoreProducts
-      //a - b (old - new)
-      //b - a (new - old)
-      .sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))
-      .map((product, index) => (
-        <div class="more-product-item" style={index < initialCount ? '' : 'display:none'}>
-          <MoreProducts moreproducts={product} />
-        </div>
-      ))
-    }
-  </div>
-  <!-- Load more button -->
-  <div class="load-more-grid">
-    {pageMoreProducts.length > initialCount && (
-      <button id="load-more-btn">Load More Products</button>
-    )}
-  </div>
-
-</div>
-    <PromoProducts promoProducts={promoProductsData} />
-
+  <PromoProducts promoProducts={promoProductsData} />
 </Layout>
 
-  <script>
-    import { loadMoreProducts } from "../lib/loadMore";
-    loadMoreProducts();
-  </script>
+<script>
+  import { loadMoreProducts } from "../lib/loadMore";
+  loadMoreProducts();
+</script>
