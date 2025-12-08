@@ -87,6 +87,22 @@ header {
     }
 }
 
+.call-btn{
+  
+    position: fixed;
+    z-index: 1;
+    top:  90%;
+    right: 10px;
+    background-color: $secondary-yellow;
+    padding: 1.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    color: $tertiary-dark-blue;
+       
+    
+}
+
+
 @media (min-width: 320px) {
     .request {
         display: none;
