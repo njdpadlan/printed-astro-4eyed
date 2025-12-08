@@ -13,7 +13,8 @@ header {
         background-color: $primary-blue;
         padding: 6px 0;
 
-        a, span {
+        a,
+        span {
             font-size: 16px;
             text-decoration: none;
             color: $white;
@@ -65,7 +66,7 @@ header {
 
                 a:hover {
                     background-color: $secondary-yellow;
-                    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+                    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
                 }
             }
         }
@@ -87,18 +88,17 @@ header {
 }
 
 .call-btn{
-  
     position: fixed;
     z-index: 1;
-    top:  90%;
-    right: 10px;
+    top: 88%;
+    right: 40px;
     background-color: $secondary-yellow;
-    padding: 1.2rem;
+    padding: 21px;
     border-radius: 50%;
     text-decoration: none;
     color: $tertiary-dark-blue;
-       
-    
+    width: 75px;
+    height: 75px;
 }
 
 
@@ -119,7 +119,8 @@ header {
         position: unset;
 
         .top-nav {
-            a, span {
+            a,
+            span {
                 font-size: 20px;
             }
         }
@@ -152,16 +153,16 @@ header {
 
             ul {
                 display: flex;
-                flex-flow: nowrap;
+                flex-wrap: wrap;
 
                 li {
                     border-bottom: none;
-    
+                    line-height: 65px;
 
                     a {
                         display: inline;
                         white-space: nowrap;
-                        padding: 1rem 1rem;
+                        padding: 1rem 1rem; 
                     }
 
                     a:hover {
