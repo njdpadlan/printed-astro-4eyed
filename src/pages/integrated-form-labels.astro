@@ -26,8 +26,7 @@ const smartformData = pageData.find(pd => pd.__component === "smartefficientform
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-<Head seoData={seoPageData} />
-<Layout>
+<Layout seo={seoPageData} >
     <Hero integratedFormHero={heroData}  />
     <WhatIs productWhatIs={integratedformWhatIsData}  />
     <SmartEfficient productSmartEfficient={smartformData} />

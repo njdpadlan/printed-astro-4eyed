@@ -144,7 +144,6 @@
 }
 
 .promo-products-container {
-
     @include products-hero-card($tertiary-dark-blue);
     margin-bottom: 96px;
     max-width: 700px;
@@ -174,7 +173,7 @@
 @media(min-width:1000px) {
 
     .products-banner {
-        background-image: url("https://stylish-dinosaurs-39d17e40aa.media.strapiapp.com/products_hero_8adc45541a.webp");
+        background-image: url("https://truthful-song-3b4f8cc9a9.media.strapiapp.com/products_hero_large_507b9ca87d.webp");
         background-size: cover;
         background-position: center;
         padding: 1rem;
@@ -198,8 +197,6 @@
         }
     }
 
-
-
     .featured-h2-grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -211,7 +208,6 @@
     }
 
     .featured-products-bg {
-        // margin: 0 150px 0 150px;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
@@ -221,7 +217,7 @@
         display: grid;
         grid-template-columns: repeat(10, 1fr);
         gap: 1rem;
-        max-width: unset;
+        max-width: 1920px;
         align-items: end;
         grid-column: 2 / span 10;
         padding: unset;
@@ -262,8 +258,7 @@
     }
 
     .more-products-container {
-        max-width: unset;
-        margin: unset;
+        max-width: 1920px;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 1rem;
@@ -275,17 +270,15 @@
         ul h3 {
             font-family: 'assistant', sans-serif;
         }
-
     }
 
     .more-products {
-
-        margin: 144px 0 144px 0;
+        margin: 9rem 0;
 
         .more-products-h2 {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
-            max-width: unset;
+            max-width: 1920px;
 
             h2 {
                 grid-column: 3 / span 5;
@@ -309,6 +302,7 @@
     .more-products-section {
         display: flex;
         grid-column: 3 / span 8;
+        max-width: 1920px;
     }
 
     .product-header-group img {
@@ -327,7 +321,7 @@
     .promo-products-container {
         display: grid;
         grid-template-columns: repeat(10, 1fr);
-        margin: 144px 150px 144px 150px;
+        margin: 9rem 150px 9rem 150px;
         align-items: center;
         max-width: unset;
 

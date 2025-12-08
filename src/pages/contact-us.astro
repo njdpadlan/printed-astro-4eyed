@@ -27,9 +27,7 @@ const contactusFormData =
 const seoPageData =
   pageData.find((pd) => pd.__component === "shared.seo") || {};
 ---
-
-<Head seoData={seoPageData} />
-<Layout>
+<Layout seo={seoPageData} >
   <div class="background-form">
     <div class="forms-page-wrapper">
       <Hero contactUsHero={heroData} />

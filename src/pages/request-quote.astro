@@ -23,8 +23,7 @@ const requestquoteFormData = pageData.find(pd => pd.__component === "requestquot
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-<Head seoData={seoPageData} />
-<Layout>
+<Layout seo={seoPageData} >
   <div class="white-space">
 
   </div>

@@ -31,17 +31,10 @@ const aboutData = pageData.find(pd => pd.__component === "about.about") || {};
 
 const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
 ---
-<Head seoData={seoPageData} />
-<Layout>
-
+<Layout seo={seoPageData} >
 	<Hero homeHero={heroData}  />
-
 	<HighQuality homeHighQuality={highQualityData}  />
-
 	<FeaturedProducts homeFeaturedProducts={featuredProductsData} />
-
 	<OnlineBased homeOnlineBased={onlineBasedData} />
-
 	<About homeAbout={aboutData} />
-
 </Layout>
