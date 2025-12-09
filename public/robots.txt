@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: 
-Sitemap: https://www.printedonline.ca/sitemap.xml
+Allow: /
+
+Sitemap: https://www.printedonline.ca/sitemap-index.xml
