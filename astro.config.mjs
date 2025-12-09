@@ -1,8 +1,8 @@
 // @ts-check 
- //import { defineConfig } from 'astro/config';
+//import { defineConfig } from 'astro/config';
 
 // https://astro.build/config 
- //export default defineConfig({});
+//export default defineConfig({});
 
 
 //SSR using vercel as adapter
@@ -10,8 +10,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   output: "server",
   adapter: vercel(),
+  site: "https://printedonline.ca",
+  integrations: [sitemap()],
 });
