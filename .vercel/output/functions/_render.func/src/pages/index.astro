@@ -1,0 +1,40 @@
+---
+import Hero from "../components/HomePage/Hero.astro";
+import HighQuality from "../components/HomePage/HighQuality.astro";
+import FeaturedProducts from "../components/HomePage/FeaturedProducts.astro";
+import OnlineBased from "../components/HomePage/OnlineBased.astro";
+import About from "../components/HomePage/About.astro";
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+import Head from "../layouts/Head.astro";
+
+const pages = await fetchApi({
+  endpoint: 'homes', 
+  page: 'HomePage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/homes?populate[HomePage][populate]=*
+
+const homePage = pages[0];
+const pageData = homePage?.HomePage || [];
+
+const heroData = pageData.find(pd => pd.__component === "homehero.home-hero") || {};
+
+const highQualityData = pageData.find(pd => pd.__component === "highquality.high-quality") || {};
+
+const featuredProductsData = pageData.find(pd => pd.__component === "featuredproducts.featured-products") || {};
+
+const onlineBasedData = pageData.find(pd => pd.__component === "onlinebased.online-based") || {};
+
+const aboutData = pageData.find(pd => pd.__component === "about.about") || {};
+
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
+---
+<Layout seo={seoPageData} >
+	<Hero homeHero={heroData}  />
+	<HighQuality homeHighQuality={highQualityData}  />
+	<FeaturedProducts homeFeaturedProducts={featuredProductsData} />
+	<OnlineBased homeOnlineBased={onlineBasedData} />
+	<About homeAbout={aboutData} />
+</Layout>

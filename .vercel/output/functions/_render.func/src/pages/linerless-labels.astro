@@ -1,0 +1,34 @@
+---
+import Hero from "../components/LinerlessLabel/Hero.astro";
+import SustainableLabel from "../components/LinerlessLabel/SustainableLabel.astro";
+import WhatIs from "../components/LinerlessLabel/WhatIs.astro";
+import Head from "../layouts/Head.astro";
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+
+
+
+const pages = await fetchApi({
+  endpoint: 'linerless-labels', 
+  page: 'LinerlessLabelPage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/linerless-labels?populate[LinerlessLabelPage][populate]=*
+
+const linerlessPage = pages[0];
+const pageData = linerlessPage?.LinerlessLabelPage || [];
+
+const heroData = pageData.find(pd => pd.__component === "linerlesslabelhero.linerlesslabel-hero") || {};
+
+const linerlessWhatIsData = pageData.find(pd => pd.__component === "linerlesslabelwhatis.linerlesslabel-what-is") || {};
+
+const sustainablelabelData = pageData.find(pd => pd.__component === "sustainablelabel.sustainable-label") || {};
+
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
+---
+<Layout seo={seoPageData} >
+    <Hero linerlessHero={heroData} />
+    <WhatIs productWhatIs={linerlessWhatIsData} />
+    <SustainableLabel productSustainable={sustainablelabelData} />
+</Layout>

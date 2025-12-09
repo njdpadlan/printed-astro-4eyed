@@ -1,0 +1,29 @@
+---
+import Hero from "../components/Services/Hero.astro";
+import ServicesTypes from "../components/Services/ServicesTypes.astro";
+import Head from "../layouts/Head.astro";
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+
+
+const pages = await fetchApi({
+  endpoint: 'services', 
+  page: 'ServicePage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/services?populate[ServicePage][populate]=*
+
+const aboutusPage = pages[0];
+const pageData = aboutusPage?.ServicePage || [];
+
+const heroData = pageData.find(pd => pd.__component === "servicehero.service-hero") || {};
+
+const servicesTypesData = pageData.find(pd => pd.__component === "servicestype.services-type") || {};
+
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
+---
+<Layout seo={seoPageData} >
+    <Hero servicesHero={heroData} />
+    <ServicesTypes servicesType={servicesTypesData} />
+</Layout>

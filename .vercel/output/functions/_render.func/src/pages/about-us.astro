@@ -1,0 +1,29 @@
+---
+import AboutUsWhy from "../components/AboutUs/AboutUsWhy.astro";
+import Hero from "../components/AboutUs/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+import Head from "../layouts/Head.astro";
+
+
+const pages = await fetchApi({
+  endpoint: 'about-uses', 
+  page: 'AboutUsPage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/about-uses?populate[AboutUsPage][populate]=*
+
+const aboutusPage = pages[0];
+const pageData = aboutusPage?.AboutUsPage || [];
+
+const heroData = pageData.find(pd => pd.__component === "aboutushero.about-us-hero") || {};
+
+const aboutusWhyData = pageData.find(pd => pd.__component === "aboutuswhy.about-us-why") || {};
+
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
+---
+<Layout seo={seoPageData} >
+    <Hero aboutUsHero={heroData} />
+    <AboutUsWhy aboutUs={aboutusWhyData} />
+</Layout>

@@ -1,0 +1,33 @@
+---
+import Hero from "../components/IntegratedForm/Hero.astro";
+import WhatIs from "../components/IntegratedForm/WhatIs.astro";
+import SmartEfficient from "../components/IntegratedForm/SmartEfficient.astro";
+import Layout from "../layouts/Layout.astro";
+import fetchApi from "../lib/strapi";
+import Head from "../layouts/Head.astro";
+
+
+const pages = await fetchApi({
+  endpoint: 'integrated-form-labels', 
+  page: 'IntegratedFormLabelPage',
+  wrappedByKey: 'data',
+});
+
+// http://localhost:1337/api/integrated-form-labels?populate[IntegratedFormLabelPage][populate]=*
+
+const integratedformsPage = pages[0];
+const pageData = integratedformsPage?.IntegratedFormLabelPage || [];
+
+const heroData = pageData.find(pd => pd.__component === "integratedformlabelhero.integratedformlabel-hero") || {};
+
+const integratedformWhatIsData = pageData.find(pd => pd.__component === "integratedformlabelwhatis.integratedformlabel-what-is") || {};
+
+const smartformData = pageData.find(pd => pd.__component === "smartefficientform.smart-efficient-form") || {};
+
+const seoPageData = pageData.find(pd => pd.__component === "shared.seo") || {};
+---
+<Layout seo={seoPageData} >
+    <Hero integratedFormHero={heroData}  />
+    <WhatIs productWhatIs={integratedformWhatIsData}  />
+    <SmartEfficient productSmartEfficient={smartformData} />
+</Layout>
