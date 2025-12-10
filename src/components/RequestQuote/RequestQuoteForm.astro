@@ -10,7 +10,7 @@ const { formDetails } = Astro.props;
      </div>
     <form
         action="https://formsubmit.co/info@printedonline.ca"
-        method="post"
+        method="POST"
         name="requestquote"
         enctype="multipart/form-data"
     >
@@ -30,7 +30,7 @@ const { formDetails } = Astro.props;
             <label for="phone">{formDetails.Phone} <span class="form-symbol">*</span></label>
             <input
                 id="phone"
-                type="number"
+                type="text"
                 name="phone"
                 placeholder="Enter your phone number here."
             />
@@ -40,6 +40,7 @@ const { formDetails } = Astro.props;
             <label for="email">{formDetails.Email}</label>
             <input
                 id="email"
+                type="email"
                 name="email"
                 placeholder="Enter your email address here."
             />
