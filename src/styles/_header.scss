@@ -57,7 +57,6 @@ header {
                     text-decoration: none;
                     text-transform: uppercase;
                     display: block;
-                    font-size: 20px;
                     font-weight: 600;
                     color: $tertiary-dark-blue;
                     height: 100%;
@@ -118,13 +117,6 @@ header {
     header {
         position: unset;
 
-        .top-nav {
-            a,
-            span {
-                font-size: 20px;
-            }
-        }
-
         .nav-container {
             flex-wrap: unset;
 
@@ -139,7 +131,10 @@ header {
             .request {
                 @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
                 display: inline-block;
+                padding: .75rem;
+                font-size: 1rem;
                 font-weight: bold;
+                white-space: nowrap;
             }
         }
 
@@ -153,7 +148,7 @@ header {
 
             ul {
                 display: flex;
-                flex-wrap: wrap;
+                white-space: nowrap;
 
                 li {
                     border-bottom: none;
@@ -162,7 +157,8 @@ header {
                     a {
                         display: inline;
                         white-space: nowrap;
-                        padding: 1rem 1rem; 
+                        padding: 1rem 1rem;
+                        font-size: 1rem;
                     }
 
                     a:hover {
@@ -176,6 +172,27 @@ header {
 
         .show-nav {
             position: unset;
+        }
+    }
+}
+
+@media (min-width: 1250px) {
+    header {
+        nav {
+            ul {
+                li {
+                    a {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .nav-container {
+            .request {
+                font-size: 20px;
+                padding: 1rem;
+            }
         }
     }
 }
