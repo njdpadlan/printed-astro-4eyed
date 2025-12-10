@@ -3,41 +3,57 @@ const { formDetails } = Astro.props;
 ---
 
 <div class="form-card">
-     <div class="form-p">
-        <p>Input fields that are marked with <span class="form-symbol">*</span> are required. </p>
-     </div>
+    <div class="form-p">
+        <p>
+            Input fields that are marked with <span class="form-symbol">*</span> are
+            required.
+        </p>
+    </div>
     <form
         action="https://formsubmit.co/info@printedonline.ca"
-        method="post"
+        method="POST"
         name="contactus"
     >
-    <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_template" value="table" />
         <div>
-            <label for="name">{formDetails.FullName} <span class="form-symbol">*</span></label>
+            <label for="name"
+                >{formDetails.FullName}
+                <span class="form-symbol">*</span></label
+            >
             <input
                 id="name"
                 type="text"
                 name="name"
                 placeholder="Enter your full name here."
             />
-           <p id="name_errormsg"></p>
+            <p id="name_errormsg"></p>
         </div>
         <div>
-            <label for="phone" class="label">{formDetails.Phone}<span class="form-symbol"> *</span></label>
-            <input id="phone" type="number" name="phone" placeholder="Enter your phone number here."/>
+            <label for="phone" class="label"
+                >{formDetails.Phone}<span class="form-symbol"> *</span></label
+            >
+            <input
+                id="phone"
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone number here."
+            />
             <p id="phone_errormsg"></p>
         </div>
         <div>
             <label for="email">{formDetails.Email}</label>
             <input
                 id="email"
+                type="email"
                 name="email"
                 placeholder="Enter your email address here."
             />
             <p id="email_errormsg"></p>
         </div>
         <div>
-            <label for={formDetails.Message}>{formDetails.Message} <span class="form-symbol">*</span></label>
+            <label for={formDetails.Message}
+                >{formDetails.Message} <span class="form-symbol">*</span></label
+            >
             <textarea
                 id={formDetails.Message}
                 name="message"
@@ -45,12 +61,15 @@ const { formDetails } = Astro.props;
                 placeholder="Enter your message here."></textarea>
             <p id="message_errormsg"></p>
         </div>
-        <input type="submit" value={formDetails.sendmessageBtn} class="submit-btn" />
+        <input
+            type="submit"
+            value={formDetails.sendmessageBtn}
+            class="submit-btn"
+        />
     </form>
-
 </div>
 
 <script>
-    import { contactFormValidate } from '../../lib/formValidation';
+    import { contactFormValidate } from "../../lib/formValidation";
     contactFormValidate();
 </script>
