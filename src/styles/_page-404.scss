@@ -1,47 +1,61 @@
 @use "colours" as *;
 @use "mixins" as *;
 
-
-.container-four{
-    background-color: $tertiary-dark-blue;
-    justify-self: center;
-    padding: 2rem;
-    margin:96px 0 96px 0;
-    border-radius: 15px;
-
+.four-background {
+    margin: 2rem 0 6rem 0;
 }
-.container-four h1, .container-four p{
+
+.container-four {
+    background-color: $tertiary-dark-blue;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 700px;
+
+    .text-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.container-four h1,
+.container-four p {
     color: $white;
 }
-.container-four h1{
+
+.container-four h1 {
     font-size: 122px;
 }
-.container-four p{
+
+.container-four p {
     font-weight: bold
 }
 
 
 .btn-four {
-  @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
-  display: inline-block;
-  margin-top: 32px;
-  width: 100%;
+    @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
+    display: inline-block;
+    margin-top: 32px;
+    width: 100%;
 }
 
-@media (min-width:1000px){
-    .container-four h1{
-    font-size: 250px;
-    justify-self: center;
-}
+@media (min-width:1000px) {
+    .container-four h1 {
+        font-size: 250px;
+    }
 
-.container-four{
-    padding: 2rem 7rem;
-    margin:144px 0 144px 0;
-}
+    .four-background {
+        margin: 4rem 0;
+    }
 
-.container-four p{
-    justify-self: center;
-    font-size: 44px;
+    .container-four {
+        padding: 2rem 7rem;
 
-}
+    }
+
+    .container-four p {
+        font-size: 44px;
+    }
 }

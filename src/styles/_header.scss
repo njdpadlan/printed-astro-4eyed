@@ -13,7 +13,8 @@ header {
         background-color: $primary-blue;
         padding: 6px 0;
 
-        a, span {
+        a,
+        span {
             font-size: 16px;
             text-decoration: none;
             color: $white;
@@ -65,7 +66,7 @@ header {
 
                 a:hover {
                     background-color: $secondary-yellow;
-                    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+                    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
                 }
             }
         }
@@ -86,19 +87,18 @@ header {
     }
 }
 
-.call-btn{
-  
+.call-btn {
     position: fixed;
-    z-index: 1;
-    top:  87%;
-    right: 15px;
+    z-index: 100;
+    bottom: 25px;
+    right: 25px;
     background-color: $secondary-yellow;
-    padding: 1.2rem;
+    padding: 20px;
     border-radius: 50%;
     text-decoration: none;
     color: $tertiary-dark-blue;
-       
-    
+    width: 75px;
+    height: 75px;
 }
 
 
@@ -118,12 +118,6 @@ header {
     header {
         position: unset;
 
-        .top-nav {
-            a, span {
-                font-size: 20px;
-            }
-        }
-
         .nav-container {
             flex-wrap: unset;
 
@@ -138,7 +132,10 @@ header {
             .request {
                 @include btn ($secondary-yellow, $tertiary-dark-blue, #FFEDAD);
                 display: inline-block;
+                padding: .75rem;
+                font-size: 1rem;
                 font-weight: bold;
+                white-space: nowrap;
             }
         }
 
@@ -152,16 +149,17 @@ header {
 
             ul {
                 display: flex;
-                flex-flow: nowrap;
+                white-space: nowrap;
 
                 li {
                     border-bottom: none;
-    
+                    line-height: 65px;
 
                     a {
                         display: inline;
                         white-space: nowrap;
                         padding: 1rem 1rem;
+                        font-size: 1rem;
                     }
 
                     a:hover {
@@ -175,6 +173,27 @@ header {
 
         .show-nav {
             position: unset;
+        }
+    }
+}
+
+@media (min-width: 1250px) {
+    header {
+        nav {
+            ul {
+                li {
+                    a {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .nav-container {
+            .request {
+                font-size: 20px;
+                padding: 1rem;
+            }
         }
     }
 }
